@@ -24,6 +24,7 @@ const softwareIdInput = document.getElementById('softwareId');
 const softwareNameInput = document.getElementById('softwareName');
 const softwareUrlInput = document.getElementById('softwareUrl');
 const softwareDescInput = document.getElementById('softwareDescription');
+const softwareTypeInput = document.getElementById('softwareType');
 const softwareCategoryInput = document.getElementById('softwareCategory');
 const softwareIconInput = document.getElementById('softwareIcon');
 const softwareIconColorInput = document.getElementById('softwareIconColor');
@@ -189,21 +190,23 @@ function renderSoftwareTable() {
         // 生成类型标签
         const typeTag = software.type ? `<span class="tag" style="background-color: ${software.type === 'software' ? '#3b82f6' : '#10b981'}; color: white;">${software.type === 'software' ? '软件' : '网站'}</span>` : '';
         
+        // 判断图标是URL还是类名
+        const iconHTML = getIconHTML(software.icon, software.iconColor || '#2575fc');
+        
         row.innerHTML = `
             <td>${index + 1}</td>
             <td>
                 <div class="software-icon-cell">
-                    <div class="table-icon" style="background-color: ${software.iconColor || '#2575fc'}">
-                        <i class="${software.icon || 'fas fa-cube'}"></i>
-                    </div>
+                    ${iconHTML}
                     <div>
                         <div class="software-name">${software.name || '未命名项目'}</div>
                         <div style="font-size: 12px; color: #64748b; margin-top: 3px;">${software.description?.substring(0, 50) || '无描述'}${software.description && software.description.length > 50 ? '...' : ''}</div>
                     </div>
                 </div>
             </td>
+            <td>${typeTag}</td>
             <td><span class="software-category">${getCategoryDisplayName(software.category) || '未分类'}</span></td>
-            <td><div class="software-tags-cell">${typeTag}${tagsHTML ? ' ' + tagsHTML : '<span style="color: #94a3b8; font-size: 12px;">无标签</span>'}</div></td>
+            <td><div class="software-tags-cell">${tagsHTML || '<span style="color: #94a3b8; font-size: 12px;">无标签</span>'}</div></td>
             <td>${software.popular ? '<span style="color: #f59e0b;"><i class="fas fa-star"></i> 是</span>' : '否'}</td>
             <td>
                 <div class="action-cell">
@@ -259,7 +262,7 @@ function getCategoryDisplayName(category) {
     return displayNames[category] || category;
 }
 
-// 打开添加软件模态框
+// 打开添加项目模态框
 function openAddSoftwareModal() {
     editMode = false;
     modalTitle.textContent = '添加项目';
@@ -271,12 +274,13 @@ function openAddSoftwareModal() {
     softwareIconColorInput.value = '#2575fc';
     softwarePopularInput.checked = false;
     softwareCategoryInput.value = 'other'; // 默认分类
+    softwareTypeInput.value = 'software'; // 默认类型为软件
     
     // 打开模态框
     softwareModal.classList.add('show');
 }
 
-// 编辑软件
+// 编辑项目
 function editSoftware(id) {
     const software = softwareData.find(item => item.id === id);
     
@@ -295,6 +299,7 @@ function editSoftware(id) {
     softwareUrlInput.value = software.url || '';
     softwareDescInput.value = software.description || '';
     softwareCategoryInput.value = software.category || 'other';
+    softwareTypeInput.value = software.type || 'software'; // 设置类型字段
     softwareIconInput.value = software.icon || 'fas fa-cube';
     softwareIconColorInput.value = software.iconColor || '#2575fc';
     softwarePopularInput.checked = software.popular || false;
@@ -326,11 +331,11 @@ function handleFormSubmit(event) {
         url: softwareUrlInput.value.trim(),
         description: softwareDescInput.value.trim(),
         category: softwareCategoryInput.value,
+        type: softwareTypeInput.value, // 添加类型字段
         icon: softwareIconInput.value.trim(),
         iconColor: softwareIconColorInput.value,
         popular: softwarePopularInput.checked,
-        tags: softwareTagsInput.value.split(',').map(tag => tag.trim()).filter(tag => tag.length > 0),
-        type: 'software' // 默认类型为软件，可以根据需要修改
+        tags: softwareTagsInput.value.split(',').map(tag => tag.trim()).filter(tag => tag.length > 0)
     };
     
     // 验证数据
@@ -351,6 +356,11 @@ function handleFormSubmit(event) {
     
     if (!formData.category) {
         showNotification('请选择项目分类', 'error');
+        return;
+    }
+    
+    if (!formData.type) {
+        showNotification('请选择项目类型', 'error');
         return;
     }
     
@@ -552,7 +562,7 @@ function exportJsonFile() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'software-website-navigation-data.json';
+    a.download = 'data.json';
     
     // 触发下载
     document.body.appendChild(a);
@@ -628,4 +638,28 @@ function showNotification(message, type = 'info') {
             notification.remove();
         }
     }, 5000); // 延长显示时间到5秒，因为有重要提示信息
+}
+
+// 获取图标HTML（支持URL和类名）
+function getIconHTML(iconValue, backgroundColor) {
+    if (!iconValue) {
+        iconValue = 'fas fa-cube';
+        backgroundColor = '#2575fc';
+    }
+    
+    // 判断是否为URL（简单判断是否包含http或https）
+    if (iconValue.startsWith('http://') || iconValue.startsWith('https://')) {
+        return `
+            <div class="table-icon table-icon-image" style="background-color: ${backgroundColor}">
+                <img src="${iconValue}" alt="图标" onerror="this.style.display='none';this.parentElement.innerHTML='<i class=\'fas fa-image\'></i>'">
+            </div>
+        `;
+    } else {
+        // Font Awesome 图标类名
+        return `
+            <div class="table-icon" style="background-color: ${backgroundColor}">
+                <i class="${iconValue}"></i>
+            </div>
+        `;
+    }
 }

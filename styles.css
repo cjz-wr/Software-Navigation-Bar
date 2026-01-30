@@ -268,6 +268,18 @@ main {
     color: white;
 }
 
+/* 图片图标特殊样式 */
+.software-icon-image {
+    overflow: hidden;
+}
+
+.software-icon-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
 .software-info h3 {
     font-size: 18px;
     margin-bottom: 5px;
@@ -809,6 +821,141 @@ footer {
     transform: translateY(-2px);
 }
 
+/* 修复HTML中使用的类名与CSS中的不匹配问题 */
+.loading-state {
+    text-align: center;
+    padding: 40px;
+    color: var(--text-light);
+}
+
+.loading-state i {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.error-state {
+    text-align: center;
+    padding: 40px;
+    color: var(--error-color);
+}
+
+.error-state i {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    justify-items: center;
+}
+
+/* 管理员编辑提示面板 */
+.admin-hint-panel {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 12px;
+    padding: 25px;
+    margin: 30px 0;
+    color: white;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.admin-hint-panel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+}
+
+.hint-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.hint-icon {
+    font-size: 36px;
+    flex-shrink: 0;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.hint-text h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.hint-text p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.hint-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.primary-btn {
+    background-color: white;
+    color: #667eea;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.secondary-link {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.secondary-link:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.hint-divider {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 16px;
+}
+
 /* 响应式设计 */
 @media (max-width: 768px) {
     .header-content {
@@ -871,6 +1018,66 @@ footer {
     
     .contributor-name {
         font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .admin-hint-panel {
+        padding: 20px;
+        margin: 25px 0;
+    }
+    
+    .hint-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .hint-icon {
+        font-size: 32px;
+    }
+    
+    .hint-text h3 {
+        font-size: 20px;
+    }
+    
+    .hint-text p {
+        font-size: 15px;
+    }
+    
+    .hint-actions {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .admin-hint-panel {
+        padding: 15px;
+    }
+    
+    .hint-icon {
+        font-size: 28px;
+    }
+    
+    .hint-text h3 {
+        font-size: 18px;
+    }
+    
+    .hint-text p {
+        font-size: 14px;
+    }
+    
+    .primary-btn {
+        padding: 10px 20px;
+        font-size: 15px;
+    }
+    
+    .secondary-link {
+        font-size: 15px;
+    }
+    
+    .hint-divider {
+        font-size: 15px;
     }
 }
 

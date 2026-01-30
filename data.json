@@ -5,7 +5,11 @@
     "description": "谷歌浏览器，快速、安全、稳定的网页浏览器",
     "url": "https://www.google.com/chrome/",
     "category": "browser",
-    "tags": ["浏览器", "谷歌", "快速"],
+    "tags": [
+      "浏览器",
+      "谷歌",
+      "快速"
+    ],
     "icon": "fab fa-chrome",
     "iconColor": "#4285F4",
     "popular": true,
@@ -17,7 +21,11 @@
     "description": "微软开发的免费、开源代码编辑器，支持多种编程语言",
     "url": "https://code.visualstudio.com/",
     "category": "development",
-    "tags": ["开发", "编辑器", "微软"],
+    "tags": [
+      "开发",
+      "编辑器",
+      "微软"
+    ],
     "icon": "fas fa-code",
     "iconColor": "#007ACC",
     "popular": true,
@@ -29,7 +37,11 @@
     "description": "基于浏览器的界面设计工具，支持团队协作",
     "url": "https://www.figma.com/",
     "category": "design",
-    "tags": ["设计", "UI", "协作"],
+    "tags": [
+      "设计",
+      "UI",
+      "协作"
+    ],
     "icon": "fas fa-paint-brush",
     "iconColor": "#F24E1E",
     "popular": true,
@@ -41,7 +53,11 @@
     "description": "一体化工作空间，笔记、任务、数据库和项目管理",
     "url": "https://www.notion.so/",
     "category": "productivity",
-    "tags": ["笔记", "协作", "办公"],
+    "tags": [
+      "笔记",
+      "协作",
+      "办公"
+    ],
     "icon": "fas fa-sticky-note",
     "iconColor": "#000000",
     "popular": false,
@@ -53,7 +69,11 @@
     "description": "视频会议软件，支持在线会议和屏幕共享",
     "url": "https://zoom.us/",
     "category": "communication",
-    "tags": ["视频会议", "通讯", "远程办公"],
+    "tags": [
+      "视频会议",
+      "通讯",
+      "远程办公"
+    ],
     "icon": "fas fa-video",
     "iconColor": "#2D8CFF",
     "popular": true,
@@ -65,7 +85,11 @@
     "description": "音乐流媒体服务平台，拥有海量歌曲和播客",
     "url": "https://www.spotify.com/",
     "category": "media",
-    "tags": ["音乐", "流媒体", "播客"],
+    "tags": [
+      "音乐",
+      "流媒体",
+      "播客"
+    ],
     "icon": "fab fa-spotify",
     "iconColor": "#1DB954",
     "popular": false,
@@ -77,7 +101,11 @@
     "description": "开源网页浏览器，注重隐私保护",
     "url": "https://www.mozilla.org/firefox/",
     "category": "browser",
-    "tags": ["浏览器", "开源", "隐私"],
+    "tags": [
+      "浏览器",
+      "开源",
+      "隐私"
+    ],
     "icon": "fab fa-firefox",
     "iconColor": "#FF7139",
     "popular": false,
@@ -89,7 +117,11 @@
     "description": "专业的图像编辑和处理软件",
     "url": "https://www.adobe.com/products/photoshop.html",
     "category": "design",
-    "tags": ["设计", "图像编辑", "Adobe"],
+    "tags": [
+      "设计",
+      "图像编辑",
+      "Adobe"
+    ],
     "icon": "fas fa-image",
     "iconColor": "#31A8FF",
     "popular": true,
@@ -101,7 +133,11 @@
     "description": "团队协作工具，集成多种办公应用",
     "url": "https://slack.com/",
     "category": "communication",
-    "tags": ["团队协作", "办公", "通讯"],
+    "tags": [
+      "团队协作",
+      "办公",
+      "通讯"
+    ],
     "icon": "fab fa-slack",
     "iconColor": "#4A154B",
     "popular": false,
@@ -113,7 +149,11 @@
     "description": "代码托管平台，用于版本控制和协作",
     "url": "https://github.com/",
     "category": "development",
-    "tags": ["代码托管", "开发", "Git"],
+    "tags": [
+      "代码托管",
+      "开发",
+      "Git"
+    ],
     "icon": "fab fa-github",
     "iconColor": "#181717",
     "popular": true,
@@ -125,7 +165,11 @@
     "description": "程序员问答社区，解决编程问题的最佳场所",
     "url": "https://stackoverflow.com/",
     "category": "development",
-    "tags": ["编程", "问答", "社区"],
+    "tags": [
+      "编程",
+      "问答",
+      "社区"
+    ],
     "icon": "fab fa-stack-overflow",
     "iconColor": "#F48024",
     "popular": true,
@@ -137,7 +181,11 @@
     "description": "知名技术博客，分享前端开发和互联网技术",
     "url": "https://www.ruanyifeng.com/blog/",
     "category": "blog",
-    "tags": ["技术博客", "前端", "学习"],
+    "tags": [
+      "技术博客",
+      "前端",
+      "学习"
+    ],
     "icon": "fas fa-blog",
     "iconColor": "#FF6B6B",
     "popular": true,
@@ -149,7 +197,11 @@
     "description": "Mozilla开发者网络，Web技术权威文档",
     "url": "https://developer.mozilla.org/",
     "category": "documentation",
-    "tags": ["文档", "Web开发", "教程"],
+    "tags": [
+      "文档",
+      "Web开发",
+      "教程"
+    ],
     "icon": "fas fa-book",
     "iconColor": "#83D043",
     "popular": true,
@@ -161,7 +213,11 @@
     "description": "中文互联网高质量问答社区",
     "url": "https://www.zhihu.com/",
     "category": "social",
-    "tags": ["问答", "知识", "社区"],
+    "tags": [
+      "问答",
+      "知识",
+      "社区"
+    ],
     "icon": "fab fa-zhihu",
     "iconColor": "#0084FF",
     "popular": true,
@@ -173,10 +229,41 @@
     "description": "年轻人的文化社区，视频分享平台",
     "url": "https://www.bilibili.com/",
     "category": "media",
-    "tags": ["视频", "娱乐", "学习"],
+    "tags": [
+      "视频",
+      "娱乐",
+      "学习"
+    ],
     "icon": "fab fa-bilibili",
     "iconColor": "#FB7299",
     "popular": true,
     "type": "website"
+  },
+  {
+    "id": 16,
+    "name": "百度",
+    "url": "https://www.baidu.com/",
+    "description": "百度",
+    "category": "browser",
+    "type": "website",
+    "icon": "https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png",
+    "iconColor": "#175cd3",
+    "popular": false,
+    "tags": []
+  },
+  {
+    "id": 17,
+    "name": "WPS",
+    "url": "https://platform.wps.cn/",
+    "description": "WPS是一款由中国金山办公软件公司开发的综合办公套件，主要用于处理文档、表格和演示文稿",
+    "category": "productivity",
+    "type": "software",
+    "icon": "https://platform.wps.cn/assets/model1-logo-217669f7.svg",
+    "iconColor": "#ffffff",
+    "popular": true,
+    "tags": [
+      "工具",
+      "办公"
+    ]
   }
 ]

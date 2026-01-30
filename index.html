@@ -78,6 +78,31 @@
             </button>
         </div>
         
+        <!-- GitHub贡献者展示区域 -->
+        <section class="contributors-section">
+            <div class="container">
+                <h2 class="section-title"><i class="fab fa-github"></i> 项目贡献者</h2>
+                <p class="section-description">感谢所有为这个项目做出贡献的开发者们</p>
+                
+                <div class="loading-state" id="contributorsLoading">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <span>正在加载贡献者信息...</span>
+                </div>
+                
+                <div class="error-state" id="contributorsError" style="display: none;">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <span>加载贡献者信息失败，请稍后重试</span>
+                    <button id="retryContributors">
+                        <i class="fas fa-redo"></i> 重新加载
+                    </button>
+                </div>
+                
+                <div class="grid" id="contributorsGrid">
+                    <!-- 贡献者卡片将通过JavaScript动态生成 -->
+                </div>
+            </div>
+        </section>
+
         <!-- 数据管理面板 -->
         <div class="data-manager">
             <h3><i class="fas fa-database"></i> 数据管理</h3>
@@ -99,8 +124,30 @@
             </p>
         </div>
         
+        <!-- 网站或软件添加提示 -->
+        <div class="admin-hint-panel">
+            <div class="hint-content">
+                <div class="hint-icon">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <div class="hint-text">
+                    <h3>网站或软件添加</h3>
+                    <p>如果您需要添加网站或者软件，可以直接使用管理后台进行数据编辑和管理，注意:你修改的数据不会直接生效，需要提交 Pull Request 后才会更新到网站上。</p>
+                    <div class="hint-actions">
+                        <a href="admin.html" class="primary-btn">
+                            <i class="fas fa-edit"></i> 进入管理后台
+                        </a>
+                        <span class="hint-divider">或</span>
+                        <a href="#instructions" class="secondary-link">
+                            <i class="fas fa-question-circle"></i> 查看使用说明
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <!-- 使用说明 -->
-        <div class="instructions">
+        <div class="instructions" id="instructions">
             <h3><i class="fas fa-question-circle"></i> 如何添加软件或网站？</h3>
             <div class="steps">
                 <div class="step">
@@ -159,31 +206,6 @@
             </div>
         </div>
     </div>
-
-    <!-- GitHub贡献者展示区域 -->
-    <section class="contributors-section">
-        <div class="container">
-            <h2 class="section-title"><i class="fab fa-github"></i> 项目贡献者</h2>
-            <p class="section-description">感谢所有为这个项目做出贡献的开发者们</p>
-            
-            <div class="loading-state" id="contributorsLoading">
-                <i class="fas fa-spinner fa-spin"></i>
-                <span>正在加载贡献者信息...</span>
-            </div>
-            
-            <div class="error-state" id="contributorsError" style="display: none;">
-                <i class="fas fa-exclamation-triangle"></i>
-                <span>加载贡献者信息失败，请稍后重试</span>
-                <button id="retryContributors">
-                    <i class="fas fa-redo"></i> 重新加载
-                </button>
-            </div>
-            
-            <div class="grid" id="contributorsGrid">
-                <!-- 贡献者卡片将通过JavaScript动态生成 -->
-            </div>
-        </div>
-    </section>
 
     <!-- 页脚 -->
     <footer>

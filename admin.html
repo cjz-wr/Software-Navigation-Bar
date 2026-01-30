@@ -92,6 +92,7 @@
                             <tr>
                                 <th style="width: 40px;">#</th>
                                 <th>项目名称</th>
+                                <th>类型</th>
                                 <th>分类</th>
                                 <th>标签</th>
                                 <th>热门</th>
@@ -165,13 +166,17 @@
                         </div>
                     </div>
                     
-                    <div class="form-group">
-                        <label for="softwareDescription">项目描述 *</label>
-                        <textarea id="softwareDescription" class="form-control" rows="3" required></textarea>
-                        <div class="form-help">请输入项目的简要描述</div>
-                    </div>
-                    
                     <div class="form-row">
+                        <div class="form-group">
+                            <label for="softwareType">项目类型 *</label>
+                            <select id="softwareType" class="form-control" required>
+                                <option value="">请选择类型</option>
+                                <option value="software">软件</option>
+                                <option value="website">网站</option>
+                            </select>
+                            <div class="form-help">请选择这是软件还是网站</div>
+                        </div>
+                        
                         <div class="form-group">
                             <label for="softwareCategory">分类 *</label>
                             <select id="softwareCategory" class="form-control" required>
@@ -193,7 +198,15 @@
                                 <option value="other">其他</option>
                             </select>
                         </div>
-                        
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="softwareDescription">项目描述 *</label>
+                        <textarea id="softwareDescription" class="form-control" rows="3" required></textarea>
+                        <div class="form-help">请输入项目的简要描述</div>
+                    </div>
+                    
+                    <div class="form-row">
                         <div class="form-group">
                             <label for="softwarePopular">热门推荐</label>
                             <div style="display: flex; align-items: center; gap: 10px;">
@@ -205,15 +218,15 @@
                     
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="softwareIcon">图标类名</label>
+                            <label for="softwareIcon">图标</label>
                             <input type="text" id="softwareIcon" class="form-control" value="fas fa-cube">
-                            <div class="form-help">Font Awesome 图标类名，如 fas fa-code</div>
+                            <div class="form-help">可以输入Font Awesome图标类名（如：fas fa-code）或图片URL</div>
                         </div>
                         
                         <div class="form-group">
                             <label for="softwareIconColor">图标颜色</label>
                             <input type="color" id="softwareIconColor" class="form-control" value="#2575fc">
-                            <div class="form-help">选择图标的背景颜色</div>
+                            <div class="form-help">选择图标的背景颜色（对图片URL也生效）</div>
                         </div>
                     </div>
                     

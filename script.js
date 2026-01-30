@@ -473,12 +473,13 @@ function renderSoftwareCards(itemsList) {
         // 生成类型标签
         const typeTag = `<span class="tag ${item.type}-tag">${getTypeDisplayName(item.type)}</span>`;
         
+        // 判断图标是URL还是类名
+        const iconHTML = getHomepageIconHTML(item.icon, item.iconColor || '#2575fc');
+        
         // 生成卡片HTML
         card.innerHTML = `
             <div class="card-header">
-                <div class="software-icon" style="background-color: ${item.iconColor || '#2575fc'}">
-                    <i class="${item.icon || 'fas fa-cube'}"></i>
-                </div>
+                ${iconHTML}
                 <div class="software-info">
                     <h3>${item.name || '未命名项目'}</h3>
                     <p>${getCategoryDisplayName(item.category) || '未分类'}</p>
@@ -501,6 +502,30 @@ function renderSoftwareCards(itemsList) {
         
         softwareGrid.appendChild(card);
     });
+}
+
+// 获取主页图标HTML（支持URL和类名）
+function getHomepageIconHTML(iconValue, backgroundColor) {
+    if (!iconValue) {
+        iconValue = 'fas fa-cube';
+        backgroundColor = '#2575fc';
+    }
+    
+    // 判断是否为URL（简单判断是否包含http或https）
+    if (iconValue.startsWith('http://') || iconValue.startsWith('https://')) {
+        return `
+            <div class="software-icon software-icon-image" style="background-color: ${backgroundColor}">
+                <img src="${iconValue}" alt="图标" onerror="this.style.display='none';this.parentElement.innerHTML='<i class=\'fas fa-image\'></i>'">
+            </div>
+        `;
+    } else {
+        // Font Awesome 图标类名
+        return `
+            <div class="software-icon" style="background-color: ${backgroundColor}">
+                <i class="${iconValue}"></i>
+            </div>
+        `;
+    }
 }
 
 // 导出JSON文件

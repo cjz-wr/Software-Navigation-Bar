@@ -247,6 +247,18 @@ header {
     font-size: 14px;
 }
 
+/* 图片图标特殊样式 */
+.table-icon-image {
+    overflow: hidden;
+}
+
+.table-icon-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
 .software-name {
     font-weight: 600;
     color: #2c3e50;
