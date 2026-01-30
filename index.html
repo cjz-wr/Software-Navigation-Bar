@@ -122,29 +122,6 @@
         </div>
     </main>
 
-    <!-- GitHub贡献者展示 -->
-    <section class="contributors-section">
-        <div class="container">
-            <h2 class="section-title">
-                <i class="fab fa-github"></i> 项目贡献者
-            </h2>
-            <div class="contributors-description">
-                <p>感谢以下开发者对本项目的贡献和支持</p>
-            </div>
-            <div class="contributors-loading" id="contributorsLoading">
-                <i class="fas fa-spinner fa-spin"></i>
-                <p>正在加载贡献者信息...</p>
-            </div>
-            <div class="contributors-grid" id="contributorsGrid">
-                <!-- 贡献者卡片将通过JavaScript动态生成 -->
-            </div>
-            <div class="contributors-empty" id="contributorsEmpty" style="display: none;">
-                <i class="fas fa-users"></i>
-                <p>暂无贡献者信息</p>
-            </div>
-        </div>
-    </section>
-
     <!-- JSON结构模态框 -->
     <div class="modal" id="jsonModal">
         <div class="modal-content">
@@ -183,6 +160,31 @@
         </div>
     </div>
 
+    <!-- GitHub贡献者展示区域 -->
+    <section class="contributors-section">
+        <div class="container">
+            <h2 class="section-title"><i class="fab fa-github"></i> 项目贡献者</h2>
+            <p class="section-description">感谢所有为这个项目做出贡献的开发者们</p>
+            
+            <div class="loading-state" id="contributorsLoading">
+                <i class="fas fa-spinner fa-spin"></i>
+                <span>正在加载贡献者信息...</span>
+            </div>
+            
+            <div class="error-state" id="contributorsError" style="display: none;">
+                <i class="fas fa-exclamation-triangle"></i>
+                <span>加载贡献者信息失败，请稍后重试</span>
+                <button id="retryContributors">
+                    <i class="fas fa-redo"></i> 重新加载
+                </button>
+            </div>
+            
+            <div class="grid" id="contributorsGrid">
+                <!-- 贡献者卡片将通过JavaScript动态生成 -->
+            </div>
+        </div>
+    </section>
+
     <!-- 页脚 -->
     <footer>
         <div class="container">
@@ -194,8 +196,8 @@
                 <div class="footer-section">
                     <h4>相关链接</h4>
                     <ul>
-                        <li><a href="https://github.com/yourusername/software-navigation" target="_blank">GitHub 仓库</a></li>
-                        <li><a href="https://github.com/yourusername/software-navigation/issues" target="_blank">提交问题</a></li>
+                        <li><a href="https://github.com/cjz-wr/Software-Navigation-Bar" target="_blank">GitHub 仓库</a></li>
+                        <li><a href="https://github.com/cjz-wr/Software-Navigation-Bar/issues" target="_blank">提交问题</a></li>
                         <li><a href="https://pages.github.com/" target="_blank">GitHub Pages</a></li>
                     </ul>
                 </div>

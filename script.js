@@ -1,7 +1,28 @@
-// 软件和网站数据变量
+// 全局变量
 let softwareData = [];
-let categories = new Set();
-let currentType = 'all'; // 当前筛选类型：all, software, website
+let filteredData = [];
+let currentPage = 1;
+const itemsPerPage = 12;
+const categories = new Set(); // 存储所有分类
+let currentType = 'all'; // 当前选择的类型
+
+// GitHub配置
+const GITHUB_CONFIG = {
+    owner: 'cjz-wr',
+    repo: 'Software-Navigation-Bar',
+    apiUrl: 'https://api.github.com'
+};
+
+// 通知配置
+const NOTIFICATION_CONFIG = {
+    duration: 5000,
+    types: {
+        success: 'success',
+        error: 'error',
+        info: 'info',
+        warning: 'warning'
+    }
+};
 
 // DOM元素
 const softwareGrid = document.getElementById('softwareGrid');
@@ -20,81 +41,163 @@ const jsonModal = document.getElementById('jsonModal');
 const closeModalBtn = document.getElementById('closeModal');
 const currentYear = document.getElementById('currentYear');
 
-// 贡献者相关DOM元素
-const contributorsGrid = document.getElementById('contributorsGrid');
-const contributorsLoading = document.getElementById('contributorsLoading');
-const contributorsEmpty = document.getElementById('contributorsEmpty');
-
 // JSON数据文件路径
 const DATA_URL = 'data.json';
 
-// GitHub API配置
-const GITHUB_OWNER = 'yourusername'; // 替换为实际的GitHub用户名
-const GITHUB_REPO = 'software-navigation'; // 替换为实际的仓库名
+// 显示通知函数
+function showNotification(message, type = 'info') {
+    const container = document.getElementById('notificationContainer');
+    const notification = document.createElement('div');
+    notification.className = `notification ${type}`;
+    notification.innerHTML = `
+        <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-circle' : 'info-circle'}"></i>
+        <span>${message}</span>
+        <button class="notification-close">&times;</button>
+    `;
+    
+    container.appendChild(notification);
+    
+    // 自动关闭
+    setTimeout(() => {
+        if (notification.parentNode) {
+            notification.remove();
+        }
+    }, 5000);
+    
+    // 手动关闭
+    notification.querySelector('.notification-close').addEventListener('click', () => {
+        notification.remove();
+    });
+}
 
-// 页面加载完成后初始化
-document.addEventListener('DOMContentLoaded', function() {
-    // 设置当前年份
-    currentYear.textContent = new Date().getFullYear();
+// 获取GitHub贡献者数据
+async function fetchContributors() {
+    const loadingEl = document.getElementById('contributorsLoading');
+    const gridEl = document.getElementById('contributorsGrid');
+    const errorEl = document.getElementById('contributorsError');
     
-    // 加载软件数据
-    loadSoftwareData();
-    
-    // 加载GitHub贡献者数据
-    loadGitHubContributors();
-    
-    // 搜索按钮点击事件
-    searchBtn.addEventListener('click', performSearch);
-    
-    // 搜索输入框回车事件
-    searchInput.addEventListener('keyup', function(event) {
-        if (event.key === 'Enter') {
-            performSearch();
-        }
-    });
-    
-    // 清除搜索按钮
-    clearSearchBtn.addEventListener('click', function() {
-        searchInput.value = '';
-        performSearch();
-    });
-    
-    // 查看JSON结构按钮
-    if (viewJsonBtn) {
-        viewJsonBtn.addEventListener('click', function() {
-            jsonModal.classList.add('show');
-        });
-    }
-    
-    // 关闭模态框
-    if (closeModalBtn) {
-        closeModalBtn.addEventListener('click', function() {
-            jsonModal.classList.remove('show');
-        });
-    }
-    
-    // 点击模态框外部关闭
-    jsonModal.addEventListener('click', function(event) {
-        if (event.target === jsonModal) {
-            jsonModal.classList.remove('show');
-        }
-    });
-    
-    // 导出数据按钮
-    if (exportDataBtn) {
-        exportDataBtn.addEventListener('click', exportJsonFile);
-    }
-    
-    // 重置数据按钮
-    if (resetDataBtn) {
-        resetDataBtn.addEventListener('click', function() {
-            if (confirm('确定要重新加载数据吗？这将从 data.json 文件重新加载数据。')) {
-                loadSoftwareData();
-                showNotification('数据已重新加载', 'success');
+    try {
+        // 显示加载状态
+        loadingEl.style.display = 'block';
+        gridEl.style.display = 'none';
+        errorEl.style.display = 'none';
+        
+        const response = await fetch(
+            `${GITHUB_CONFIG.apiUrl}/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contributors`,
+            {
+                headers: {
+                    'Accept': 'application/vnd.github.v3+json'
+                }
             }
-        });
+        );
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const contributors = await response.json();
+        
+        // 隐藏加载状态
+        loadingEl.style.display = 'none';
+        
+        if (contributors.length === 0) {
+            showError('暂无贡献者数据');
+            return;
+        }
+        
+        // 渲染贡献者
+        renderContributors(contributors);
+        
+    } catch (error) {
+        console.error('获取贡献者数据失败:', error);
+        loadingEl.style.display = 'none';
+        showError('获取贡献者数据失败，请稍后重试');
     }
-});
+}
+
+// 渲染贡献者列表
+function renderContributors(contributors) {
+    const gridEl = document.getElementById('contributorsGrid');
+    gridEl.style.display = 'grid';
+    
+    // 只显示前16名贡献者
+    const displayContributors = contributors.slice(0, 16);
+    
+    gridEl.innerHTML = displayContributors.map(contributor => `
+        <div class="contributor-card" data-event-bound="false">
+            <a href="${contributor.html_url}" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               title="访问 ${contributor.login} 的 GitHub 主页">
+                <img src="${contributor.avatar_url}" 
+                     alt="${contributor.login}" 
+                     class="contributor-avatar"
+                     onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(contributor.login)}&background=0D8ABC&color=fff&size=80'">
+                <p class="contributor-name">${contributor.login}</p>
+            </a>
+        </div>
+    `).join('');
+    
+    // 添加事件监听器
+    bindContributorEvents();
+}
+
+// 绑定贡献者卡片事件
+function bindContributorEvents() {
+    const cards = document.querySelectorAll('.contributor-card[data-event-bound="false"]');
+    
+    cards.forEach(card => {
+        const link = card.querySelector('a');
+        const avatar = card.querySelector('.contributor-avatar');
+        
+        // 添加悬停效果
+        card.addEventListener('mouseenter', function() {
+            avatar.style.transform = 'scale(1.1)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            avatar.style.transform = 'scale(1)';
+        });
+        
+        // 确保链接可以正常工作
+        link.addEventListener('click', function(e) {
+            // 允许链接正常跳转
+        });
+        
+        // 标记为已绑定事件
+        card.setAttribute('data-event-bound', 'true');
+    });
+}
+
+// 显示错误信息
+function showError(message) {
+    const errorEl = document.getElementById('contributorsError');
+    const gridEl = document.getElementById('contributorsGrid');
+    
+    errorEl.style.display = 'block';
+    gridEl.style.display = 'none';
+    
+    errorEl.querySelector('p').textContent = message;
+}
+
+// 重新加载贡献者数据
+function retryLoadContributors() {
+    fetchContributors();
+}
+
+// 初始化贡献者展示
+function initContributors() {
+    // 绑定重新加载按钮事件
+    const retryBtn = document.getElementById('retryContributors');
+    if (retryBtn) {
+        retryBtn.addEventListener('click', retryLoadContributors);
+    }
+    
+    // 延迟加载贡献者数据，避免影响主内容加载
+    setTimeout(() => {
+        fetchContributors();
+    }, 1000);
+}
 
 // 加载软件数据
 async function loadSoftwareData() {
@@ -250,36 +353,45 @@ function renderCategoryButtons() {
     });
 }
 
-// 获取分类显示名称
-function getCategoryDisplayName(category) {
-    // 将内部分类名转换为更友好的显示名称
+// 获取显示名称（通用函数）
+function getDisplayName(value, type) {
     const displayNames = {
-        'browser': '浏览器',
-        'design': '设计工具',
-        'development': '开发工具',
-        'productivity': '效率办公',
-        'communication': '通讯社交',
-        'media': '影音媒体',
-        'utility': '实用工具',
-        'security': '安全软件',
-        'editor': '编辑器',
-        'ai': 'AI工具',
-        'cloud': '云服务',
-        'blog': '技术博客',
-        'documentation': '技术文档',
-        'social': '社交媒体'
+        category: {
+            'browser': '浏览器',
+            'design': '设计工具',
+            'development': '开发工具',
+            'productivity': '效率办公',
+            'communication': '通讯社交',
+            'media': '影音媒体',
+            'utility': '实用工具',
+            'security': '安全软件',
+            'editor': '编辑器',
+            'ai': 'AI工具',
+            'cloud': '云服务',
+            'blog': '技术博客',
+            'documentation': '技术文档',
+            'social': '社交媒体'
+        },
+        type: {
+            'software': '软件',
+            'website': '网站'
+        }
     };
     
-    return displayNames[category] || category;
+    if (displayNames[type] && displayNames[type][value]) {
+        return displayNames[type][value];
+    }
+    return value;
 }
 
-// 获取类型显示名称
+// 获取分类显示名称（兼容原有调用）
+function getCategoryDisplayName(category) {
+    return getDisplayName(category, 'category');
+}
+
+// 获取类型显示名称（兼容原有调用）
 function getTypeDisplayName(type) {
-    const typeNames = {
-        'software': '软件',
-        'website': '网站'
-    };
-    return typeNames[type] || type;
+    return getDisplayName(type, 'type');
 }
 
 // 执行搜索
@@ -418,97 +530,72 @@ function exportJsonFile() {
     showNotification(`已导出 ${softwareData.length} 个项目数据`, 'success');
 }
 
-// 显示通知
-function showNotification(message, type = 'info') {
-    // 移除现有通知
-    const existingNotification = document.getElementById('notificationContainer');
-    existingNotification.innerHTML = '';
+// 设置事件监听器
+function setupEventListeners() {
+    // 搜索按钮点击事件
+    searchBtn.addEventListener('click', performSearch);
     
-    // 创建通知元素
-    const notification = document.createElement('div');
-    notification.className = `notification ${type}`;
-    notification.innerHTML = `
-        <div class="notification-content">
-            <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-circle' : 'info-circle'}"></i>
-            <span>${message}</span>
-        </div>
-        <button class="notification-close">&times;</button>
-    `;
-    
-    // 添加到容器
-    existingNotification.appendChild(notification);
-    
-    // 关闭按钮事件
-    notification.querySelector('.notification-close').addEventListener('click', function() {
-        notification.remove();
+    // 搜索输入框回车事件
+    searchInput.addEventListener('keyup', function(event) {
+        if (event.key === 'Enter') {
+            performSearch();
+        }
     });
     
-    // 自动消失
-    setTimeout(() => {
-        if (notification.parentNode) {
-            notification.remove();
+    // 清除搜索按钮
+    clearSearchBtn.addEventListener('click', function() {
+        searchInput.value = '';
+        performSearch();
+    });
+    
+    // 查看JSON结构按钮
+    if (viewJsonBtn) {
+        viewJsonBtn.addEventListener('click', function() {
+            jsonModal.classList.add('show');
+        });
+    }
+    
+    // 关闭模态框
+    if (closeModalBtn) {
+        closeModalBtn.addEventListener('click', function() {
+            jsonModal.classList.remove('show');
+        });
+    }
+    
+    // 点击模态框外部关闭
+    jsonModal.addEventListener('click', function(event) {
+        if (event.target === jsonModal) {
+            jsonModal.classList.remove('show');
         }
-    }, 3000);
-}
-
-// 加载GitHub贡献者数据
-async function loadGitHubContributors() {
-    try {
-        const response = await fetch(`https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contributors`);
-        
-        if (!response.ok) {
-            throw new Error(`GitHub API错误! 状态码: ${response.status}`);
-        }
-        
-        const contributors = await response.json();
-        
-        // 隐藏加载状态
-        contributorsLoading.style.display = 'none';
-        
-        if (contributors.length === 0) {
-            // 显示空状态
-            contributorsEmpty.style.display = 'block';
-            return;
-        }
-        
-        // 渲染贡献者卡片
-        renderContributorCards(contributors);
-        
-        console.log(`成功加载 ${contributors.length} 位贡献者信息`);
-    } catch (error) {
-        console.error('加载贡献者数据失败:', error);
-        contributorsLoading.style.display = 'none';
-        contributorsEmpty.style.display = 'block';
-        contributorsEmpty.innerHTML = `
-            <i class="fas fa-exclamation-triangle"></i>
-            <p>加载贡献者信息失败</p>
-        `;
+    });
+    
+    // 导出数据按钮
+    if (exportDataBtn) {
+        exportDataBtn.addEventListener('click', exportJsonFile);
+    }
+    
+    // 重置数据按钮
+    if (resetDataBtn) {
+        resetDataBtn.addEventListener('click', function() {
+            if (confirm('确定要重新加载数据吗？这将从 data.json 文件重新加载数据。')) {
+                loadSoftwareData();
+                showNotification('数据已重新加载', 'success');
+            }
+        });
     }
 }
 
-// 渲染贡献者卡片
-function renderContributorCards(contributors) {
-    contributorsGrid.innerHTML = '';
-    
-    contributors.forEach(contributor => {
-        const card = document.createElement('div');
-        card.className = 'contributor-card';
-        
-        card.innerHTML = `
-            <a href="${contributor.html_url}" target="_blank" class="contributor-link" title="访问GitHub主页">
-                <div class="contributor-avatar">
-                    <img src="${contributor.avatar_url}" alt="${contributor.login}" loading="lazy">
-                    <div class="contributor-rank">#${contributors.indexOf(contributor) + 1}</div>
-                </div>
-                <div class="contributor-info">
-                    <h3 class="contributor-name">${contributor.login}</h3>
-                    <div class="contributor-stats">
-                        <span class="contributions">${contributor.contributions} 次贡献</span>
-                    </div>
-                </div>
-            </a>
-        `;
-        
-        contributorsGrid.appendChild(card);
-    });
+// 更新当前年份
+function updateCurrentYear() {
+    currentYear.textContent = new Date().getFullYear();
 }
+
+// 页面加载完成后初始化
+document.addEventListener('DOMContentLoaded', function() {
+    loadSoftwareData();
+    setupEventListeners();
+    updateCurrentYear();
+    
+    // 初始化贡献者展示
+    initContributors();
+});
