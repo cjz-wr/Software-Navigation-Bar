@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>项目管理后台 - 软件&网站导航</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 头部区域 -->
+        <header>
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-cogs"></i>
+                    <h1>项目管理后台</h1>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home"></i> 返回首页
+                    </a>
+                    <a href="#" class="nav-link active">
+                        <i class="fas fa-list"></i> 项目管理
+                    </a>
+                    <a href="#" class="nav-link" id="exportDataLink">
+                        <i class="fas fa-download"></i> 导出数据
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- 主要内容区域 -->
+        <main>
+            <!-- 统计卡片 -->
+            <div class="stats-cards">
+                <div class="stat-card">
+                    <div class="stat-icon" style="background-color: #2575fc;">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="totalSoftware">0</h3>
+                        <p>总项目数</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="background-color: #10b981;">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="popularSoftware">0</h3>
+                        <p>热门项目</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="background-color: #f59e0b;">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="totalCategories">0</h3>
+                        <p>分类数量</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="background-color: #8b5cf6;">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="storageStatus">正常</h3>
+                        <p>数据状态</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 项目表格 -->
+            <div class="content-header">
+                <h2><i class="fas fa-list"></i> 项目列表</h2>
+                <div class="action-buttons">
+                    <button class="btn btn-secondary" id="importDataBtn">
+                        <i class="fas fa-file-import"></i> 导入JSON
+                    </button>
+                    <button class="btn btn-primary" id="addSoftwareBtn">
+                        <i class="fas fa-plus"></i> 添加项目
+                    </button>
+                </div>
+            </div>
+
+            <div class="software-table-container">
+                <div class="table-responsive">
+                    <table class="software-table" id="softwareTable">
+                        <thead>
+                            <tr>
+                                <th style="width: 40px;">#</th>
+                                <th>项目名称</th>
+                                <th>分类</th>
+                                <th>标签</th>
+                                <th>热门</th>
+                                <th style="width: 100px;">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="softwareTableBody">
+                            <!-- 项目数据将通过JavaScript动态生成 -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 空状态 -->
+            <div class="empty-state" id="emptyTableState" style="display: none;">
+                <i class="fas fa-box-open"></i>
+                <h3>暂无项目数据</h3>
+                <p>您还没有添加任何项目，点击"添加项目"按钮开始创建吧！</p>
+                <button class="btn btn-primary" id="addFirstSoftwareBtn">
+                    <i class="fas fa-plus"></i> 添加第一个项目
+                </button>
+            </div>
+
+            <!-- 数据管理面板 -->
+            <div class="data-manager">
+                <h3><i class="fas fa-database"></i> 数据管理</h3>
+                <p>管理您的软件和网站数据，支持导入、导出和同步功能。</p>
+                <div class="data-actions">
+                    <button class="btn btn-secondary" id="importJsonBtn">
+                        <i class="fas fa-file-import"></i> 导入JSON文件
+                    </button>
+                    <button class="btn btn-secondary" id="exportJsonBtn">
+                        <i class="fas fa-file-export"></i> 导出JSON文件
+                    </button>
+                    <button class="btn btn-success" id="syncToMainBtn">
+                        <i class="fas fa-sync-alt"></i> 从data.json同步
+                    </button>
+                    <button class="btn btn-danger" id="clearAllDataBtn">
+                        <i class="fas fa-trash"></i> 清空当前数据
+                    </button>
+                </div>
+                <p style="margin-top: 15px; font-size: 14px; color: #94a3b8;">
+                    <i class="fas fa-exclamation-triangle"></i> <strong>重要提示：</strong>此管理后台直接读取和显示 data.json 文件的内容。要永久保存更改，请手动编辑 data.json 文件。
+                </p>
+            </div>
+        </main>
+    </div>
+
+    <!-- 添加/编辑项目模态框 -->
+    <div class="modal" id="softwareModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-edit"></i> <span id="modalTitle">添加项目</span></h3>
+                <button class="modal-close" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="softwareForm">
+                    <input type="hidden" id="softwareId">
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="softwareName">项目名称 *</label>
+                            <input type="text" id="softwareName" class="form-control" required>
+                            <div class="form-help">请输入软件或网站的名称</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="softwareUrl">链接地址 *</label>
+                            <input type="url" id="softwareUrl" class="form-control" required>
+                            <div class="form-help">请输入项目的官方链接地址</div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="softwareDescription">项目描述 *</label>
+                        <textarea id="softwareDescription" class="form-control" rows="3" required></textarea>
+                        <div class="form-help">请输入项目的简要描述</div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="softwareCategory">分类 *</label>
+                            <select id="softwareCategory" class="form-control" required>
+                                <option value="">请选择分类</option>
+                                <option value="browser">浏览器</option>
+                                <option value="design">设计工具</option>
+                                <option value="development">开发工具</option>
+                                <option value="productivity">效率办公</option>
+                                <option value="communication">通讯社交</option>
+                                <option value="media">影音媒体</option>
+                                <option value="utility">实用工具</option>
+                                <option value="security">安全软件</option>
+                                <option value="editor">编辑器</option>
+                                <option value="ai">AI工具</option>
+                                <option value="cloud">云服务</option>
+                                <option value="blog">技术博客</option>
+                                <option value="documentation">技术文档</option>
+                                <option value="social">社交媒体</option>
+                                <option value="other">其他</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="softwarePopular">热门推荐</label>
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <input type="checkbox" id="softwarePopular">
+                                <label for="softwarePopular" style="margin: 0; font-weight: normal;">设为热门项目</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="softwareIcon">图标类名</label>
+                            <input type="text" id="softwareIcon" class="form-control" value="fas fa-cube">
+                            <div class="form-help">Font Awesome 图标类名，如 fas fa-code</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="softwareIconColor">图标颜色</label>
+                            <input type="color" id="softwareIconColor" class="form-control" value="#2575fc">
+                            <div class="form-help">选择图标的背景颜色</div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="softwareTags">标签</label>
+                        <input type="text" id="softwareTags" class="form-control">
+                        <div class="form-help">多个标签请用逗号分隔，如：工具,免费,跨平台</div>
+                    </div>
+                    
+                    <div class="form-footer">
+                        <button type="button" class="btn btn-secondary" id="cancelFormBtn">
+                            <i class="fas fa-times"></i> 取消
+                        </button>
+                        <button type="submit" class="btn btn-primary" id="submitFormBtn">
+                            <i class="fas fa-save"></i> <span id="submitButtonText">保存项目</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- 导入数据模态框 -->
+    <div class="modal" id="importModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-file-import"></i> 导入数据</h3>
+                <button class="modal-close" id="closeImportModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div style="display: flex; gap: 15px; margin-bottom: 25px;">
+                    <button class="btn btn-secondary" id="uploadJsonBtn">
+                        <i class="fas fa-upload"></i> 上传JSON文件
+                    </button>
+                    <button class="btn btn-secondary" id="pasteJsonBtn">
+                        <i class="fas fa-paste"></i> 粘贴JSON内容
+                    </button>
+                </div>
+                
+                <div id="uploadJsonArea" style="display: none;">
+                    <div class="form-group">
+                        <label>选择JSON文件</label>
+                        <input type="file" id="jsonFileInput" class="form-control" accept=".json">
+                        <div class="form-help">请选择要导入的JSON数据文件</div>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="mergeDataCheckbox" checked>
+                            合并数据（不勾选则替换现有数据）
+                        </label>
+                    </div>
+                    <div style="display: flex; gap: 10px; margin-top: 20px;">
+                        <button class="btn btn-secondary" id="cancelUploadBtn">
+                            <i class="fas fa-times"></i> 取消
+                        </button>
+                        <button class="btn btn-primary" id="confirmUploadBtn">
+                            <i class="fas fa-check"></i> 确认导入
+                        </button>
+                    </div>
+                </div>
+                
+                <div id="pasteJsonArea" style="display: none;">
+                    <div class="form-group">
+                        <label>粘贴JSON内容</label>
+                        <textarea id="jsonTextarea" class="form-control" rows="10" placeholder='[{"id": 1, "name": "项目名称", "url": "https://example.com", ...}]'></textarea>
+                        <div class="form-help">请粘贴有效的JSON数据</div>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="mergeDataCheckbox2" checked>
+                            合并数据（不勾选则替换现有数据）
+                        </label>
+                    </div>
+                    <div style="display: flex; gap: 10px; margin-top: 20px;">
+                        <button class="btn btn-secondary" id="cancelPasteBtn">
+                            <i class="fas fa-times"></i> 取消
+                        </button>
+                        <button class="btn btn-primary" id="confirmPasteBtn">
+                            <i class="fas fa-check"></i> 确认导入
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 通知容器 -->
+    <div id="notificationContainer"></div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

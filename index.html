@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>软件&网站导航 | 发现优质工具和资源</title>
+    <meta name="description" content="一个收录各种软件官方网站和优质网站的导航页面，方便快速查找和访问。">
+    <meta name="keywords" content="软件导航,官网导航,工具导航,软件推荐,网站导航,资源导航">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📱</text></svg>">
+</head>
+<body>
+    <!-- 头部区域 -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-compass"></i>
+                    <h1>软件&网站导航</h1>
+                </div>
+                <div class="search-container">
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="搜索软件、网站、类别或功能...">
+                        <button class="search-btn" id="searchBtn">
+                            <i class="fas fa-search"></i> 搜索
+                        </button>
+                    </div>
+                </div>
+                <div class="header-info">
+                    <p>已收录 <span id="softwareCount">0</span> 个软件和网站</p>
+                    <a href="https://github.com/yourusername/software-navigation" target="_blank" class="github-btn" title="GitHub 仓库">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 分类导航 -->
+    <nav class="category-nav">
+        <div class="container">
+            <div class="category-list">
+                <button class="category-btn active" data-category="all">全部</button>
+                <button class="category-btn" data-type="software">软件</button>
+                <button class="category-btn" data-type="website">网站</button>
+                <!-- 分类按钮将通过JavaScript动态生成 -->
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容区域 -->
+    <main class="container">
+        <!-- 搜索结果提示 -->
+        <div class="search-results-info" id="searchResultsInfo">
+            <div>
+                <i class="fas fa-search"></i>
+                搜索结果：找到 <span id="resultCount">0</span> 个相关项目
+            </div>
+            <button id="clearSearch" class="clear-btn">清除搜索</button>
+        </div>
+        
+        <!-- 软件展示区域 -->
+        <h2 class="section-title">
+            <i class="fas fa-th-large"></i> 资源目录
+        </h2>
+        <div class="software-grid" id="softwareGrid">
+            <!-- 软件卡片将通过JavaScript动态生成 -->
+        </div>
+        
+        <!-- 空状态 -->
+        <div class="empty-state" id="emptyState">
+            <i class="fas fa-box-open"></i>
+            <h3>暂无数据</h3>
+            <p>当前分类或搜索条件下没有找到相关内容</p>
+            <button id="resetData" class="action-btn">
+                <i class="fas fa-redo"></i> 恢复默认数据
+            </button>
+        </div>
+        
+        <!-- 数据管理面板 -->
+        <div class="data-manager">
+            <h3><i class="fas fa-database"></i> 数据管理</h3>
+            <p>本页面数据来自 <code>data.json</code> 文件。您可以通过以下方式管理数据：</p>
+            <div class="data-actions">
+                <button id="viewJson" class="action-btn secondary-btn">
+                    <i class="fas fa-code"></i> 查看JSON结构
+                </button>
+                <button id="exportData" class="action-btn secondary-btn">
+                    <i class="fas fa-download"></i> 导出JSON数据
+                </button>
+                <a href="https://github.com/yourusername/software-navigation/blob/main/data.json" target="_blank" class="action-btn">
+                    <i class="fab fa-github"></i> 在GitHub编辑
+                </a>
+            </div>
+            <p class="data-note">
+                <i class="fas fa-info-circle"></i> 
+                想要添加新软件或网站？Fork 此项目，编辑 data.json 文件，然后提交 Pull Request！
+            </p>
+        </div>
+        
+        <!-- 使用说明 -->
+        <div class="instructions">
+            <h3><i class="fas fa-question-circle"></i> 如何添加软件或网站？</h3>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h4>Fork 项目</h4>
+                    <p>点击右上角的 GitHub 图标，Fork 此项目到您的账户</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h4>编辑 data.json</h4>
+                    <p>在您的仓库中编辑 <code>data.json</code> 文件，添加新的软件或网站数据</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h4>提交更改</h4>
+                    <p>提交更改并创建 Pull Request，我们会审核并合并</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- GitHub贡献者展示 -->
+    <section class="contributors-section">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fab fa-github"></i> 项目贡献者
+            </h2>
+            <div class="contributors-description">
+                <p>感谢以下开发者对本项目的贡献和支持</p>
+            </div>
+            <div class="contributors-loading" id="contributorsLoading">
+                <i class="fas fa-spinner fa-spin"></i>
+                <p>正在加载贡献者信息...</p>
+            </div>
+            <div class="contributors-grid" id="contributorsGrid">
+                <!-- 贡献者卡片将通过JavaScript动态生成 -->
+            </div>
+            <div class="contributors-empty" id="contributorsEmpty" style="display: none;">
+                <i class="fas fa-users"></i>
+                <p>暂无贡献者信息</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- JSON结构模态框 -->
+    <div class="modal" id="jsonModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-code"></i> JSON数据结构</h3>
+                <button class="modal-close" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>在 <code>data.json</code> 文件中按照以下格式添加新的软件或网站：</p>
+                <pre><code>[
+  {
+    "id": 1,
+    "name": "软件/网站名称",
+    "description": "详细描述",
+    "url": "https://example.com",
+    "category": "分类名称",
+    "tags": ["标签1", "标签2"],
+    "icon": "fas fa-icon",
+    "iconColor": "#颜色代码",
+    "popular": false,
+    "type": "software" // 或 "website"
+  }
+]</code></pre>
+                <p>常用的图标类：</p>
+                <ul class="icon-list">
+                    <li><i class="fab fa-chrome"></i> fab fa-chrome (浏览器)</li>
+                    <li><i class="fas fa-code"></i> fas fa-code (开发工具)</li>
+                    <li><i class="fas fa-paint-brush"></i> fas fa-paint-brush (设计工具)</li>
+                    <li><i class="fas fa-video"></i> fas fa-video (视频会议)</li>
+                    <li><i class="fas fa-music"></i> fas fa-music (音乐)</li>
+                    <li><i class="fas fa-file"></i> fas fa-file (文档)</li>
+                    <li><i class="fas fa-blog"></i> fas fa-blog (博客)</li>
+                    <li><i class="fas fa-book"></i> fas fa-book (文档/书籍)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>软件&网站导航</h4>
+                    <p>收录各类优质软件的官方网站和实用网站，方便快速查找和访问。</p>
+                </div>
+                <div class="footer-section">
+                    <h4>相关链接</h4>
+                    <ul>
+                        <li><a href="https://github.com/yourusername/software-navigation" target="_blank">GitHub 仓库</a></li>
+                        <li><a href="https://github.com/yourusername/software-navigation/issues" target="_blank">提交问题</a></li>
+                        <li><a href="https://pages.github.com/" target="_blank">GitHub Pages</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>技术栈</h4>
+                    <p>HTML5, CSS3, JavaScript<br>Font Awesome, GitHub Pages</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">
+                    © <span id="currentYear"></span> 软件&网站导航 | 
+                    部署于 GitHub Pages | 
+                    数据来自 <code>data.json</code>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 通知容器 -->
+    <div id="notificationContainer"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
