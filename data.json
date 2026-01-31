@@ -1288,7 +1288,7 @@
     "type": "website",
     "icon": "fas fa-basketball-ball",
     "iconColor": "#ff6600",
-    "popular": true,
+    "popular": false,
     "tags": [
       "体育",
       "社区",
@@ -1304,7 +1304,7 @@
     "type": "software",
     "icon": "fas fa-podcast",
     "iconColor": "#ff4646",
-    "popular": true,
+    "popular": false,
     "tags": [
       "音频",
       "有声书",
@@ -1330,18 +1330,18 @@
   {
     "id": 105,
     "name": "腾讯电脑管家",
-    "description": "腾讯出品智能安全软件，融合TAV杀毒引擎、系统清理、网络防护与勒索病毒专防",
     "url": "https://guanjia.qq.com/",
+    "description": "腾讯出品智能安全软件，融合TAV杀毒引擎、系统清理、网络防护与勒索病毒专防",
     "category": "security",
+    "type": "software",
+    "icon": "fas fa-shield-virus",
+    "iconColor": "#2ba245",
+    "popular": false,
     "tags": [
       "杀毒",
       "系统优化",
       "实时防护"
-    ],
-    "icon": "fas fa-shield-virus",
-    "iconColor": "#2BA245",
-    "popular": true,
-    "type": "software"
+    ]
   },
   {
     "id": 106,
@@ -1378,18 +1378,18 @@
   {
     "id": 108,
     "name": "Norton 360",
-    "description": "赛门铁克旗舰安全套件，集成AI病毒防护、云备份、密码管理器与暗网监控服务",
     "url": "https://us.norton.com/",
+    "description": "赛门铁克旗舰安全套件，集成AI病毒防护、云备份、密码管理器与暗网监控服务",
     "category": "security",
+    "type": "software",
+    "icon": "fas fa-lock",
+    "iconColor": "#0072c6",
+    "popular": false,
     "tags": [
       "杀毒",
       "云安全",
       "密码管理"
-    ],
-    "icon": "fas fa-lock",
-    "iconColor": "#0072C6",
-    "popular": true,
-    "type": "software"
+    ]
   },
   {
     "id": 109,
@@ -1410,34 +1410,34 @@
   {
     "id": 110,
     "name": "Malwarebytes",
-    "description": "专业恶意软件清除工具，专注查杀广告软件、勒索病毒、间谍程序等高级威胁",
     "url": "https://www.malwarebytes.com/",
+    "description": "专业恶意软件清除工具，专注查杀广告软件、勒索病毒、间谍程序等高级威胁",
     "category": "security",
+    "type": "software",
+    "icon": "fas fa-bug",
+    "iconColor": "#1a8cff",
+    "popular": false,
     "tags": [
       "恶意软件清除",
       "专业工具",
       "国际"
-    ],
-    "icon": "fas fa-bug",
-    "iconColor": "#1A8CFF",
-    "popular": true,
-    "type": "software"
+    ]
   },
   {
     "id": 111,
     "name": "微步在线",
-    "description": "威胁情报与安全分析平台，提供IP/域名/文件威胁检测、API集成与安全运营支持",
     "url": "https://www.threatbook.cn/",
+    "description": "威胁情报与安全分析平台，提供IP/域名/文件威胁检测、API集成与安全运营支持",
     "category": "security",
+    "type": "website",
+    "icon": "fas fa-search",
+    "iconColor": "#00c1d4",
+    "popular": false,
     "tags": [
       "威胁情报",
       "企业安全",
       "SOC"
-    ],
-    "icon": "fas fa-search",
-    "iconColor": "#00C1D4",
-    "popular": true,
-    "type": "website"
+    ]
   },
   {
     "id": 112,
@@ -1458,50 +1458,50 @@
   {
     "id": 114,
     "name": "360手机急救箱",
-    "description": "Android端顽固木马专杀工具，集成云QVM引擎与底层强力查杀技术，支持长老木马清除、刷机修复及扣费拦截",
     "url": "https://sj.360.cn/jiuzhi",
+    "description": "Android端顽固木马专杀工具，集成云QVM引擎与底层强力查杀技术，支持长老木马清除、刷机修复及扣费拦截",
     "category": "security",
+    "type": "software",
+    "icon": "fas fa-mobile-alt",
+    "iconColor": "#e40000",
+    "popular": false,
     "tags": [
       "手机安全",
       "木马查杀",
       "Android工具"
-    ],
-    "icon": "fas fa-mobile-alt",
-    "iconColor": "#E40000",
-    "popular": true,
-    "type": "software"
+    ]
   },
   {
     "id": 115,
     "name": "1Password",
-    "description": "企业级密码管理器，支持安全存储密码/证件/密钥，提供家庭共享、旅行模式与防钓鱼保护",
     "url": "https://1password.com/",
+    "description": "企业级密码管理器，支持安全存储密码/证件/密钥，提供家庭共享、旅行模式与防钓鱼保护",
     "category": "security",
+    "type": "software",
+    "icon": "fas fa-key",
+    "iconColor": "#267ff5",
+    "popular": false,
     "tags": [
       "密码管理",
       "数据加密",
       "跨平台"
-    ],
-    "icon": "fas fa-key",
-    "iconColor": "#267FF5",
-    "popular": true,
-    "type": "software"
+    ]
   },
   {
     "id": 116,
     "name": "Avast Free Antivirus",
-    "description": "全球超4亿用户信赖的免费杀毒软件，含Wi-Fi安全扫描、行为防护与勒索软件盾",
     "url": "https://www.avast.com/",
+    "description": "全球超4亿用户信赖的免费杀毒软件，含Wi-Fi安全扫描、行为防护与勒索软件盾",
     "category": "security",
+    "type": "software",
+    "icon": "fas fa-shield-alt",
+    "iconColor": "#00b84d",
+    "popular": false,
     "tags": [
       "杀毒",
       "免费工具",
       "国际品牌"
-    ],
-    "icon": "fas fa-shield-alt",
-    "iconColor": "#00B84D",
-    "popular": true,
-    "type": "software"
+    ]
   },
   {
     "id": 117,
@@ -1512,7 +1512,7 @@
     "type": "software",
     "icon": "fas fa-stethoscope",
     "iconColor": "#00b07d",
-    "popular": true,
+    "popular": false,
     "tags": [
       "医疗",
       "问诊",
@@ -1528,7 +1528,7 @@
     "type": "website",
     "icon": "fas fa-chart-line",
     "iconColor": "#222222",
-    "popular": true,
+    "popular": false,
     "tags": [
       "投资",
       "股票",
@@ -1554,18 +1554,18 @@
   {
     "id": 122,
     "name": "丁香园",
-    "description": "医学专业社区与知识平台，服务医生群体，涵盖临床指南、学术会议与继续教育",
     "url": "https://www.dxy.cn/",
-    "category": "education",
+    "description": "医学专业社区与知识平台，服务医生群体，涵盖临床指南、学术会议与继续教育",
+    "category": "study",
+    "type": "website",
+    "icon": "fas fa-graduation-cap",
+    "iconColor": "#009a6c",
+    "popular": false,
     "tags": [
       "医学",
       "学术",
       "专业社区"
-    ],
-    "icon": "fas fa-graduation-cap",
-    "iconColor": "#009A6C",
-    "popular": true,
-    "type": "website"
+    ]
   },
   {
     "id": 123,
@@ -1576,7 +1576,7 @@
     "type": "website",
     "icon": "fas fa-store",
     "iconColor": "#ff5500",
-    "popular": true,
+    "popular": false,
     "tags": [
       "电商工具",
       "SaaS",
@@ -1597,6 +1597,3241 @@
     "icon": "fas fa-cloud-sun",
     "iconColor": "#33CCFF",
     "popular": true,
+    "type": "software"
+  },
+  {
+    "id": 200,
+    "name": "DeepSeek",
+    "description": "深度求索公司开发的大型语言模型AI助手，支持文本对话、文件处理、代码编写等功能",
+    "url": "https://www.deepseek.com/",
+    "category": "ai",
+    "tags": [
+      "AI助手",
+      "大模型",
+      "智能对话"
+    ],
+    "icon": "fas fa-robot",
+    "iconColor": "#10A37F",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 201,
+    "name": "ChatGPT",
+    "description": "OpenAI开发的AI对话模型，支持自然语言处理、代码生成、创意写作等",
+    "url": "https://chat.openai.com/",
+    "category": "ai",
+    "tags": [
+      "AI对话",
+      "GPT",
+      "智能助手"
+    ],
+    "icon": "fas fa-comment-dots",
+    "iconColor": "#74AA9C",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 202,
+    "name": "Discord",
+    "description": "游戏玩家和社区交流的即时通讯平台，支持语音、视频和文本聊天",
+    "url": "https://discord.com/",
+    "category": "communication",
+    "tags": [
+      "游戏社区",
+      "语音聊天",
+      "社群"
+    ],
+    "icon": "fab fa-discord",
+    "iconColor": "#5865F2",
+    "popular": true,
+    "type": "software"
+  },
+  {
+    "id": 203,
+    "name": "Microsoft Teams",
+    "url": "https://www.microsoft.com/microsoft-teams/",
+    "description": "微软推出的团队协作工具，集成Office 365，支持会议、聊天、文件协作",
+    "category": "communication",
+    "type": "software",
+    "icon": "fas fa-users",
+    "iconColor": "#6264a7",
+    "popular": false,
+    "tags": [
+      "企业协作",
+      "微软",
+      "远程办公"
+    ]
+  },
+  {
+    "id": 204,
+    "name": "Jira",
+    "description": "Atlassian开发的敏捷项目管理工具，特别适合软件开发团队",
+    "url": "https://www.atlassian.com/software/jira",
+    "category": "development",
+    "tags": [
+      "项目管理",
+      "敏捷开发",
+      "issue跟踪"
+    ],
+    "icon": "fab fa-jira",
+    "iconColor": "#0052CC",
+    "popular": true,
+    "type": "software"
+  },
+  {
+    "id": 205,
+    "name": "Confluence",
+    "description": "Atlassian的知识管理工具，用于团队文档协作和知识库建设",
+    "url": "https://www.atlassian.com/software/confluence",
+    "category": "productivity",
+    "tags": [
+      "知识库",
+      "文档协作",
+      "团队wiki"
+    ],
+    "icon": "fas fa-book",
+    "iconColor": "#172B4D",
+    "popular": true,
+    "type": "software"
+  },
+  {
+    "id": 206,
+    "name": "Docker",
+    "description": "容器化平台，简化应用程序的开发、部署和运行",
+    "url": "https://www.docker.com/",
+    "category": "development",
+    "tags": [
+      "容器",
+      "DevOps",
+      "部署"
+    ],
+    "icon": "fab fa-docker",
+    "iconColor": "#2496ED",
+    "popular": true,
+    "type": "software"
+  },
+  {
+    "id": 207,
+    "name": "Kubernetes",
+    "url": "https://kubernetes.io/",
+    "description": "容器编排平台，自动化容器化应用的部署、扩展和管理",
+    "category": "development",
+    "type": "software",
+    "icon": "fas fa-ship",
+    "iconColor": "#326ce5",
+    "popular": false,
+    "tags": [
+      "容器编排",
+      "DevOps",
+      "云原生"
+    ]
+  },
+  {
+    "id": 208,
+    "name": "npm",
+    "description": "Node.js包管理器，世界上最大的软件注册表",
+    "url": "https://www.npmjs.com/",
+    "category": "development",
+    "tags": [
+      "包管理",
+      "JavaScript",
+      "Node.js"
+    ],
+    "icon": "fab fa-npm",
+    "iconColor": "#CB3837",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 209,
+    "name": "LeetCode",
+    "description": "程序员面试刷题平台，提供海量算法题库和在线判题系统",
+    "url": "https://leetcode.com/",
+    "category": "study",
+    "tags": [
+      "算法",
+      "面试",
+      "编程练习"
+    ],
+    "icon": "fas fa-code",
+    "iconColor": "#FFA116",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 210,
+    "name": "Grammarly",
+    "url": "https://www.grammarly.com/",
+    "description": "AI写作助手，检查语法错误、优化写作风格、提升表达效果",
+    "category": "productivity",
+    "type": "software",
+    "icon": "fas fa-spell-check",
+    "iconColor": "#15c39a",
+    "popular": false,
+    "tags": [
+      "语法检查",
+      "写作助手",
+      "英语学习"
+    ]
+  },
+  {
+    "id": 211,
+    "name": "Microsoft Edge",
+    "description": "微软基于Chromium开发的网页浏览器，集成Copilot AI助手",
+    "url": "https://www.microsoft.com/edge",
+    "category": "browser",
+    "tags": [
+      "浏览器",
+      "微软",
+      "Chromium"
+    ],
+    "icon": "fab fa-edge",
+    "iconColor": "#0078D7",
+    "popular": true,
+    "type": "software"
+  },
+  {
+    "id": 212,
+    "name": "Safari",
+    "url": "https://www.apple.com/safari/",
+    "description": "苹果公司开发的网页浏览器，在苹果生态系统中提供流畅体验",
+    "category": "browser",
+    "type": "software",
+    "icon": "fab fa-safari",
+    "iconColor": "#0066cc",
+    "popular": false,
+    "tags": [
+      "浏览器",
+      "苹果",
+      "macOS"
+    ]
+  },
+  {
+    "id": 213,
+    "name": "Adobe Premiere Pro",
+    "url": "https://www.adobe.com/products/premiere.html",
+    "description": "专业的视频编辑软件，广泛应用于影视制作和内容创作",
+    "category": "design",
+    "type": "software",
+    "icon": "fas fa-video",
+    "iconColor": "#ea77f2",
+    "popular": false,
+    "tags": [
+      "视频编辑",
+      "影视制作",
+      "Adobe"
+    ]
+  },
+  {
+    "id": 214,
+    "name": "Final Cut Pro",
+    "url": "https://www.apple.com/final-cut-pro/",
+    "description": "苹果专业级视频编辑软件，优化于macOS系统",
+    "category": "design",
+    "type": "software",
+    "icon": "fas fa-film",
+    "iconColor": "#ff6b6b",
+    "popular": false,
+    "tags": [
+      "视频编辑",
+      "苹果",
+      "专业工具"
+    ]
+  },
+  {
+    "id": 215,
+    "name": "Coursera",
+    "url": "https://www.coursera.org/",
+    "description": "国际在线学习平台，提供世界顶尖大学和公司的课程",
+    "category": "study",
+    "type": "website",
+    "icon": "fas fa-graduation-cap",
+    "iconColor": "#0056d2",
+    "popular": false,
+    "tags": [
+      "在线课程",
+      "大学课程",
+      "技能提升"
+    ]
+  },
+  {
+    "id": 216,
+    "name": "Dropbox",
+    "url": "https://www.dropbox.com/",
+    "description": "云存储和文件同步服务，支持跨平台文件共享和协作",
+    "category": "utility",
+    "type": "software",
+    "icon": "fab fa-dropbox",
+    "iconColor": "#0061ff",
+    "popular": false,
+    "tags": [
+      "云存储",
+      "文件同步",
+      "协作"
+    ]
+  },
+  {
+    "id": 217,
+    "name": "OneDrive",
+    "url": "https://www.microsoft.com/onedrive",
+    "description": "微软云存储服务，集成于Windows和Office 365",
+    "category": "utility",
+    "type": "software",
+    "icon": "fas fa-cloud",
+    "iconColor": "#0078d4",
+    "popular": false,
+    "tags": [
+      "云存储",
+      "微软",
+      "文件同步"
+    ]
+  },
+  {
+    "id": 218,
+    "name": "Telegram",
+    "description": "注重隐私安全的即时通讯应用，支持大群组和频道功能",
+    "url": "https://telegram.org/",
+    "category": "communication",
+    "tags": [
+      "即时通讯",
+      "隐私安全",
+      "大群组"
+    ],
+    "icon": "fab fa-telegram",
+    "iconColor": "#0088CC",
+    "popular": true,
+    "type": "software"
+  },
+  {
+    "id": 219,
+    "name": "Signal",
+    "description": "开源加密通讯应用，注重隐私保护和安全性",
+    "url": "https://signal.org/",
+    "category": "communication",
+    "tags": [
+      "加密通讯",
+      "隐私保护",
+      "开源"
+    ],
+    "icon": "fas fa-lock",
+    "iconColor": "#3A76F0",
+    "popular": true,
+    "type": "software"
+  },
+  {
+    "id": 220,
+    "name": "Microsoft Word",
+    "description": "微软文档处理软件，功能强大的文字编辑器",
+    "url": "https://www.microsoft.com/microsoft-365/word",
+    "category": "productivity",
+    "tags": [
+      "文档处理",
+      "文字编辑",
+      "Office"
+    ],
+    "icon": "fas fa-file-word",
+    "iconColor": "#2B579A",
+    "popular": true,
+    "type": "software"
+  },
+  {
+    "id": 221,
+    "name": "Microsoft Excel",
+    "description": "微软电子表格软件，支持数据分析和可视化",
+    "url": "https://www.microsoft.com/microsoft-365/excel",
+    "category": "productivity",
+    "tags": [
+      "电子表格",
+      "数据分析",
+      "Office"
+    ],
+    "icon": "fas fa-file-excel",
+    "iconColor": "#217346",
+    "popular": true,
+    "type": "software"
+  },
+  {
+    "id": 222,
+    "name": "Microsoft PowerPoint",
+    "description": "微软演示文稿软件，创建精美幻灯片",
+    "url": "https://www.microsoft.com/microsoft-365/powerpoint",
+    "category": "productivity",
+    "tags": [
+      "演示文稿",
+      "幻灯片",
+      "Office"
+    ],
+    "icon": "fas fa-file-powerpoint",
+    "iconColor": "#D24726",
+    "popular": true,
+    "type": "software"
+  },
+  {
+    "id": 223,
+    "name": "Apple Music",
+    "description": "苹果音乐流媒体服务，集成于苹果生态系统",
+    "url": "https://www.apple.com/apple-music/",
+    "category": "media",
+    "tags": [
+      "音乐",
+      "流媒体",
+      "苹果"
+    ],
+    "icon": "fas fa-music",
+    "iconColor": "#FA243C",
+    "popular": true,
+    "type": "software"
+  },
+  {
+    "id": 224,
+    "name": "YouTube Music",
+    "description": "谷歌音乐流媒体服务，基于YouTube内容库",
+    "url": "https://music.youtube.com/",
+    "category": "media",
+    "tags": [
+      "音乐",
+      "流媒体",
+      "谷歌"
+    ],
+    "icon": "fab fa-youtube",
+    "iconColor": "#FF0000",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 225,
+    "name": "Netflix",
+    "description": "全球领先的流媒体视频服务，提供原创剧集和电影",
+    "url": "https://www.netflix.com/",
+    "category": "media",
+    "tags": [
+      "视频流媒体",
+      "原创内容",
+      "影视"
+    ],
+    "icon": "fas fa-play-circle",
+    "iconColor": "#E50914",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 226,
+    "name": "WhatsApp",
+    "description": "Meta旗下即时通讯应用，全球广泛使用",
+    "url": "https://www.whatsapp.com/",
+    "category": "communication",
+    "tags": [
+      "即时通讯",
+      "社交",
+      "国际"
+    ],
+    "icon": "fab fa-whatsapp",
+    "iconColor": "#25D366",
+    "popular": true,
+    "type": "software"
+  },
+  {
+    "id": 227,
+    "name": "Instagram",
+    "description": "Meta旗下图片和视频分享社交平台",
+    "url": "https://www.instagram.com/",
+    "category": "social",
+    "tags": [
+      "社交",
+      "图片分享",
+      "短视频"
+    ],
+    "icon": "fab fa-instagram",
+    "iconColor": "#E4405F",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 228,
+    "name": "Twitter/X",
+    "description": "社交媒体平台，实时信息分享和讨论",
+    "url": "https://twitter.com/",
+    "category": "social",
+    "tags": [
+      "社交媒体",
+      "实时信息",
+      "微博客"
+    ],
+    "icon": "fab fa-twitter",
+    "iconColor": "#000000",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 229,
+    "name": "Reddit",
+    "description": "社交新闻和讨论平台，基于兴趣社区",
+    "url": "https://www.reddit.com/",
+    "category": "social",
+    "tags": [
+      "社区讨论",
+      "兴趣小组",
+      "新闻聚合"
+    ],
+    "icon": "fab fa-reddit",
+    "iconColor": "#FF4500",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 232,
+    "name": "Microsoft Copilot",
+    "description": "微软AI助手，集成于Windows、Office和Edge浏览器",
+    "url": "https://www.microsoft.com/copilot",
+    "category": "ai",
+    "tags": [
+      "AI助手",
+      "微软",
+      "智能办公"
+    ],
+    "icon": "fas fa-robot",
+    "iconColor": "#0078D4",
+    "popular": true,
+    "type": "software"
+  },
+  {
+    "id": 233,
+    "name": "Google Gemini",
+    "description": "谷歌AI助手，原名为Google Bard，集成于谷歌生态",
+    "url": "https://gemini.google.com/",
+    "category": "ai",
+    "tags": [
+      "AI助手",
+      "谷歌",
+      "智能搜索"
+    ],
+    "icon": "fas fa-gem",
+    "iconColor": "#4285F4",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 234,
+    "name": "Midjourney",
+    "description": "AI图像生成工具，通过文本描述创建高质量图像",
+    "url": "https://www.midjourney.com/",
+    "category": "ai",
+    "tags": [
+      "AI绘画",
+      "图像生成",
+      "创意设计"
+    ],
+    "icon": "fas fa-paint-brush",
+    "iconColor": "#2C2C2C",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 235,
+    "name": "Stable Diffusion",
+    "description": "开源AI图像生成模型，支持本地部署和自定义训练",
+    "url": "https://stability.ai/stable-diffusion",
+    "category": "ai",
+    "tags": [
+      "AI绘画",
+      "开源模型",
+      "图像生成"
+    ],
+    "icon": "fas fa-cube",
+    "iconColor": "#FF6B35",
+    "popular": true,
+    "type": "software"
+  },
+  {
+    "id": 236,
+    "name": "DALL-E",
+    "description": "OpenAI的AI图像生成模型，基于文本创建多样化图像",
+    "url": "https://openai.com/dall-e-3",
+    "category": "ai",
+    "tags": [
+      "AI绘画",
+      "OpenAI",
+      "图像生成"
+    ],
+    "icon": "fas fa-palette",
+    "iconColor": "#10A37F",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 237,
+    "name": "Kimi Chat",
+    "description": "月之暗面公司开发的AI助手，支持长文本处理和文件上传",
+    "url": "https://kimi.moonshot.cn/",
+    "category": "ai",
+    "tags": [
+      "AI助手",
+      "长文本处理",
+      "智能对话"
+    ],
+    "icon": "fas fa-comments",
+    "iconColor": "#FF6B6B",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 238,
+    "name": "智谱清言",
+    "description": "智谱AI开发的对话助手，基于GLM大模型",
+    "url": "https://chatglm.cn/",
+    "category": "ai",
+    "tags": [
+      "AI助手",
+      "GLM模型",
+      "智能对话"
+    ],
+    "icon": "fas fa-brain",
+    "iconColor": "#1677FF",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 239,
+    "name": "讯飞星火",
+    "description": "科大讯飞推出的认知大模型，支持多模态交互",
+    "url": "https://xinghuo.xfyun.cn/",
+    "category": "ai",
+    "tags": [
+      "AI助手",
+      "科大讯飞",
+      "多模态"
+    ],
+    "icon": "fas fa-star",
+    "iconColor": "#0081FF",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 240,
+    "name": "腾讯混元",
+    "description": "腾讯自研的大语言模型，集成于腾讯生态产品",
+    "url": "https://hunyuan.tencent.com/",
+    "category": "ai",
+    "tags": [
+      "大模型",
+      "腾讯",
+      "AI助手"
+    ],
+    "icon": "fas fa-cloud",
+    "iconColor": "#1E6BFF",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 241,
+    "name": "文心一言",
+    "description": "百度开发的文心大模型AI助手",
+    "url": "https://yiyan.baidu.com/",
+    "category": "ai",
+    "tags": [
+      "AI助手",
+      "百度",
+      "大模型"
+    ],
+    "icon": "fas fa-comment",
+    "iconColor": "#2932E1",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 242,
+    "name": "Claude",
+    "description": "Anthropic开发的AI助手，专注于安全、可靠的人工智能对话",
+    "url": "https://claude.ai/",
+    "category": "ai",
+    "tags": [
+      "AI助手",
+      "安全AI",
+      "智能对话"
+    ],
+    "icon": "fas fa-brain",
+    "iconColor": "#D4A574",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 243,
+    "name": "Notion AI",
+    "description": "Notion集成的AI助手，帮助用户写作、总结、翻译和头脑风暴",
+    "url": "https://www.notion.so/product/ai",
+    "category": "ai",
+    "tags": [
+      "AI写作",
+      "智能助手",
+      "知识管理"
+    ],
+    "icon": "fas fa-magic",
+    "iconColor": "#000000",
+    "popular": true,
+    "type": "software"
+  },
+  {
+    "id": 244,
+    "name": "iCloud",
+    "description": "苹果云服务，提供存储、备份和同步功能",
+    "url": "https://www.icloud.com/",
+    "category": "utility",
+    "tags": [
+      "云存储",
+      "苹果",
+      "数据备份"
+    ],
+    "icon": "fas fa-cloud",
+    "iconColor": "#007AFF",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 245,
+    "name": "Skype",
+    "description": "微软的视频通话和即时通讯软件，支持国际通话",
+    "url": "https://www.skype.com/",
+    "category": "communication",
+    "tags": [
+      "视频通话",
+      "即时通讯",
+      "国际通话"
+    ],
+    "icon": "fab fa-skype",
+    "iconColor": "#00AFF0",
+    "popular": true,
+    "type": "software"
+  },
+  {
+    "id": 246,
+    "name": "PyPI",
+    "description": "Python包索引，Python生态系统的软件存储库",
+    "url": "https://pypi.org/",
+    "category": "development",
+    "tags": [
+      "Python",
+      "包管理",
+      "开源"
+    ],
+    "icon": "fab fa-python",
+    "iconColor": "#3776AB",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 247,
+    "name": "edX",
+    "description": "哈佛和MIT创建的在线学习平台，提供免费大学课程",
+    "url": "https://www.edx.org/",
+    "category": "study",
+    "tags": [
+      "在线教育",
+      "大学课程",
+      "MOOC"
+    ],
+    "icon": "fas fa-university",
+    "iconColor": "#02262B",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 248,
+    "name": "Disney+",
+    "description": "迪士尼流媒体服务，提供迪士尼、漫威、星战等内容",
+    "url": "https://www.disneyplus.com/",
+    "category": "media",
+    "tags": [
+      "视频流媒体",
+      "迪士尼",
+      "家庭娱乐"
+    ],
+    "icon": "fas fa-film",
+    "iconColor": "#0063E5",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 249,
+    "name": "Figma AI",
+    "description": "Figma集成的AI设计助手，帮助用户快速生成设计元素和布局",
+    "url": "https://www.figma.com/ai",
+    "category": "ai",
+    "tags": [
+      "AI设计",
+      "设计助手",
+      "Figma"
+    ],
+    "icon": "fas fa-paint-brush",
+    "iconColor": "#F24E1E",
+    "popular": true,
+    "type": "software"
+  },
+  {
+    "id": 250,
+    "name": "腾讯视频",
+    "description": "腾讯旗下在线视频平台，提供海量正版影视内容",
+    "url": "https://v.qq.com/",
+    "category": "media",
+    "tags": [
+      "视频",
+      "影视",
+      "腾讯"
+    ],
+    "icon": "fas fa-video",
+    "iconColor": "#3196FA",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 251,
+    "name": "优酷",
+    "description": "阿里巴巴旗下视频平台，提供高清正版视频内容",
+    "url": "https://www.youku.com/",
+    "category": "media",
+    "tags": [
+      "视频",
+      "影视",
+      "阿里巴巴"
+    ],
+    "icon": "fas fa-play-circle",
+    "iconColor": "#00A1D6",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 252,
+    "name": "芒果TV",
+    "description": "湖南广播电视台旗下视频平台，专注综艺和自制内容",
+    "url": "https://www.mgtv.com/",
+    "category": "media",
+    "tags": [
+      "视频",
+      "综艺",
+      "电视台"
+    ],
+    "icon": "fas fa-tv",
+    "iconColor": "#FF6A00",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 253,
+    "name": "百度地图",
+    "description": "百度提供的地图导航服务，支持路线规划和实时路况",
+    "url": "https://map.baidu.com/",
+    "category": "life",
+    "tags": [
+      "地图",
+      "导航",
+      "百度"
+    ],
+    "icon": "fas fa-map",
+    "iconColor": "#2C6BFF",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 254,
+    "name": "腾讯地图",
+    "description": "腾讯提供的地图导航服务，集成于微信和QQ生态",
+    "url": "https://map.qq.com/",
+    "category": "life",
+    "tags": [
+      "地图",
+      "导航",
+      "腾讯"
+    ],
+    "icon": "fas fa-map-marker-alt",
+    "iconColor": "#1E6BFF",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 255,
+    "name": "微软必应",
+    "description": "微软搜索引擎，集成AI助手Copilot",
+    "url": "https://www.bing.com/",
+    "category": "browser",
+    "tags": [
+      "搜索引擎",
+      "微软",
+      "AI搜索"
+    ],
+    "icon": "fab fa-microsoft",
+    "iconColor": "#008373",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 256,
+    "name": "Google搜索",
+    "description": "谷歌搜索引擎，全球最流行的搜索服务",
+    "url": "https://www.google.com/",
+    "category": "browser",
+    "tags": [
+      "搜索引擎",
+      "谷歌",
+      "全球搜索"
+    ],
+    "icon": "fab fa-google",
+    "iconColor": "#4285F4",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 257,
+    "name": "DuckDuckGo",
+    "description": "注重隐私保护的搜索引擎，不追踪用户数据",
+    "url": "https://duckduckgo.com/",
+    "category": "browser",
+    "tags": [
+      "搜索引擎",
+      "隐私保护",
+      "匿名搜索"
+    ],
+    "icon": "fas fa-search",
+    "iconColor": "#DE5833",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 258,
+    "name": "GitLab",
+    "description": "开源代码托管和DevOps平台，支持CI/CD",
+    "url": "https://about.gitlab.com/",
+    "category": "development",
+    "tags": [
+      "代码托管",
+      "DevOps",
+      "CI/CD"
+    ],
+    "icon": "fab fa-gitlab",
+    "iconColor": "#FC6D26",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 259,
+    "name": "Bitbucket",
+    "description": "Atlassian代码托管平台，集成Jira和Confluence",
+    "url": "https://bitbucket.org/",
+    "category": "development",
+    "tags": [
+      "代码托管",
+      "Atlassian",
+      "Git"
+    ],
+    "icon": "fab fa-bitbucket",
+    "iconColor": "#0052CC",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 260,
+    "name": "Jenkins",
+    "description": "开源自动化服务器，支持持续集成和持续部署",
+    "url": "https://www.jenkins.io/",
+    "category": "development",
+    "tags": [
+      "CI/CD",
+      "自动化",
+      "开源"
+    ],
+    "icon": "fas fa-cogs",
+    "iconColor": "#D24939",
+    "popular": true,
+    "type": "software"
+  },
+  {
+    "id": 261,
+    "name": "Slack AI",
+    "description": "Slack集成的AI助手，帮助团队协作和信息检索",
+    "url": "https://slack.com/features/ai",
+    "category": "ai",
+    "tags": [
+      "AI助手",
+      "团队协作",
+      "Slack"
+    ],
+    "icon": "fab fa-slack",
+    "iconColor": "#4A154B",
+    "popular": true,
+    "type": "software"
+  },
+  {
+    "id": 262,
+    "name": "Zoom AI",
+    "description": "Zoom视频会议集成的AI功能，包括会议摘要和翻译",
+    "url": "https://zoom.ai/",
+    "category": "ai",
+    "tags": [
+      "AI会议",
+      "视频会议",
+      "翻译"
+    ],
+    "icon": "fas fa-video",
+    "iconColor": "#2D8CFF",
+    "popular": true,
+    "type": "software"
+  },
+  {
+    "id": 263,
+    "name": "腾讯翻译君",
+    "description": "腾讯推出的AI翻译工具，支持多语种实时翻译",
+    "url": "https://fanyi.qq.com/",
+    "category": "ai",
+    "tags": [
+      "AI翻译",
+      "多语种",
+      "腾讯"
+    ],
+    "icon": "fas fa-language",
+    "iconColor": "#1E6BFF",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 264,
+    "name": "百度翻译",
+    "description": "百度AI翻译服务，支持文本、文档和网页翻译",
+    "url": "https://fanyi.baidu.com/",
+    "category": "ai",
+    "tags": [
+      "AI翻译",
+      "百度",
+      "多语言"
+    ],
+    "icon": "fas fa-exchange-alt",
+    "iconColor": "#2932E1",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 265,
+    "name": "有道翻译",
+    "description": "网易有道AI翻译服务，支持拍照翻译和实时对话翻译",
+    "url": "https://fanyi.youdao.com/",
+    "category": "ai",
+    "tags": [
+      "AI翻译",
+      "网易",
+      "拍照翻译"
+    ],
+    "icon": "fas fa-camera",
+    "iconColor": "#FF6600",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 266,
+    "name": "腾讯会议AI",
+    "description": "腾讯会议集成的AI功能，包括会议纪要和实时字幕",
+    "url": "https://meeting.tencent.com/ai",
+    "category": "ai",
+    "tags": [
+      "AI会议",
+      "腾讯会议",
+      "会议纪要"
+    ],
+    "icon": "fas fa-robot",
+    "iconColor": "#2BA245",
+    "popular": true,
+    "type": "software"
+  },
+  {
+    "id": 267,
+    "name": "钉钉AI",
+    "description": "钉钉集成的AI助手，帮助办公自动化和智能回复",
+    "url": "https://www.dingtalk.com/ai",
+    "category": "ai",
+    "tags": [
+      "AI办公",
+      "钉钉",
+      "自动化"
+    ],
+    "icon": "fas fa-bell",
+    "iconColor": "#0086FF",
+    "popular": true,
+    "type": "software"
+  },
+  {
+    "id": 268,
+    "name": "飞书AI",
+    "description": "飞书集成的AI助手，支持智能写作和会议辅助",
+    "url": "https://www.feishu.cn/ai",
+    "category": "ai",
+    "tags": [
+      "AI办公",
+      "飞书",
+      "智能写作"
+    ],
+    "icon": "fas fa-comments",
+    "iconColor": "#00B2FF",
+    "popular": true,
+    "type": "software"
+  },
+  {
+    "id": 269,
+    "name": "华为云",
+    "description": "华为云计算服务，提供云服务器、数据库和AI平台",
+    "url": "https://www.huaweicloud.com/",
+    "category": "development",
+    "tags": [
+      "云计算",
+      "服务器",
+      "华为"
+    ],
+    "icon": "fas fa-cloud",
+    "iconColor": "#FF6A00",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 270,
+    "name": "百度智能云",
+    "description": "百度云计算和AI服务平台，提供文心大模型API",
+    "url": "https://cloud.baidu.com/",
+    "category": "development",
+    "tags": [
+      "云计算",
+      "AI平台",
+      "百度"
+    ],
+    "icon": "fas fa-cloud",
+    "iconColor": "#2932E1",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 271,
+    "name": "字节跳动云",
+    "url": "https://www.volcengine.com/",
+    "description": "字节跳动云计算服务，支持火山引擎和AI能力",
+    "category": "development",
+    "type": "website",
+    "icon": "fas fa-cloud",
+    "iconColor": "#ff4400",
+    "popular": false,
+    "tags": [
+      "云计算",
+      "字节跳动",
+      "火山引擎"
+    ]
+  },
+  {
+    "id": 272,
+    "name": "Sublime Text",
+    "url": "https://www.sublimetext.com/",
+    "description": "轻量级文本编辑器，支持多种编程语言",
+    "category": "development",
+    "type": "software",
+    "icon": "fas fa-code",
+    "iconColor": "#ff9800",
+    "popular": false,
+    "tags": [
+      "文本编辑器",
+      "编程",
+      "轻量级"
+    ]
+  },
+  {
+    "id": 273,
+    "name": "Atom",
+    "url": "https://atom.io/",
+    "description": "GitHub开发的现代化文本编辑器，开源可扩展",
+    "category": "development",
+    "type": "software",
+    "icon": "fas fa-atom",
+    "iconColor": "#66595c",
+    "popular": false,
+    "tags": [
+      "文本编辑器",
+      "开源",
+      "GitHub"
+    ]
+  },
+  {
+    "id": 274,
+    "name": "IntelliJ IDEA",
+    "url": "https://www.jetbrains.com/idea/",
+    "description": "JetBrains开发的Java集成开发环境，支持多种语言",
+    "category": "development",
+    "type": "software",
+    "icon": "fas fa-coffee",
+    "iconColor": "#000000",
+    "popular": false,
+    "tags": [
+      "IDE",
+      "Java",
+      "JetBrains"
+    ]
+  },
+  {
+    "id": 275,
+    "name": "PyCharm",
+    "url": "https://www.jetbrains.com/pycharm/",
+    "description": "JetBrains开发的Python集成开发环境",
+    "category": "development",
+    "type": "software",
+    "icon": "fab fa-python",
+    "iconColor": "#3776ab",
+    "popular": false,
+    "tags": [
+      "IDE",
+      "Python",
+      "JetBrains"
+    ]
+  },
+  {
+    "id": 276,
+    "name": "WebStorm",
+    "url": "https://www.jetbrains.com/webstorm/",
+    "description": "JetBrains开发的JavaScript集成开发环境",
+    "category": "development",
+    "type": "software",
+    "icon": "fab fa-js-square",
+    "iconColor": "#f7df1e",
+    "popular": false,
+    "tags": [
+      "IDE",
+      "JavaScript",
+      "前端开发"
+    ]
+  },
+  {
+    "id": 277,
+    "name": "Eclipse",
+    "url": "https://www.eclipse.org/",
+    "description": "开源集成开发环境，支持多种编程语言",
+    "category": "development",
+    "type": "software",
+    "icon": "fas fa-sun",
+    "iconColor": "#2c2255",
+    "popular": false,
+    "tags": [
+      "IDE",
+      "开源",
+      "Java"
+    ]
+  },
+  {
+    "id": 278,
+    "name": "Android Studio",
+    "url": "https://developer.android.com/studio",
+    "description": "谷歌官方Android应用开发IDE",
+    "category": "development",
+    "type": "software",
+    "icon": "fab fa-android",
+    "iconColor": "#3ddc84",
+    "popular": false,
+    "tags": [
+      "IDE",
+      "Android开发",
+      "谷歌"
+    ]
+  },
+  {
+    "id": 279,
+    "name": "Xcode",
+    "url": "https://developer.apple.com/xcode/",
+    "description": "苹果官方iOS和macOS应用开发IDE",
+    "category": "development",
+    "type": "software",
+    "icon": "fab fa-apple",
+    "iconColor": "#000000",
+    "popular": false,
+    "tags": [
+      "IDE",
+      "iOS开发",
+      "苹果"
+    ]
+  },
+  {
+    "id": 280,
+    "name": "Flutter",
+    "url": "https://flutter.dev/",
+    "description": "谷歌开源的跨平台应用开发框架",
+    "category": "development",
+    "type": "software",
+    "icon": "fas fa-mobile-alt",
+    "iconColor": "#02569b",
+    "popular": false,
+    "tags": [
+      "跨平台",
+      "移动开发",
+      "谷歌"
+    ]
+  },
+  {
+    "id": 281,
+    "name": "React Native",
+    "url": "https://reactnative.dev/",
+    "description": "Facebook开源的跨平台移动应用开发框架",
+    "category": "development",
+    "type": "software",
+    "icon": "fab fa-react",
+    "iconColor": "#61dafb",
+    "popular": false,
+    "tags": [
+      "跨平台",
+      "移动开发",
+      "Facebook"
+    ]
+  },
+  {
+    "id": 282,
+    "name": "Vue.js",
+    "url": "https://vuejs.org/",
+    "description": "渐进式JavaScript框架，用于构建用户界面",
+    "category": "development",
+    "type": "software",
+    "icon": "fab fa-vuejs",
+    "iconColor": "#4fc08d",
+    "popular": false,
+    "tags": [
+      "前端框架",
+      "JavaScript",
+      "渐进式"
+    ]
+  },
+  {
+    "id": 283,
+    "name": "React",
+    "url": "https://reactjs.org/",
+    "description": "Facebook开发的JavaScript库，用于构建用户界面",
+    "category": "development",
+    "type": "software",
+    "icon": "fab fa-react",
+    "iconColor": "#61dafb",
+    "popular": false,
+    "tags": [
+      "前端框架",
+      "JavaScript",
+      "Facebook"
+    ]
+  },
+  {
+    "id": 284,
+    "name": "Angular",
+    "url": "https://angular.io/",
+    "description": "谷歌开发的Web应用框架，基于TypeScript",
+    "category": "development",
+    "type": "software",
+    "icon": "fab fa-angular",
+    "iconColor": "#dd0031",
+    "popular": false,
+    "tags": [
+      "前端框架",
+      "TypeScript",
+      "谷歌"
+    ]
+  },
+  {
+    "id": 285,
+    "name": "Node.js",
+    "url": "https://nodejs.org/",
+    "description": "基于Chrome V8引擎的JavaScript运行时环境",
+    "category": "development",
+    "type": "software",
+    "icon": "fab fa-node-js",
+    "iconColor": "#339933",
+    "popular": false,
+    "tags": [
+      "JavaScript",
+      "运行时",
+      "后端开发"
+    ]
+  },
+  {
+    "id": 286,
+    "name": "Spring Boot",
+    "url": "https://spring.io/projects/spring-boot",
+    "description": "Java开发框架，简化Spring应用的创建和开发",
+    "category": "development",
+    "type": "software",
+    "icon": "fas fa-leaf",
+    "iconColor": "#6db33f",
+    "popular": false,
+    "tags": [
+      "Java框架",
+      "后端开发",
+      "微服务"
+    ]
+  },
+  {
+    "id": 287,
+    "name": "Django",
+    "url": "https://www.djangoproject.com/",
+    "description": "Python Web开发框架，快速构建高质量Web应用",
+    "category": "development",
+    "type": "software",
+    "icon": "fas fa-database",
+    "iconColor": "#092e20",
+    "popular": false,
+    "tags": [
+      "Python框架",
+      "Web开发",
+      "快速开发"
+    ]
+  },
+  {
+    "id": 288,
+    "name": "Flask",
+    "url": "https://flask.palletsprojects.com/",
+    "description": "轻量级Python Web开发框架",
+    "category": "development",
+    "type": "software",
+    "icon": "fas fa-flask",
+    "iconColor": "#000000",
+    "popular": false,
+    "tags": [
+      "Python框架",
+      "Web开发",
+      "轻量级"
+    ]
+  },
+  {
+    "id": 289,
+    "name": "Laravel",
+    "url": "https://laravel.com/",
+    "description": "PHP Web开发框架，优雅的语法和丰富的功能",
+    "category": "development",
+    "type": "software",
+    "icon": "fas fa-server",
+    "iconColor": "#ff2d20",
+    "popular": false,
+    "tags": [
+      "PHP框架",
+      "Web开发",
+      "优雅语法"
+    ]
+  },
+  {
+    "id": 290,
+    "name": "Ruby on Rails",
+    "url": "https://rubyonrails.org/",
+    "description": "Ruby Web开发框架，遵循约定优于配置原则",
+    "category": "development",
+    "type": "software",
+    "icon": "fas fa-gem",
+    "iconColor": "#cc0000",
+    "popular": false,
+    "tags": [
+      "Ruby框架",
+      "Web开发",
+      "约定优于配置"
+    ]
+  },
+  {
+    "id": 291,
+    "name": "ASP.NET Core",
+    "url": "https://dotnet.microsoft.com/apps/aspnet",
+    "description": "微软跨平台Web开发框架",
+    "category": "development",
+    "type": "software",
+    "icon": "fab fa-microsoft",
+    "iconColor": "#512bd4",
+    "popular": false,
+    "tags": [
+      "微软框架",
+      "Web开发",
+      "跨平台"
+    ]
+  },
+  {
+    "id": 292,
+    "name": "MySQL",
+    "url": "https://www.mysql.com/",
+    "description": "流行的开源关系型数据库管理系统",
+    "category": "development",
+    "type": "software",
+    "icon": "fas fa-database",
+    "iconColor": "#4479a1",
+    "popular": true,
+    "tags": [
+      "数据库",
+      "关系型",
+      "开源"
+    ]
+  },
+  {
+    "id": 293,
+    "name": "PostgreSQL",
+    "url": "https://www.postgresql.org/",
+    "description": "强大的开源对象关系型数据库系统",
+    "category": "development",
+    "type": "software",
+    "icon": "fas fa-database",
+    "iconColor": "#336791",
+    "popular": false,
+    "tags": [
+      "数据库",
+      "关系型",
+      "开源"
+    ]
+  },
+  {
+    "id": 294,
+    "name": "MongoDB",
+    "url": "https://www.mongodb.com/",
+    "description": "流行的NoSQL文档数据库",
+    "category": "development",
+    "type": "software",
+    "icon": "fas fa-database",
+    "iconColor": "#47a248",
+    "popular": false,
+    "tags": [
+      "数据库",
+      "NoSQL",
+      "文档数据库"
+    ]
+  },
+  {
+    "id": 295,
+    "name": "Redis",
+    "url": "https://redis.io/",
+    "description": "开源内存数据结构存储，用作数据库、缓存和消息代理",
+    "category": "development",
+    "type": "software",
+    "icon": "fas fa-bolt",
+    "iconColor": "#dc382d",
+    "popular": false,
+    "tags": [
+      "数据库",
+      "缓存",
+      "内存存储"
+    ]
+  },
+  {
+    "id": 296,
+    "name": "Elasticsearch",
+    "url": "https://www.elastic.co/",
+    "description": "分布式搜索和分析引擎",
+    "category": "development",
+    "type": "software",
+    "icon": "fas fa-search",
+    "iconColor": "#005571",
+    "popular": false,
+    "tags": [
+      "搜索引擎",
+      "数据分析",
+      "分布式"
+    ]
+  },
+  {
+    "id": 297,
+    "name": "Apache Kafka",
+    "url": "https://kafka.apache.org/",
+    "description": "分布式流处理平台，用于构建实时数据管道和流应用",
+    "category": "development",
+    "type": "software",
+    "icon": "fas fa-stream",
+    "iconColor": "#231f20",
+    "popular": false,
+    "tags": [
+      "消息队列",
+      "流处理",
+      "分布式"
+    ]
+  },
+  {
+    "id": 298,
+    "name": "RabbitMQ",
+    "url": "https://www.rabbitmq.com/",
+    "description": "开源消息代理软件，实现高级消息队列协议",
+    "category": "development",
+    "type": "software",
+    "icon": "fas fa-exchange-alt",
+    "iconColor": "#ff6600",
+    "popular": false,
+    "tags": [
+      "消息队列",
+      "消息代理",
+      "开源"
+    ]
+  },
+  {
+    "id": 299,
+    "name": "Nginx",
+    "url": "https://nginx.org/",
+    "description": "高性能HTTP和反向代理服务器",
+    "category": "development",
+    "type": "software",
+    "icon": "fas fa-server",
+    "iconColor": "#009639",
+    "popular": false,
+    "tags": [
+      "Web服务器",
+      "反向代理",
+      "负载均衡"
+    ]
+  },
+  {
+    "id": 350,
+    "name": "AutoCAD",
+    "description": "Autodesk公司开发的计算机辅助设计软件，用于二维绘图和三维设计",
+    "url": "https://www.autodesk.com/products/autocad/",
+    "category": "design",
+    "tags": [
+      "CAD",
+      "工业设计",
+      "建筑设计",
+      "Autodesk"
+    ],
+    "icon": "fas fa-drafting-compass",
+    "iconColor": "#E51937",
+    "popular": true,
+    "type": "software"
+  },
+  {
+    "id": 351,
+    "name": "Fusion 360",
+    "description": "Autodesk开发的集成CAD/CAM/CAE软件，支持云端协作",
+    "url": "https://www.autodesk.com/products/fusion-360/",
+    "category": "design",
+    "tags": [
+      "CAD",
+      "3D建模",
+      "工业设计",
+      "云端协作"
+    ],
+    "icon": "fas fa-cloud",
+    "iconColor": "#00BCF2",
+    "popular": true,
+    "type": "software"
+  },
+  {
+    "id": 352,
+    "name": "SolidWorks",
+    "description": "达索系统开发的3D CAD设计软件，专注于机械设计",
+    "url": "https://www.solidworks.com/",
+    "category": "design",
+    "tags": [
+      "CAD",
+      "机械设计",
+      "3D建模",
+      "工程"
+    ],
+    "icon": "fas fa-cube",
+    "iconColor": "#D31F26",
+    "popular": true,
+    "type": "software"
+  },
+  {
+    "id": 353,
+    "name": "CATIA",
+    "description": "达索系统开发的高端CAD/CAM/CAE软件，用于航空航天和汽车设计",
+    "url": "https://www.3ds.com/products/catia",
+    "category": "design",
+    "tags": [
+      "CAD",
+      "工业设计",
+      "航空航天",
+      "汽车设计"
+    ],
+    "icon": "fas fa-plane",
+    "iconColor": "#005386",
+    "popular": true,
+    "type": "software"
+  },
+  {
+    "id": 354,
+    "name": "Creo",
+    "description": "PTC公司开发的产品设计软件，支持参数化建模",
+    "url": "https://www.ptc.com/products/creo",
+    "category": "design",
+    "tags": [
+      "CAD",
+      "产品设计",
+      "参数化建模",
+      "工程"
+    ],
+    "icon": "fas fa-cube",
+    "iconColor": "#00AEEF",
+    "popular": true,
+    "type": "software"
+  },
+  {
+    "id": 355,
+    "name": "Inventor",
+    "description": "Autodesk开发的3D机械设计软件",
+    "url": "https://www.autodesk.com/products/inventor/",
+    "category": "design",
+    "tags": [
+      "CAD",
+      "机械设计",
+      "工程制图",
+      "Autodesk"
+    ],
+    "icon": "fas fa-cogs",
+    "iconColor": "#D2481C",
+    "popular": true,
+    "type": "software"
+  },
+  {
+    "id": 356,
+    "name": "Revit",
+    "description": "Autodesk开发的BIM建筑信息建模软件",
+    "url": "https://www.autodesk.com/products/revit/",
+    "category": "design",
+    "tags": [
+      "BIM",
+      "建筑设计",
+      "建筑信息模型",
+      "工程"
+    ],
+    "icon": "fas fa-building",
+    "iconColor": "#00BCF2",
+    "popular": true,
+    "type": "software"
+  },
+  {
+    "id": 357,
+    "name": "SketchUp",
+    "description": "Trimble公司开发的3D建模软件，适合建筑和室内设计",
+    "url": "https://www.sketchup.com/",
+    "category": "design",
+    "tags": [
+      "3D建模",
+      "建筑设计",
+      "室内设计",
+      "快速建模"
+    ],
+    "icon": "fas fa-cube",
+    "iconColor": "#005F9E",
+    "popular": true,
+    "type": "software"
+  },
+  {
+    "id": 358,
+    "name": "Rhino 3D",
+    "url": "https://www.rhino3d.com/",
+    "description": "专业3D建模软件，支持NURBS曲面建模",
+    "category": "design",
+    "type": "software",
+    "icon": "fas fa-drafting-compass",
+    "iconColor": "#001e36",
+    "popular": false,
+    "tags": [
+      "3D建模",
+      "工业设计",
+      "NURBS",
+      "曲面建模"
+    ]
+  },
+  {
+    "id": 359,
+    "name": "Blender",
+    "description": "开源3D创作套件，支持建模、动画、渲染等功能",
+    "url": "https://www.blender.org/",
+    "category": "design",
+    "tags": [
+      "3D建模",
+      "动画",
+      "渲染",
+      "开源"
+    ],
+    "icon": "fas fa-cube",
+    "iconColor": "#F5792A",
+    "popular": true,
+    "type": "software"
+  },
+  {
+    "id": 360,
+    "name": "Maya",
+    "description": "Autodesk开发的专业3D动画、建模和渲染软件",
+    "url": "https://www.autodesk.com/products/maya/",
+    "category": "design",
+    "tags": [
+      "3D动画",
+      "建模",
+      "渲染",
+      "影视特效"
+    ],
+    "icon": "fas fa-film",
+    "iconColor": "#00BCF2",
+    "popular": true,
+    "type": "software"
+  },
+  {
+    "id": 361,
+    "name": "3ds Max",
+    "description": "Autodesk开发的3D建模、动画和渲染软件",
+    "url": "https://www.autodesk.com/products/3ds-max/",
+    "category": "design",
+    "tags": [
+      "3D建模",
+      "动画",
+      "渲染",
+      "游戏开发"
+    ],
+    "icon": "fas fa-gamepad",
+    "iconColor": "#00BCF2",
+    "popular": true,
+    "type": "software"
+  },
+  {
+    "id": 362,
+    "name": "Cinema 4D",
+    "description": "Maxon公司开发的专业3D建模、动画和渲染软件",
+    "url": "https://www.maxon.net/cinema-4d",
+    "category": "design",
+    "tags": [
+      "3D建模",
+      "动画",
+      "渲染",
+      "Motion Graphics"
+    ],
+    "icon": "fas fa-cube",
+    "iconColor": "#B0B0B0",
+    "popular": true,
+    "type": "software"
+  },
+  {
+    "id": 363,
+    "name": "ZBrush",
+    "description": "数字雕刻软件，用于高精度3D建模",
+    "url": "https://www.maxon.net/zbrush",
+    "category": "design",
+    "tags": [
+      "数字雕刻",
+      "3D建模",
+      "高精度",
+      "角色设计"
+    ],
+    "icon": "fas fa-mountain",
+    "iconColor": "#F7A700",
+    "popular": true,
+    "type": "software"
+  },
+  {
+    "id": 364,
+    "name": "Substance Painter",
+    "description": "专业的3D纹理绘制和材质创作软件",
+    "url": "https://www.substance3d.com/products/substance-painter/",
+    "category": "design",
+    "tags": [
+      "纹理绘制",
+      "材质创作",
+      "3D纹理",
+      "PBR"
+    ],
+    "icon": "fas fa-paint-brush",
+    "iconColor": "#FF3A00",
+    "popular": true,
+    "type": "software"
+  },
+  {
+    "id": 365,
+    "name": "Substance Designer",
+    "description": "程序化材质创作软件，用于生成复杂的纹理和材质",
+    "url": "https://www.substance3d.com/products/substance-designer/",
+    "category": "design",
+    "tags": [
+      "材质创作",
+      "程序化纹理",
+      "节点编辑",
+      "PBR"
+    ],
+    "icon": "fas fa-sitemap",
+    "iconColor": "#FF3A00",
+    "popular": true,
+    "type": "software"
+  },
+  {
+    "id": 366,
+    "name": "Keyshot",
+    "description": "实时3D渲染软件，用于产品可视化",
+    "url": "https://www.keyshot.com/",
+    "category": "design",
+    "tags": [
+      "3D渲染",
+      "产品可视化",
+      "实时渲染",
+      "工业设计"
+    ],
+    "icon": "fas fa-camera",
+    "iconColor": "#00B4F0",
+    "popular": true,
+    "type": "software"
+  },
+  {
+    "id": 367,
+    "name": "V-Ray",
+    "description": "专业的渲染引擎，支持多种3D软件",
+    "url": "https://www.chaos.com/vray",
+    "category": "design",
+    "tags": [
+      "渲染引擎",
+      "3D渲染",
+      "物理渲染",
+      "Chaos Group"
+    ],
+    "icon": "fas fa-sun",
+    "iconColor": "#00AEEF",
+    "popular": true,
+    "type": "software"
+  },
+  {
+    "id": 368,
+    "name": "Arnold",
+    "url": "https://www.autodesk.com/products/arnold/",
+    "description": "Autodesk开发的高级渲染引擎",
+    "category": "design",
+    "type": "software",
+    "icon": "fas fa-sun",
+    "iconColor": "#00bcf2",
+    "popular": false,
+    "tags": [
+      "渲染引擎",
+      "影视渲染",
+      "物理渲染",
+      "Autodesk"
+    ]
+  },
+  {
+    "id": 369,
+    "name": "Lumion",
+    "description": "实时3D建筑可视化软件",
+    "url": "https://lumion.com/",
+    "category": "design",
+    "tags": [
+      "建筑可视化",
+      "实时渲染",
+      "建筑动画",
+      "效果图"
+    ],
+    "icon": "fas fa-city",
+    "iconColor": "#00B8D4",
+    "popular": true,
+    "type": "software"
+  },
+  {
+    "id": 370,
+    "name": "Enscape",
+    "description": "实时渲染和虚拟现实插件，支持Revit、SketchUp等",
+    "url": "https://enscape3d.com/",
+    "category": "design",
+    "tags": [
+      "实时渲染",
+      "虚拟现实",
+      "建筑可视化",
+      "插件"
+    ],
+    "icon": "fas fa-vr-cardboard",
+    "iconColor": "#00AEEF",
+    "popular": true,
+    "type": "software"
+  },
+  {
+    "id": 371,
+    "name": "Twinmotion",
+    "url": "https://www.twinmotion.com/",
+    "description": "实时建筑可视化软件，支持虚拟现实",
+    "category": "design",
+    "type": "software",
+    "icon": "fas fa-vr-cardboard",
+    "iconColor": "#6b7280",
+    "popular": false,
+    "tags": [
+      "建筑可视化",
+      "实时渲染",
+      "虚拟现实",
+      "Epic Games"
+    ]
+  },
+  {
+    "id": 372,
+    "name": "Vectorworks",
+    "url": "https://www.vectorworks.net/",
+    "description": "专业CAD和BIM设计软件，用于建筑和娱乐设计",
+    "category": "design",
+    "type": "software",
+    "icon": "fas fa-vector-square",
+    "iconColor": "#4c9f70",
+    "popular": false,
+    "tags": [
+      "CAD",
+      "BIM",
+      "建筑设计",
+      "舞台设计"
+    ]
+  },
+  {
+    "id": 373,
+    "name": "Archicad",
+    "url": "https://graphisoft.com/archicad/",
+    "description": "Graphisoft开发的BIM建筑设计软件",
+    "category": "design",
+    "type": "software",
+    "icon": "fas fa-archway",
+    "iconColor": "#2396f3",
+    "popular": false,
+    "tags": [
+      "BIM",
+      "建筑设计",
+      "建筑信息模型",
+      "Graphisoft"
+    ]
+  },
+  {
+    "id": 374,
+    "name": "Solid Edge",
+    "url": "https://solidedge.siemens.com/",
+    "description": "西门子开发的3D CAD软件，用于产品设计",
+    "category": "design",
+    "type": "software",
+    "icon": "fas fa-cube",
+    "iconColor": "#009999",
+    "popular": false,
+    "tags": [
+      "CAD",
+      "产品设计",
+      "3D建模",
+      "西门子"
+    ]
+  },
+  {
+    "id": 375,
+    "name": "NX",
+    "url": "https://www.plm.automation.siemens.com/products/nx/",
+    "description": "西门子开发的产品工程解决方案，支持CAD/CAM/CAE",
+    "category": "design",
+    "type": "software",
+    "icon": "fas fa-industry",
+    "iconColor": "#009999",
+    "popular": false,
+    "tags": [
+      "CAD",
+      "CAM",
+      "CAE",
+      "产品工程",
+      "西门子"
+    ]
+  },
+  {
+    "id": 376,
+    "name": "FreeCAD",
+    "url": "https://www.freecad.org/",
+    "description": "开源参数化3D建模软件，支持CAD设计",
+    "category": "design",
+    "type": "software",
+    "icon": "fas fa-cube",
+    "iconColor": "#00aeef",
+    "popular": false,
+    "tags": [
+      "CAD",
+      "3D建模",
+      "参数化设计",
+      "开源"
+    ]
+  },
+  {
+    "id": 377,
+    "name": "OpenSCAD",
+    "url": "https://openscad.org/",
+    "description": "基于脚本的3D建模软件，适合编程人员使用",
+    "category": "design",
+    "type": "software",
+    "icon": "fas fa-code",
+    "iconColor": "#f0ad4e",
+    "popular": false,
+    "tags": [
+      "3D建模",
+      "脚本建模",
+      "编程建模",
+      "开源"
+    ]
+  },
+  {
+    "id": 378,
+    "name": "CorelCAD",
+    "url": "https://www.coreldraw.com/corelcad/",
+    "description": "Corel公司开发的2D制图和3D设计软件",
+    "category": "design",
+    "type": "software",
+    "icon": "fas fa-drafting-compass",
+    "iconColor": "#f68f1e",
+    "popular": false,
+    "tags": [
+      "CAD",
+      "2D制图",
+      "3D设计",
+      "Corel"
+    ]
+  },
+  {
+    "id": 379,
+    "name": "Draftsight",
+    "url": "https://www.draftsight.com/",
+    "description": "2D CAD制图软件，适合工程和技术绘图",
+    "category": "design",
+    "type": "software",
+    "icon": "fas fa-pencil-ruler",
+    "iconColor": "#0054a5",
+    "popular": false,
+    "tags": [
+      "CAD",
+      "2D制图",
+      "工程制图",
+      "技术绘图"
+    ]
+  },
+  {
+    "id": 380,
+    "name": "Onshape",
+    "url": "https://www.onshape.com/",
+    "description": "云端CAD平台，支持实时协作",
+    "category": "design",
+    "type": "website",
+    "icon": "fas fa-cloud",
+    "iconColor": "#0052cc",
+    "popular": false,
+    "tags": [
+      "云端CAD",
+      "协作设计",
+      "产品设计",
+      "实时协作"
+    ]
+  },
+  {
+    "id": 381,
+    "name": "Shapr3D",
+    "url": "https://www.shapr3d.com/",
+    "description": "iPad和Mac上的专业3D建模软件",
+    "category": "design",
+    "type": "software",
+    "icon": "fas fa-tablet-alt",
+    "iconColor": "#007aff",
+    "popular": false,
+    "tags": [
+      "3D建模",
+      "iPad应用",
+      "工业设计",
+      "移动设计"
+    ]
+  },
+  {
+    "id": 382,
+    "name": "Adobe Dimension",
+    "url": "https://www.adobe.com/products/dimension.html",
+    "description": "Adobe开发的3D渲染和合成软件",
+    "category": "design",
+    "type": "software",
+    "icon": "fas fa-cube",
+    "iconColor": "#ff61f6",
+    "popular": false,
+    "tags": [
+      "3D渲染",
+      "产品可视化",
+      "合成",
+      "Adobe"
+    ]
+  },
+  {
+    "id": 383,
+    "name": "Adobe Aero",
+    "url": "https://www.adobe.com/products/aero.html",
+    "description": "Adobe开发的增强现实创作工具",
+    "category": "design",
+    "type": "software",
+    "icon": "fas fa-vr-cardboard",
+    "iconColor": "#00bcf2",
+    "popular": false,
+    "tags": [
+      "增强现实",
+      "AR创作",
+      "虚拟体验",
+      "Adobe"
+    ]
+  },
+  {
+    "id": 384,
+    "name": "Procreate",
+    "url": "https://procreate.com/",
+    "description": "iPad上的专业数字绘画应用",
+    "category": "design",
+    "type": "software",
+    "icon": "fas fa-paint-brush",
+    "iconColor": "#1b1b1b",
+    "popular": false,
+    "tags": [
+      "数字绘画",
+      "iPad应用",
+      "插画",
+      "艺术创作"
+    ]
+  },
+  {
+    "id": 385,
+    "name": "Clip Studio Paint",
+    "url": "https://www.clipstudio.net/",
+    "description": "专业的漫画和插画创作软件",
+    "category": "design",
+    "type": "software",
+    "icon": "fas fa-paint-brush",
+    "iconColor": "#00b4f0",
+    "popular": false,
+    "tags": [
+      "漫画创作",
+      "插画",
+      "数字绘画",
+      "动画"
+    ]
+  },
+  {
+    "id": 386,
+    "name": "Krita",
+    "url": "https://krita.org/",
+    "description": "开源数字绘画软件",
+    "category": "design",
+    "type": "software",
+    "icon": "fas fa-palette",
+    "iconColor": "#3b78b5",
+    "popular": false,
+    "tags": [
+      "数字绘画",
+      "开源",
+      "插画",
+      "概念艺术"
+    ]
+  },
+  {
+    "id": 387,
+    "name": "Affinity Designer",
+    "url": "https://affinity.serif.com/designer/",
+    "description": "专业的矢量图形设计软件",
+    "category": "design",
+    "type": "software",
+    "icon": "fas fa-pen-fancy",
+    "iconColor": "#1b72be",
+    "popular": false,
+    "tags": [
+      "矢量图形",
+      "UI设计",
+      "插画",
+      "Affinity"
+    ]
+  },
+  {
+    "id": 388,
+    "name": "Affinity Photo",
+    "url": "https://affinity.serif.com/photo/",
+    "description": "专业的图像编辑软件",
+    "category": "design",
+    "type": "software",
+    "icon": "fas fa-camera-retro",
+    "iconColor": "#7eba1d",
+    "popular": false,
+    "tags": [
+      "图像编辑",
+      "照片处理",
+      "修图",
+      "Affinity"
+    ]
+  },
+  {
+    "id": 389,
+    "name": "GIMP",
+    "url": "https://www.gimp.org/",
+    "description": "GNU图像处理程序，开源图像编辑器",
+    "category": "design",
+    "type": "software",
+    "icon": "fas fa-image",
+    "iconColor": "#5c5543",
+    "popular": false,
+    "tags": [
+      "图像编辑",
+      "开源",
+      "照片处理",
+      "免费"
+    ]
+  },
+  {
+    "id": 390,
+    "name": "Inkscape",
+    "url": "https://inkscape.org/",
+    "description": "开源矢量图形编辑器",
+    "category": "design",
+    "type": "software",
+    "icon": "fas fa-paint-brush",
+    "iconColor": "#000000",
+    "popular": false,
+    "tags": [
+      "矢量图形",
+      "开源",
+      "插画",
+      "免费"
+    ]
+  },
+  {
+    "id": 391,
+    "name": "Adobe Illustrator",
+    "url": "https://www.adobe.com/products/illustrator.html",
+    "description": "行业标准矢量图形设计软件",
+    "category": "design",
+    "type": "software",
+    "icon": "fas fa-pen-nib",
+    "iconColor": "#ff9a00",
+    "popular": false,
+    "tags": [
+      "矢量图形",
+      "插画",
+      "Logo设计",
+      "Adobe"
+    ]
+  },
+  {
+    "id": 392,
+    "name": "Adobe InDesign",
+    "url": "https://www.adobe.com/products/indesign.html",
+    "description": "专业版面设计和排版软件",
+    "category": "design",
+    "type": "software",
+    "icon": "fas fa-newspaper",
+    "iconColor": "#ff3366",
+    "popular": false,
+    "tags": [
+      "排版",
+      "版面设计",
+      "出版物设计",
+      "Adobe"
+    ]
+  },
+  {
+    "id": 393,
+    "name": "Adobe After Effects",
+    "url": "https://www.adobe.com/products/aftereffects.html",
+    "description": "专业动态图形和视觉特效软件",
+    "category": "design",
+    "type": "software",
+    "icon": "fas fa-film",
+    "iconColor": "#9999ff",
+    "popular": false,
+    "tags": [
+      "动态图形",
+      "视觉特效",
+      "视频编辑",
+      "Adobe"
+    ]
+  },
+  {
+    "id": 395,
+    "name": "DaVinci Resolve",
+    "url": "https://www.blackmagicdesign.com/products/davinciresolve/",
+    "description": "专业视频剪辑、调色和音频后期软件",
+    "category": "design",
+    "type": "software",
+    "icon": "fas fa-film",
+    "iconColor": "#000000",
+    "popular": false,
+    "tags": [
+      "视频编辑",
+      "调色",
+      "音频后期",
+      "免费"
+    ]
+  },
+  {
+    "id": 397,
+    "name": "Adobe Lightroom",
+    "url": "https://www.adobe.com/products/photoshop-lightroom.html",
+    "description": "专业照片编辑和管理软件",
+    "category": "design",
+    "type": "software",
+    "icon": "fas fa-camera",
+    "iconColor": "#31a8ff",
+    "popular": false,
+    "tags": [
+      "照片编辑",
+      "照片管理",
+      "调色",
+      "Adobe"
+    ]
+  },
+  {
+    "id": 398,
+    "name": "Adobe Audition",
+    "url": "https://www.adobe.com/products/audition.html",
+    "description": "专业音频编辑和混音软件",
+    "category": "design",
+    "type": "software",
+    "icon": "fas fa-microphone",
+    "iconColor": "#9999ff",
+    "popular": false,
+    "tags": [
+      "音频编辑",
+      "混音",
+      "录音",
+      "Adobe"
+    ]
+  },
+  {
+    "id": 399,
+    "name": "Adobe Animate",
+    "url": "https://www.adobe.com/products/animate.html",
+    "description": "专业动画和交互式内容创作软件",
+    "category": "design",
+    "type": "software",
+    "icon": "fas fa-play-circle",
+    "iconColor": "#9900ff",
+    "popular": false,
+    "tags": [
+      "动画",
+      "交互式内容",
+      "游戏开发",
+      "Adobe"
+    ]
+  },
+  {
+    "id": 400,
+    "name": "Altium Designer",
+    "description": "专业的PCB设计软件，集原理图设计、PCB布局、仿真和文档管理于一体",
+    "url": "https://www.altium.com/altium-designer/",
+    "category": "development",
+    "tags": [
+      "PCB设计",
+      "EDA",
+      "电子设计",
+      "原理图"
+    ],
+    "icon": "fas fa-microchip",
+    "iconColor": "#A50034",
+    "popular": false,
+    "type": "software"
+  },
+  {
+    "id": 401,
+    "name": "KiCad",
+    "description": "开源电子设计自动化套件，支持原理图设计和PCB布局",
+    "url": "https://www.kicad.org/",
+    "category": "development",
+    "tags": [
+      "PCB设计",
+      "开源",
+      "EDA",
+      "KiCad"
+    ],
+    "icon": "fas fa-microchip",
+    "iconColor": "#314C7F",
+    "popular": false,
+    "type": "software"
+  },
+  {
+    "id": 402,
+    "name": "EAGLE",
+    "description": "Autodesk的PCB设计软件，提供原理图编辑和PCB布局功能",
+    "url": "https://www.autodesk.com/products/eagle/",
+    "category": "development",
+    "tags": [
+      "PCB设计",
+      "Autodesk",
+      "原理图",
+      "电子设计"
+    ],
+    "icon": "fas fa-project-diagram",
+    "iconColor": "#0696D7",
+    "popular": false,
+    "type": "software"
+  },
+  {
+    "id": 403,
+    "name": "OrCAD",
+    "description": "Cadence的PCB设计解决方案，提供原理图捕获和PCB布局工具",
+    "url": "https://www.cadence.com/products/orcad/",
+    "category": "development",
+    "tags": [
+      "PCB设计",
+      "Cadence",
+      "原理图捕获",
+      "电子设计"
+    ],
+    "icon": "fas fa-sitemap",
+    "iconColor": "#ED1C24",
+    "popular": false,
+    "type": "software"
+  },
+  {
+    "id": 404,
+    "name": "PADS",
+    "description": "Mentor Graphics的PCB设计软件，现为西门子产品",
+    "url": "https://eda.sw.siemens.com/en-US/pcb/",
+    "category": "development",
+    "tags": [
+      "PCB设计",
+      "西门子",
+      "电子设计",
+      "电路板"
+    ],
+    "icon": "fas fa-microchip",
+    "iconColor": "#009999",
+    "popular": false,
+    "type": "software"
+  },
+  {
+    "id": 405,
+    "name": "Proteus",
+    "description": "集电路仿真、PCB设计和微控制器仿真于一体的设计套件",
+    "url": "https://www.labcenter.com/",
+    "category": "development",
+    "tags": [
+      "PCB设计",
+      "电路仿真",
+      "微控制器",
+      "设计套件"
+    ],
+    "icon": "fas fa-bolt",
+    "iconColor": "#0054A5",
+    "popular": false,
+    "type": "software"
+  },
+  {
+    "id": 406,
+    "name": "EasyEDA",
+    "description": "基于浏览器的免费PCB设计工具，支持在线协作",
+    "url": "https://easyeda.com/",
+    "category": "development",
+    "tags": [
+      "PCB设计",
+      "在线工具",
+      "免费",
+      "EDA"
+    ],
+    "icon": "fas fa-cloud",
+    "iconColor": "#1E88E5",
+    "popular": false,
+    "type": "website"
+  },
+  {
+    "id": 407,
+    "name": "DesignSpark PCB",
+    "description": "免费的PCB设计软件，适合学生和爱好者使用",
+    "url": "https://www.rs-online.com/designspark/pcb-software",
+    "category": "development",
+    "tags": [
+      "PCB设计",
+      "免费",
+      "电子设计",
+      "学生工具"
+    ],
+    "icon": "fas fa-graduation-cap",
+    "iconColor": "#0056A4",
+    "popular": false,
+    "type": "software"
+  },
+  {
+    "id": 408,
+    "name": "DipTrace",
+    "description": "专业的PCB设计软件，提供原理图和PCB布局功能",
+    "url": "https://diptrace.com/",
+    "category": "development",
+    "tags": [
+      "PCB设计",
+      "原理图",
+      "电路板布局",
+      "电子设计"
+    ],
+    "icon": "fas fa-project-diagram",
+    "iconColor": "#2E7D32",
+    "popular": false,
+    "type": "software"
+  },
+  {
+    "id": 409,
+    "name": "CircuitMaker",
+    "description": "免费的PCB设计工具，基于Altium技术，支持社区协作",
+    "url": "https://www.altium.com/circuitmaker/",
+    "category": "development",
+    "tags": [
+      "PCB设计",
+      "免费",
+      "Altium",
+      "社区协作"
+    ],
+    "icon": "fas fa-users",
+    "iconColor": "#00A8E8",
+    "popular": false,
+    "type": "software"
+  },
+  {
+    "id": 410,
+    "name": "Fritzing",
+    "description": "开源硬件原型制作工具，特别适合Arduino项目和PCB设计",
+    "url": "https://fritzing.org/",
+    "category": "development",
+    "tags": [
+      "PCB设计",
+      "开源硬件",
+      "Arduino",
+      "原型制作"
+    ],
+    "icon": "fas fa-cogs",
+    "iconColor": "#FF6B35",
+    "popular": false,
+    "type": "software"
+  },
+  {
+    "id": 411,
+    "name": "PCB Artist",
+    "description": "免费的PCB设计软件，提供高级PCB布局功能",
+    "url": "https://www.4pcb.com/pcb-artist-design-software.html",
+    "category": "development",
+    "tags": [
+      "PCB设计",
+      "免费",
+      "电路板布局",
+      "电子设计"
+    ],
+    "icon": "fas fa-paint-brush",
+    "iconColor": "#FF5722",
+    "popular": false,
+    "type": "software"
+  },
+  {
+    "id": 412,
+    "name": "Ultiboard",
+    "description": "National Instruments的PCB布局软件，与Multisim集成",
+    "url": "https://www.ni.com/ultiboard/",
+    "category": "development",
+    "tags": [
+      "PCB设计",
+      "NI",
+      "Multisim",
+      "电路仿真"
+    ],
+    "icon": "fas fa-microchip",
+    "iconColor": "#FF6A13",
+    "popular": false,
+    "type": "software"
+  },
+  {
+    "id": 413,
+    "name": "ExpressPCB",
+    "description": "免费的PCB设计软件，配套提供PCB制造服务",
+    "url": "https://www.expresspcb.com/",
+    "category": "development",
+    "tags": [
+      "PCB设计",
+      "免费",
+      "PCB制造",
+      "电路板"
+    ],
+    "icon": "fas fa-industry",
+    "iconColor": "#1A73E8",
+    "popular": false,
+    "type": "software"
+  },
+  {
+    "id": 414,
+    "name": "AutoTRAX",
+    "description": "专业的PCB设计软件，提供完整的EDA解决方案",
+    "url": "https://www.designworkshop.com/products/autotrax/",
+    "category": "development",
+    "tags": [
+      "PCB设计",
+      "EDA",
+      "电子设计",
+      "专业工具"
+    ],
+    "icon": "fas fa-microchip",
+    "iconColor": "#4CAF50",
+    "popular": false,
+    "type": "software"
+  },
+  {
+    "id": 415,
+    "name": "PCBWeb",
+    "description": "免费的在线PCB设计工具，支持从原理图到PCB的全流程设计",
+    "url": "https://www.pcbweb.com/",
+    "category": "development",
+    "tags": [
+      "PCB设计",
+      "在线工具",
+      "免费",
+      "EDA"
+    ],
+    "icon": "fas fa-globe",
+    "iconColor": "#2196F3",
+    "popular": false,
+    "type": "website"
+  },
+  {
+    "id": 416,
+    "name": "LibrePCB",
+    "description": "跨平台的开源EDA工具，专注于PCB设计项目",
+    "url": "https://librepcb.org/",
+    "category": "development",
+    "tags": [
+      "PCB设计",
+      "开源",
+      "EDA",
+      "跨平台"
+    ],
+    "icon": "fas fa-code-branch",
+    "iconColor": "#4285F4",
+    "popular": false,
+    "type": "software"
+  },
+  {
+    "id": 417,
+    "name": "gEDA",
+    "description": "开源电子设计自动化工具套件，包括原理图和PCB设计工具",
+    "url": "http://www.geda-project.org/",
+    "category": "development",
+    "tags": [
+      "PCB设计",
+      "开源",
+      "EDA",
+      "gEDA"
+    ],
+    "icon": "fas fa-tools",
+    "iconColor": "#3E3E3E",
+    "popular": false,
+    "type": "software"
+  },
+  {
+    "id": 418,
+    "name": "QUCS",
+    "description": "通用电路模拟器，支持电路仿真和PCB设计",
+    "url": "http://qucs.sourceforge.net/",
+    "category": "development",
+    "tags": [
+      "PCB设计",
+      "电路仿真",
+      "开源",
+      "电子设计"
+    ],
+    "icon": "fas fa-bolt",
+    "iconColor": "#4CAF50",
+    "popular": false,
+    "type": "software"
+  },
+  {
+    "id": 419,
+    "name": "TINA-TI",
+    "description": "德州仪器提供的电路仿真和PCB设计软件",
+    "url": "https://www.ti.com/tool/TINA-TI",
+    "category": "development",
+    "tags": [
+      "PCB设计",
+      "电路仿真",
+      "德州仪器",
+      "TI"
+    ],
+    "icon": "fas fa-microchip",
+    "iconColor": "#FF6600",
+    "popular": false,
+    "type": "software"
+  },
+  {
+    "id": 420,
+    "name": "Xpedition",
+    "description": "西门子高端PCB设计平台，适用于复杂电子系统设计",
+    "url": "https://eda.sw.siemens.com/en-US/pcb/xpedition/",
+    "category": "development",
+    "tags": [
+      "PCB设计",
+      "西门子",
+      "高端设计",
+      "电子系统"
+    ],
+    "icon": "fas fa-microchip",
+    "iconColor": "#009999",
+    "popular": false,
+    "type": "software"
+  },
+  {
+    "id": 421,
+    "name": "Allegro",
+    "description": "Cadence高端PCB设计和IC封装设计平台",
+    "url": "https://www.cadence.com/products/pcb-design/allegro/",
+    "category": "development",
+    "tags": [
+      "PCB设计",
+      "Cadence",
+      "IC封装",
+      "高端设计"
+    ],
+    "icon": "fas fa-microchip",
+    "iconColor": "#ED1C24",
+    "popular": false,
+    "type": "software"
+  },
+  {
+    "id": 422,
+    "name": "CR-8000",
+    "description": "Zuken的先进PCB设计平台，支持高速和射频设计",
+    "url": "https://www.zuken.com/products/cr-8000/",
+    "category": "development",
+    "tags": [
+      "PCB设计",
+      "Zuken",
+      "高速设计",
+      "射频设计"
+    ],
+    "icon": "fas fa-satellite",
+    "iconColor": "#1A73E8",
+    "popular": false,
+    "type": "software"
+  },
+  {
+    "id": 423,
+    "name": "P-CAD",
+    "description": "Altium早期的PCB设计软件，现已被Altium Designer取代",
+    "url": "https://www.altium.com/",
+    "category": "development",
+    "tags": [
+      "PCB设计",
+      "Altium",
+      "传统工具",
+      "电子设计"
+    ],
+    "icon": "fas fa-history",
+    "iconColor": "#757575",
+    "popular": false,
+    "type": "software"
+  },
+  {
+    "id": 424,
+    "name": "Target 3001!",
+    "description": "德国的PCB设计软件，提供原理图和PCB布局功能",
+    "url": "https://www.ibfriedrich.com/",
+    "category": "development",
+    "tags": [
+      "PCB设计",
+      "德国软件",
+      "原理图",
+      "电子设计"
+    ],
+    "icon": "fas fa-microchip",
+    "iconColor": "#E60012",
+    "popular": false,
+    "type": "software"
+  },
+  {
+    "id": 425,
+    "name": "BoardStation",
+    "description": "西门子/Mentor Graphics的高端PCB设计系统",
+    "url": "https://eda.sw.siemens.com/en-US/pcb/boardstation/",
+    "category": "development",
+    "tags": [
+      "PCB设计",
+      "西门子",
+      "高端系统",
+      "电子设计"
+    ],
+    "icon": "fas fa-server",
+    "iconColor": "#009999",
+    "popular": false,
+    "type": "software"
+  },
+  {
+    "id": 426,
+    "name": "IC Design",
+    "description": "集成电路设计软件，支持从原理图到版图的全流程设计",
+    "url": "https://www.cadence.com/products/custom-ic-design/",
+    "category": "development",
+    "tags": [
+      "IC设计",
+      "集成电路",
+      "Cadence",
+      "半导体"
+    ],
+    "icon": "fas fa-microchip",
+    "iconColor": "#673AB7",
+    "popular": false,
+    "type": "software"
+  },
+  {
+    "id": 427,
+    "name": "Virtuoso",
+    "description": "Cadence的模拟/混合信号IC设计平台",
+    "url": "https://www.cadence.com/products/custom-ic-design/virtuoso/",
+    "category": "development",
+    "tags": [
+      "IC设计",
+      "Cadence",
+      "模拟设计",
+      "混合信号"
+    ],
+    "icon": "fas fa-wave-square",
+    "iconColor": "#ED1C24",
+    "popular": false,
+    "type": "software"
+  },
+  {
+    "id": 428,
+    "name": "ADS",
+    "description": "Keysight的先进设计系统，用于高频和射频电路设计",
+    "url": "https://www.keysight.com/ads/",
+    "category": "development",
+    "tags": [
+      "射频设计",
+      "高频电路",
+      "Keysight",
+      "电路仿真"
+    ],
+    "icon": "fas fa-satellite-dish",
+    "iconColor": "#00B0F0",
+    "popular": false,
+    "type": "software"
+  },
+  {
+    "id": 429,
+    "name": "HFSS",
+    "description": "Ansys高频结构仿真软件，用于射频和天线设计",
+    "url": "https://www.ansys.com/products/electronics/ansys-hfss",
+    "category": "development",
+    "tags": [
+      "射频设计",
+      "天线设计",
+      "Ansys",
+      "电磁仿真"
+    ],
+    "icon": "fas fa-satellite",
+    "iconColor": "#FF6F00",
+    "popular": false,
+    "type": "software"
+  },
+  {
+    "id": 430,
+    "name": "CST Studio Suite",
+    "description": "达索系统的3D电磁仿真软件，用于高频电子设计",
+    "url": "https://www.3ds.com/products/simulia/cst-studio-suite",
+    "category": "development",
+    "tags": [
+      "电磁仿真",
+      "高频设计",
+      "达索系统",
+      "3D仿真"
+    ],
+    "icon": "fas fa-cube",
+    "iconColor": "#005386",
+    "popular": false,
+    "type": "software"
+  },
+  {
+    "id": 431,
+    "name": "LTspice",
+    "description": "Analog Devices的免费电路仿真软件",
+    "url": "https://www.analog.com/ltspice",
+    "category": "development",
+    "tags": [
+      "电路仿真",
+      "免费",
+      "Analog Devices",
+      "SPICE"
+    ],
+    "icon": "fas fa-bolt",
+    "iconColor": "#CC0000",
+    "popular": false,
+    "type": "software"
+  },
+  {
+    "id": 432,
+    "name": "Multisim",
+    "description": "NI的电路仿真软件，集原理图捕获和仿真于一体",
+    "url": "https://www.ni.com/multisim/",
+    "category": "development",
+    "tags": [
+      "电路仿真",
+      "NI",
+      "原理图",
+      "SPICE"
+    ],
+    "icon": "fas fa-project-diagram",
+    "iconColor": "#FF6A13",
+    "popular": false,
+    "type": "software"
+  },
+  {
+    "id": 433,
+    "name": "PSpice",
+    "description": "Cadence的电路仿真软件，基于SPICE仿真技术",
+    "url": "https://www.cadence.com/products/pcb-design/pspice/",
+    "category": "development",
+    "tags": [
+      "电路仿真",
+      "Cadence",
+      "SPICE",
+      "电子设计"
+    ],
+    "icon": "fas fa-bolt",
+    "iconColor": "#ED1C24",
+    "popular": false,
+    "type": "software"
+  },
+  {
+    "id": 434,
+    "name": "Simulink",
+    "description": "MathWorks的动态系统建模和仿真平台",
+    "url": "https://www.mathworks.com/products/simulink.html",
+    "category": "development",
+    "tags": [
+      "系统仿真",
+      "建模",
+      "MathWorks",
+      "控制系统"
+    ],
+    "icon": "fas fa-cogs",
+    "iconColor": "#0076A8",
+    "popular": false,
+    "type": "software"
+  },
+  {
+    "id": 435,
+    "name": "LabVIEW",
+    "description": "NI的图形化编程环境，用于测试测量和控制系统",
+    "url": "https://www.ni.com/labview/",
+    "category": "development",
+    "tags": [
+      "图形化编程",
+      "NI",
+      "测试测量",
+      "控制系统"
+    ],
+    "icon": "fas fa-project-diagram",
+    "iconColor": "#FF6A13",
+    "popular": false,
+    "type": "software"
+  },
+  {
+    "id": 436,
+    "name": "MATLAB",
+    "description": "MathWorks的数值计算和编程环境",
+    "url": "https://www.mathworks.com/products/matlab.html",
+    "category": "development",
+    "tags": [
+      "数值计算",
+      "数学软件",
+      "MathWorks",
+      "算法开发"
+    ],
+    "icon": "fas fa-calculator",
+    "iconColor": "#0076A8",
+    "popular": false,
+    "type": "software"
+  },
+  {
+    "id": 437,
+    "name": "Verilog HDL",
+    "description": "硬件描述语言，用于数字电路设计和验证",
+    "url": "https://en.wikipedia.org/wiki/Verilog",
+    "category": "development",
+    "tags": [
+      "硬件描述语言",
+      "数字电路",
+      "设计验证",
+      "HDL"
+    ],
+    "icon": "fas fa-code",
+    "iconColor": "#673AB7",
+    "popular": false,
+    "type": "software"
+  },
+  {
+    "id": 438,
+    "name": "VHDL",
+    "description": "超高速集成电路硬件描述语言",
+    "url": "https://en.wikipedia.org/wiki/VHDL",
+    "category": "development",
+    "tags": [
+      "硬件描述语言",
+      "数字电路",
+      "VHDL",
+      "IC设计"
+    ],
+    "icon": "fas fa-code",
+    "iconColor": "#3F51B5",
+    "popular": false,
+    "type": "software"
+  },
+  {
+    "id": 439,
+    "name": "SystemVerilog",
+    "description": "硬件设计和验证语言，扩展了Verilog功能",
+    "url": "https://en.wikipedia.org/wiki/SystemVerilog",
+    "category": "development",
+    "tags": [
+      "硬件验证",
+      "SystemVerilog",
+      "数字设计",
+      "验证语言"
+    ],
+    "icon": "fas fa-code",
+    "iconColor": "#9C27B0",
+    "popular": false,
+    "type": "software"
+  },
+  {
+    "id": 440,
+    "name": "ModelSim",
+    "description": "Mentor Graphics的HDL仿真软件",
+    "url": "https://eda.sw.siemens.com/en-US/modelsim/",
+    "category": "development",
+    "tags": [
+      "HDL仿真",
+      "西门子",
+      "数字仿真",
+      "硬件验证"
+    ],
+    "icon": "fas fa-play-circle",
+    "iconColor": "#009999",
+    "popular": false,
+    "type": "software"
+  },
+  {
+    "id": 441,
+    "name": "Quartus Prime",
+    "description": "Intel FPGA设计软件",
+    "url": "https://www.intel.com/content/www/us/en/software/programmable/quartus-prime/overview.html",
+    "category": "development",
+    "tags": [
+      "FPGA设计",
+      "Intel",
+      "可编程逻辑",
+      "数字设计"
+    ],
+    "icon": "fas fa-microchip",
+    "iconColor": "#0071C5",
+    "popular": false,
+    "type": "software"
+  },
+  {
+    "id": 442,
+    "name": "Vivado",
+    "description": "Xilinx FPGA和SoC设计套件",
+    "url": "https://www.xilinx.com/products/design-tools/vivado.html",
+    "category": "development",
+    "tags": [
+      "FPGA设计",
+      "Xilinx",
+      "SoC设计",
+      "硬件开发"
+    ],
+    "icon": "fas fa-microchip",
+    "iconColor": "#E01F27",
+    "popular": false,
+    "type": "software"
+  },
+  {
+    "id": 443,
+    "name": "ISE",
+    "description": "Xilinx旧版FPGA设计工具",
+    "url": "https://www.xilinx.com/products/design-tools/ise-design-suite.html",
+    "category": "development",
+    "tags": [
+      "FPGA设计",
+      "Xilinx",
+      "传统工具",
+      "数字设计"
+    ],
+    "icon": "fas fa-history",
+    "iconColor": "#E01F27",
+    "popular": false,
+    "type": "software"
+  },
+  {
+    "id": 444,
+    "name": "Libero",
+    "description": "Microchip FPGA设计软件",
+    "url": "https://www.microchip.com/design-centers/programmable/libero-software",
+    "category": "development",
+    "tags": [
+      "FPGA设计",
+      "Microchip",
+      "可编程逻辑",
+      "数字电路"
+    ],
+    "icon": "fas fa-microchip",
+    "iconColor": "#0097A7",
+    "popular": false,
+    "type": "software"
+  },
+  {
+    "id": 445,
+    "name": "Diamond",
+    "description": "Lattice Semiconductor FPGA设计软件",
+    "url": "https://www.latticesemi.com/products/designsoftware/diamond",
+    "category": "development",
+    "tags": [
+      "FPGA设计",
+      "Lattice",
+      "可编程逻辑",
+      "硬件设计"
+    ],
+    "icon": "fas fa-gem",
+    "iconColor": "#00B0F0",
+    "popular": false,
+    "type": "software"
+  },
+  {
+    "id": 446,
+    "name": "Active-HDL",
+    "description": "Aldec的HDL设计和仿真环境",
+    "url": "https://www.aldec.com/products/active-hdl/",
+    "category": "development",
+    "tags": [
+      "HDL仿真",
+      "Aldec",
+      "硬件设计",
+      "数字验证"
+    ],
+    "icon": "fas fa-play-circle",
+    "iconColor": "#2E7D32",
+    "popular": false,
+    "type": "software"
+  },
+  {
+    "id": 447,
+    "name": "RazorLeaf",
+    "description": "PCB数据验证和转换工具",
+    "url": "https://www.razorleaf.com/",
+    "category": "development",
+    "tags": [
+      "PCB验证",
+      "数据转换",
+      "质量检查",
+      "EDA工具"
+    ],
+    "icon": "fas fa-check-circle",
+    "iconColor": "#2196F3",
+    "popular": false,
+    "type": "software"
+  },
+  {
+    "id": 448,
+    "name": "Valor",
+    "description": "西门子PCB制造准备和验证软件",
+    "url": "https://eda.sw.siemens.com/en-US/pcb/valor/",
+    "category": "development",
+    "tags": [
+      "PCB制造",
+      "制造验证",
+      "西门子",
+      "DFM"
+    ],
+    "icon": "fas fa-industry",
+    "iconColor": "#009999",
+    "popular": false,
+    "type": "software"
+  },
+  {
+    "id": 449,
+    "name": "CAM350",
+    "description": "PCB制造数据分析和验证工具",
+    "url": "https://www.downstreamtech.com/cam350.html",
+    "category": "development",
+    "tags": [
+      "PCB制造",
+      "CAM",
+      "制造数据分析",
+      "DFM检查"
+    ],
+    "icon": "fas fa-search",
+    "iconColor": "#FF5722",
+    "popular": false,
     "type": "software"
   }
 ]
