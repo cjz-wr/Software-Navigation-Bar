@@ -256,6 +256,8 @@ function getCategoryDisplayName(category) {
         'blog': '技术博客',
         'documentation': '技术文档',
         'social': '社交媒体',
+        'life': '生活',
+        'government': '政府',
         'other': '其他'
     };
     

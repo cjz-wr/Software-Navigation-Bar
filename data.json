@@ -249,7 +249,9 @@
     "icon": "https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png",
     "iconColor": "#175cd3",
     "popular": false,
-    "tags": []
+    "tags": [
+      "搜索"
+    ]
   },
   {
     "id": 17,
@@ -265,5 +267,581 @@
       "工具",
       "办公"
     ]
+  },
+  {
+    "id": 18,
+    "name": "微信",
+    "description": "腾讯推出的即时通讯与社交应用",
+    "url": "https://weixin.qq.com/",
+    "category": "communication",
+    "tags": [
+      "社交",
+      "通讯",
+      "支付"
+    ],
+    "icon": "fab fa-weixin",
+    "iconColor": "#07C160",
+    "popular": true,
+    "type": "software"
+  },
+  {
+    "id": 19,
+    "name": "抖音",
+    "description": "字节跳动旗下短视频分享平台",
+    "url": "https://www.douyin.com/",
+    "category": "media",
+    "tags": [
+      "短视频",
+      "娱乐",
+      "创作"
+    ],
+    "icon": "fas fa-video",
+    "iconColor": "#000000",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 20,
+    "name": "淘宝",
+    "url": "https://www.taobao.com/",
+    "description": "阿里巴巴旗下电子商务平台",
+    "category": "life",
+    "type": "website",
+    "icon": "fas fa-shopping-cart",
+    "iconColor": "#ff4400",
+    "popular": true,
+    "tags": [
+      "购物",
+      "电商",
+      "阿里巴巴"
+    ]
+  },
+  {
+    "id": 21,
+    "name": "京东",
+    "url": "https://www.jd.com/",
+    "description": "自营式电商平台，正品保障物流快",
+    "category": "life",
+    "type": "website",
+    "icon": "fas fa-box",
+    "iconColor": "#e31436",
+    "popular": true,
+    "tags": [
+      "购物",
+      "电商",
+      "物流"
+    ]
+  },
+  {
+    "id": 22,
+    "name": "网易云音乐",
+    "description": "音乐社区与流媒体服务平台",
+    "url": "https://music.163.com/",
+    "category": "media",
+    "tags": [
+      "音乐",
+      "社区",
+      "歌单"
+    ],
+    "icon": "fas fa-music",
+    "iconColor": "#E41E1E",
+    "popular": true,
+    "type": "software"
+  },
+  {
+    "id": 23,
+    "name": "微博",
+    "description": "新浪推出的社交媒体平台",
+    "url": "https://weibo.com/",
+    "category": "social",
+    "tags": [
+      "社交",
+      "热搜",
+      "资讯"
+    ],
+    "icon": "fab fa-weibo",
+    "iconColor": "#DF2029",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 24,
+    "name": "语雀",
+    "description": "蚂蚁集团推出的文档与知识库协作平台",
+    "url": "https://www.yuque.com/",
+    "category": "productivity",
+    "tags": [
+      "文档",
+      "知识库",
+      "协作"
+    ],
+    "icon": "fas fa-feather-alt",
+    "iconColor": "#00C853",
+    "popular": false,
+    "type": "website"
+  },
+  {
+    "id": 25,
+    "name": "飞书",
+    "description": "字节跳动推出的企业协作与管理平台",
+    "url": "https://www.feishu.cn/",
+    "category": "communication",
+    "tags": [
+      "协作",
+      "办公",
+      "企业"
+    ],
+    "icon": "fas fa-comments",
+    "iconColor": "#00B2FF",
+    "popular": true,
+    "type": "software"
+  },
+  {
+    "id": 26,
+    "name": "ProcessOn",
+    "description": "在线作图工具，支持流程图、思维导图等",
+    "url": "https://www.processon.com/",
+    "category": "design",
+    "tags": [
+      "作图",
+      "流程图",
+      "在线工具"
+    ],
+    "icon": "fas fa-project-diagram",
+    "iconColor": "#5C6BC0",
+    "popular": false,
+    "type": "website"
+  },
+  {
+    "id": 27,
+    "name": "V2EX",
+    "description": "创意工作者社区，技术、设计与生活讨论",
+    "url": "https://www.v2ex.com/",
+    "category": "social",
+    "tags": [
+      "技术社区",
+      "创意",
+      "讨论"
+    ],
+    "icon": "fas fa-comment-dots",
+    "iconColor": "#333333",
+    "popular": false,
+    "type": "website"
+  },
+  {
+    "id": 28,
+    "name": "豆瓣",
+    "description": "书影音评论与兴趣社区",
+    "url": "https://www.douban.com/",
+    "category": "social",
+    "tags": [
+      "电影",
+      "读书",
+      "音乐"
+    ],
+    "icon": "fas fa-star",
+    "iconColor": "#2E963D",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 29,
+    "name": "CSDN",
+    "description": "中文IT技术社区与博客平台",
+    "url": "https://www.csdn.net/",
+    "category": "blog",
+    "tags": [
+      "技术博客",
+      "IT",
+      "学习"
+    ],
+    "icon": "fas fa-laptop-code",
+    "iconColor": "#FF6600",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 30,
+    "name": "码云",
+    "description": "开源中国推出的代码托管与协作平台",
+    "url": "https://gitee.com/",
+    "category": "development",
+    "tags": [
+      "代码托管",
+      "开源",
+      "Git"
+    ],
+    "icon": "fas fa-code-branch",
+    "iconColor": "#C71D23",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 31,
+    "name": "ProcessOn",
+    "description": "专业的在线作图工具，支持流程图、思维导图、原型设计等，支持实时协作。",
+    "url": "https://www.processon.com/",
+    "category": "design",
+    "tags": [
+      "作图",
+      "思维导图",
+      "设计"
+    ],
+    "icon": "fas fa-project-diagram",
+    "iconColor": "#5C6BC0",
+    "popular": false,
+    "type": "website"
+  },
+  {
+    "id": 32,
+    "name": "快递100",
+    "description": "提供覆盖全网的快递物流查询、寄件比价与智能跟踪服务。",
+    "url": "https://www.kuaidi100.com/",
+    "category": "life",
+    "tags": [
+      "物流",
+      "查询",
+      "寄件"
+    ],
+    "icon": "fas fa-shipping-fast",
+    "iconColor": "#FF9800",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 33,
+    "name": "国家政务服务平台",
+    "description": "全国一体化在线政务服务的总枢纽，可办理跨地区、跨部门的各类政务业务。",
+    "url": "http://gjzwfw.www.gov.cn/",
+    "category": "government",
+    "tags": [
+      "办事",
+      "政务",
+      "一站式"
+    ],
+    "icon": "fas fa-passport",
+    "iconColor": "#0D9E4A",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 34,
+    "name": "美团",
+    "description": "提供外卖、到店餐饮、酒店旅游、电影票等全方位生活服务的超级App网站版。",
+    "url": "https://www.meituan.com/",
+    "category": "life",
+    "tags": [
+      "外卖",
+      "生活服务",
+      "消费"
+    ],
+    "icon": "fas fa-utensils",
+    "iconColor": "#FFC300",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 35,
+    "name": "携程旅行",
+    "description": "全球领先的一站式旅行服务平台，提供机票、酒店、火车票、旅游度假预订。",
+    "url": "https://www.ctrip.com/",
+    "category": "life",
+    "tags": [
+      "旅行",
+      "机票",
+      "酒店"
+    ],
+    "icon": "fas fa-plane",
+    "iconColor": "#2E86C1",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 36,
+    "name": "拼多多",
+    "url": "https://www.pinduoduo.com/",
+    "description": "以社交拼团为核心模式的新电商平台，主打低价和农产品上行。",
+    "category": "life",
+    "type": "website",
+    "icon": "fas fa-users",
+    "iconColor": "#ee1c25",
+    "popular": true,
+    "tags": [
+      "购物",
+      "拼团",
+      "社交电商"
+    ]
+  },
+  {
+    "id": 37,
+    "name": "下厨房",
+    "description": "中文家庭美食社区，提供海量菜谱与详细步骤，是学习烹饪的热门平台。",
+    "url": "https://www.xiachufang.com/",
+    "category": "life",
+    "tags": [
+      "菜谱",
+      "美食",
+      "烹饪"
+    ],
+    "icon": "fas fa-utensil-spoon",
+    "iconColor": "#F06292",
+    "popular": false,
+    "type": "website"
+  },
+  {
+    "id": 38,
+    "name": "什么值得买",
+    "description": "消费决策平台，汇聚全网商品优惠信息、用户评测和购物攻略。",
+    "url": "https://www.smzdm.com/",
+    "category": "life",
+    "tags": [
+      "消费",
+      "优惠",
+      "评测"
+    ],
+    "icon": "fas fa-tags",
+    "iconColor": "#E53935",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 39,
+    "name": "开源中国",
+    "description": "国内知名的开源技术社区，提供代码托管、资讯、博客和技术问答服务。",
+    "url": "https://www.oschina.net/",
+    "category": "development",
+    "tags": [
+      "开源",
+      "社区",
+      "技术"
+    ],
+    "icon": "fab fa-osi",
+    "iconColor": "#21B351",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 40,
+    "name": "码云 Gitee",
+    "description": "基于Git的国内代码托管与协作开发平台，提供本土化的云端软件开发服务。",
+    "url": "https://gitee.com/",
+    "category": "development",
+    "tags": [
+      "代码托管",
+      "Git",
+      "协作"
+    ],
+    "icon": "fas fa-code-branch",
+    "iconColor": "#C71D23",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 41,
+    "name": "阿里云",
+    "description": "全球领先的云计算及人工智能科技公司，提供云服务器、数据库、大数据等全方位服务。",
+    "url": "https://www.aliyun.com/",
+    "category": "development",
+    "tags": [
+      "云计算",
+      "服务器",
+      "AI"
+    ],
+    "icon": "fas fa-cloud",
+    "iconColor": "#FF6A00",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 42,
+    "name": "腾讯云",
+    "description": "腾讯集团倾力打造的云计算品牌，提供稳定安全的云服务器、云数据库等产品。",
+    "url": "https://cloud.tencent.com/",
+    "category": "development",
+    "tags": [
+      "云计算",
+      "服务器",
+      "安全"
+    ],
+    "icon": "fas fa-cloud",
+    "iconColor": "#1E6BFF",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 43,
+    "name": "InfoQ 中文站",
+    "description": "促进软件开发领域知识与创新的国际社区，专注于前沿技术实践分享。",
+    "url": "https://www.infoq.cn/",
+    "category": "development",
+    "tags": [
+      "架构",
+      "前沿",
+      "社区"
+    ],
+    "icon": "fas fa-microchip",
+    "iconColor": "#17A2B8",
+    "popular": false,
+    "type": "website"
+  },
+  {
+    "id": 44,
+    "name": "稿定设计",
+    "description": "在线图片编辑和设计平台，提供海量模板，可快速制作海报、公众号配图等。",
+    "url": "https://www.gaoding.com/",
+    "category": "design",
+    "tags": [
+      "作图",
+      "模板",
+      "在线编辑"
+    ],
+    "icon": "fas fa-palette",
+    "iconColor": "#6A5ACD",
+    "popular": false,
+    "type": "website"
+  },
+  {
+    "id": 45,
+    "name": "花瓣网",
+    "description": "设计师寻找灵感、收藏和分享优秀设计作品的图片素材库与社区。",
+    "url": "https://huaban.com/",
+    "category": "design",
+    "tags": [
+      "灵感",
+      "素材",
+      "采集"
+    ],
+    "icon": "fab fa-pagelines",
+    "iconColor": "#E94C6F",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 46,
+    "name": "QQ",
+    "description": "腾讯公司推出的即时通信软件，支持在线聊天、视频通话、文件传输及丰富的社交功能。",
+    "url": "https://im.qq.com/",
+    "category": "communication",
+    "tags": [
+      "社交",
+      "即时通讯",
+      "腾讯"
+    ],
+    "icon": "fab fa-qq",
+    "iconColor": "#12B7F5",
+    "popular": true,
+    "type": "software"
+  },
+  {
+    "id": 47,
+    "name": "QQ邮箱",
+    "description": "腾讯提供的免费电子邮件服务，与QQ号绑定，提供超大容量和稳定的邮件服务。",
+    "url": "https://mail.qq.com/",
+    "category": "communication",
+    "tags": [
+      "邮箱",
+      "腾讯",
+      "免费"
+    ],
+    "icon": "fas fa-envelope",
+    "iconColor": "#12B7F5",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 48,
+    "name": "Foxmail",
+    "description": "腾讯旗下的电子邮件客户端软件，也提供 foxmail.com 后缀的免费邮箱服务。",
+    "url": "https://www.foxmail.com/",
+    "category": "communication",
+    "tags": [
+      "邮箱",
+      "客户端",
+      "腾讯"
+    ],
+    "icon": "fas fa-envelope-open-text",
+    "iconColor": "#FF6600",
+    "popular": false,
+    "type": "software"
+  },
+  {
+    "id": 49,
+    "name": "163网易免费邮",
+    "description": "网易公司运营的经典免费邮箱，以稳定、安全、反垃圾邮件能力强著称。",
+    "url": "https://mail.163.com/",
+    "category": "communication",
+    "tags": [
+      "邮箱",
+      "网易",
+      "免费"
+    ],
+    "icon": "fas fa-envelope-square",
+    "iconColor": "#E60012",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 50,
+    "name": "126网易免费邮",
+    "description": "网易公司提供的另一款免费电子邮箱，界面简洁，是163邮箱的兄弟品牌。",
+    "url": "https://mail.126.com/",
+    "category": "communication",
+    "tags": [
+      "邮箱",
+      "网易",
+      "简洁"
+    ],
+    "icon": "fas fa-envelope-square",
+    "iconColor": "#4682B4",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 51,
+    "name": "阿里云邮箱",
+    "description": "阿里巴巴集团推出的企业级邮箱服务，个人可注册 @aliyun.com 后缀的免费邮箱。",
+    "url": "https://mail.aliyun.com/",
+    "category": "communication",
+    "tags": [
+      "邮箱",
+      "阿里",
+      "企业级"
+    ],
+    "icon": "fas fa-envelope",
+    "iconColor": "#FF6A00",
+    "popular": false,
+    "type": "website"
+  },
+  {
+    "id": 52,
+    "name": "139邮箱",
+    "description": "中国移动提供的免费邮箱服务，与手机号码深度绑定，支持邮件到达短信提醒。",
+    "url": "https://mail.10086.cn/",
+    "category": "communication",
+    "tags": [
+      "邮箱",
+      "中国移动",
+      "手机号"
+    ],
+    "icon": "fas fa-mobile-alt",
+    "iconColor": "#EA4335",
+    "popular": false,
+    "type": "website"
+  },
+  {
+    "id": 53,
+    "name": "新浪邮箱",
+    "description": "新浪网提供的免费电子邮件服务，用户可注册 @sina.com 等后缀的邮箱。",
+    "url": "https://mail.sina.com.cn/",
+    "category": "communication",
+    "tags": [
+      "邮箱",
+      "新浪",
+      "免费"
+    ],
+    "icon": "fas fa-envelope",
+    "iconColor": "#E6162D",
+    "popular": false,
+    "type": "website"
   }
 ]

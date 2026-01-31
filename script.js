@@ -370,7 +370,9 @@ function getDisplayName(value, type) {
             'cloud': '云服务',
             'blog': '技术博客',
             'documentation': '技术文档',
-            'social': '社交媒体'
+            'social': '社交媒体',
+            'life': '生活',
+            'government': '政府'
         },
         type: {
             'software': '软件',
