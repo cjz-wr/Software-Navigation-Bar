@@ -3,8 +3,178 @@ let softwareData = [];
 let editMode = false;
 let currentEditId = null;
 
+// 分页相关变量
+let currentPage = 1;
+const itemsPerPage = 80;
+let totalPages = 1;
+
 // JSON数据文件路径
 const DATA_URL = 'data.json';
+
+// 检查项目是否已存在（根据name和url判断）
+function isSoftwareExists(name, url, excludeId = null) {
+    return softwareData.some(item => 
+        (item.name.toLowerCase() === name.toLowerCase() || 
+         item.url.toLowerCase() === url.toLowerCase()) && 
+        (excludeId === null || item.id !== excludeId)
+    );
+}
+
+// 获取已存在的项目（根据name或url）
+function getExistingSoftware(name, url) {
+    return softwareData.find(item => 
+        item.name.toLowerCase() === name.toLowerCase() || 
+        item.url.toLowerCase() === url.toLowerCase()
+    );
+}
+
+// 生成唯一ID
+function generateUniqueId() {
+    if (softwareData.length === 0) return 1;
+    
+    const existingIds = new Set(softwareData.map(item => item.id));
+    let newId = Math.max(...softwareData.map(item => item.id)) + 1;
+    
+    // 确保ID是唯一的
+    while (existingIds.has(newId)) {
+        newId++;
+    }
+    return newId;
+}
+
+// 验证URL格式
+function isValidUrl(string) {
+    try {
+        const url = new URL(string);
+        return url.protocol === 'http:' || url.protocol === 'https:';
+    } catch (_) {
+        return false;
+    }
+}
+
+// 验证必需字段
+function validateRequiredFields(item) {
+    const requiredFields = ['name', 'url', 'category', 'type'];
+    const missingFields = [];
+    
+    for (const field of requiredFields) {
+        if (!item[field] || item[field].toString().trim() === '') {
+            missingFields.push(field);
+        }
+    }
+    
+    if (missingFields.length > 0) {
+        throw new Error(`缺少必需字段: ${missingFields.join(', ')}`);
+    }
+    
+    return true;
+}
+
+// 验证数据格式
+function validateDataFormat(item) {
+    // 验证名称
+    if (typeof item.name !== 'string' || item.name.trim().length === 0) {
+        throw new Error('名称必须是有效的字符串');
+    }
+    
+    // 验证URL
+    if (typeof item.url !== 'string' || !isValidUrl(item.url)) {
+        throw new Error('URL必须是有效的链接');
+    }
+    
+    // 验证描述（可选）
+    if (item.description && typeof item.description !== 'string') {
+        throw new Error('描述必须是字符串');
+    }
+    
+    // 验证分类
+    if (typeof item.category !== 'string') {
+        throw new Error('分类必须是字符串');
+    }
+    
+    // 验证类型
+    if (!['software', 'website'].includes(item.type)) {
+        throw new Error('类型必须是 "software" 或 "website"');
+    }
+    
+    // 验证标签
+    if (item.tags) {
+        if (!Array.isArray(item.tags)) {
+            throw new Error('标签必须是数组');
+        }
+        for (const tag of item.tags) {
+            if (typeof tag !== 'string') {
+                throw new Error('每个标签必须是字符串');
+            }
+        }
+    }
+    
+    // 验证popular字段
+    if (item.popular !== undefined && typeof item.popular !== 'boolean') {
+        // 尝试转换为布尔值
+        if (typeof item.popular === 'string') {
+            const normalized = item.popular.toLowerCase();
+            if (!['true', 'false', '1', '0'].includes(normalized)) {
+                throw new Error('popular字段必须是布尔值或可转换为布尔值的字符串');
+            }
+        } else if (typeof item.popular === 'number') {
+            if (item.popular !== 0 && item.popular !== 1) {
+                throw new Error('popular字段必须是0或1');
+            }
+        } else {
+            throw new Error('popular字段必须是布尔值');
+        }
+    }
+    
+    return true;
+}
+
+// 清理和标准化数据
+function cleanAndNormalizeData(item, isImport = false) {
+    const cleanedItem = { ...item };
+    
+    // 清理字符串字段
+    cleanedItem.name = cleanedItem.name ? cleanedItem.name.toString().trim() : '';
+    cleanedItem.url = cleanedItem.url ? cleanedItem.url.toString().trim() : '';
+    cleanedItem.description = cleanedItem.description ? cleanedItem.description.toString().trim() : '';
+    cleanedItem.category = cleanedItem.category ? cleanedItem.category.toString().trim() : 'other';
+    cleanedItem.type = cleanedItem.type ? cleanedItem.type.toString().trim() : 'website';
+    
+    // 处理icon和iconColor
+    cleanedItem.icon = cleanedItem.icon ? cleanedItem.icon.toString().trim() : 'fas fa-globe';
+    cleanedItem.iconColor = cleanedItem.iconColor ? cleanedItem.iconColor.toString().trim() : '#000000';
+    
+    // 处理popular字段
+    if (typeof cleanedItem.popular === 'string') {
+        const lower = cleanedItem.popular.toLowerCase();
+        cleanedItem.popular = lower === 'true' || lower === '1';
+    } else if (typeof cleanedItem.popular === 'number') {
+        cleanedItem.popular = cleanedItem.popular === 1;
+    } else if (cleanedItem.popular === undefined) {
+        cleanedItem.popular = false;
+    }
+    
+    // 处理tags
+    if (!cleanedItem.tags || !Array.isArray(cleanedItem.tags)) {
+        cleanedItem.tags = [];
+    } else {
+        // 清理每个标签
+        cleanedItem.tags = cleanedItem.tags
+            .map(tag => tag.toString().trim())
+            .filter(tag => tag.length > 0);
+    }
+    
+    // 如果是导入，确保ID有效
+    if (isImport) {
+        let id = cleanedItem.id;
+        if (!id || typeof id !== 'number' || id <= 0 || !Number.isInteger(id)) {
+            id = generateUniqueId();
+        }
+        cleanedItem.id = id;
+    }
+    
+    return cleanedItem;
+}
 
 // DOM元素
 const softwareTableBody = document.getElementById('softwareTableBody');
@@ -114,10 +284,58 @@ async function loadSoftwareData() {
             throw new Error('数据格式错误：期望一个数组');
         }
         
+        // 验证和清理数据
+        const validatedData = [];
+        const invalidItems = [];
+        
+        for (let i = 0; i < data.length; i++) {
+            try {
+                const item = data[i];
+                
+                // 验证必需字段
+                validateRequiredFields(item);
+                
+                // 验证数据格式
+                validateDataFormat(item);
+                
+                // 清理和标准化数据
+                const cleanedItem = cleanAndNormalizeData(item);
+                
+                // 检查唯一性（在验证后的数据中）
+                const duplicate = validatedData.find(existing => 
+                    existing.name.toLowerCase() === cleanedItem.name.toLowerCase() || 
+                    existing.url.toLowerCase() === cleanedItem.url.toLowerCase()
+                );
+                
+                if (duplicate) {
+                    invalidItems.push({
+                        index: i + 1,
+                        item: cleanedItem.name,
+                        reason: `与"${duplicate.name}"重复（名称或URL相同）`
+                    });
+                    continue;
+                }
+                
+                validatedData.push(cleanedItem);
+            } catch (error) {
+                invalidItems.push({
+                    index: i + 1,
+                    item: data[i]?.name || '未知项目',
+                    reason: error.message
+                });
+            }
+        }
+        
         // 保存软件数据
-        softwareData = data;
+        softwareData = validatedData;
         
         console.log(`成功加载 ${softwareData.length} 个项目数据`);
+        
+        if (invalidItems.length > 0) {
+            console.warn(`${invalidItems.length} 个项目验证失败:`, invalidItems);
+            showNotification(`加载完成，但有 ${invalidItems.length} 个项目验证失败，已跳过`, 'warning');
+        }
+        
         storageStatusEl.textContent = '正常';
         
         // 更新统计信息
@@ -173,12 +391,25 @@ function renderSoftwareTable() {
     
     if (softwareData.length === 0) {
         emptyTableState.style.display = 'flex';
+        // 隐藏分页控件
+        const paginationControls = document.getElementById('paginationControls');
+        if (paginationControls) {
+            paginationControls.style.display = 'none';
+        }
         return;
     }
     
     emptyTableState.style.display = 'none';
     
-    softwareData.forEach((software, index) => {
+    // 计算分页信息
+    totalPages = Math.ceil(softwareData.length / itemsPerPage);
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = Math.min(startIndex + itemsPerPage, softwareData.length);
+    const paginatedData = softwareData.slice(startIndex, endIndex);
+    
+    // 渲染当前页的数据
+    paginatedData.forEach((software, index) => {
+        const actualIndex = startIndex + index;
         const row = document.createElement('tr');
         
         // 生成标签HTML
@@ -194,7 +425,7 @@ function renderSoftwareTable() {
         const iconHTML = getIconHTML(software.icon, software.iconColor || '#2575fc');
         
         row.innerHTML = `
-            <td>${index + 1}</td>
+            <td>${actualIndex + 1}</td>
             <td>
                 <div class="software-icon-cell">
                     ${iconHTML}
@@ -237,6 +468,108 @@ function renderSoftwareTable() {
             deleteSoftware(id);
         });
     });
+    
+    // 渲染分页控件
+    renderPagination();
+}
+
+// 渲染分页控件
+function renderPagination() {
+    const paginationContainer = document.getElementById('paginationContainer');
+    if (!paginationContainer) {
+        // 如果分页容器不存在，创建它
+        createPaginationContainer();
+        return;
+    }
+    
+    // 如果只有一页，隐藏分页控件
+    if (totalPages <= 1) {
+        paginationContainer.style.display = 'none';
+        return;
+    }
+    
+    paginationContainer.style.display = 'block';
+    
+    let paginationHTML = `
+        <div class="pagination-info">
+            显示第 ${(currentPage - 1) * itemsPerPage + 1} - ${Math.min(currentPage * itemsPerPage, softwareData.length)} 条，共 ${softwareData.length} 条记录
+        </div>
+        <div class="pagination-controls">
+    `;
+    
+    // 上一页按钮
+    if (currentPage > 1) {
+        paginationHTML += `<button class="pagination-btn" onclick="changePage(${currentPage - 1})"><i class="fas fa-chevron-left"></i> 上一页</button>`;
+    } else {
+        paginationHTML += `<button class="pagination-btn disabled" disabled><i class="fas fa-chevron-left"></i> 上一页</button>`;
+    }
+    
+    // 页码按钮
+    const maxVisiblePages = 5;
+    let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
+    let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+    
+    // 调整起始页码
+    if (endPage - startPage + 1 < maxVisiblePages) {
+        startPage = Math.max(1, endPage - maxVisiblePages + 1);
+    }
+    
+    // 第一页
+    if (startPage > 1) {
+        paginationHTML += `<button class="pagination-btn ${currentPage === 1 ? 'active' : ''}" onclick="changePage(1)">1</button>`;
+        if (startPage > 2) {
+            paginationHTML += `<span class="pagination-ellipsis">...</span>`;
+        }
+    }
+    
+    // 中间页码
+    for (let i = startPage; i <= endPage; i++) {
+        if (i === currentPage) {
+            paginationHTML += `<button class="pagination-btn active" onclick="changePage(${i})">${i}</button>`;
+        } else {
+            paginationHTML += `<button class="pagination-btn" onclick="changePage(${i})">${i}</button>`;
+        }
+    }
+    
+    // 最后一页
+    if (endPage < totalPages) {
+        if (endPage < totalPages - 1) {
+            paginationHTML += `<span class="pagination-ellipsis">...</span>`;
+        }
+        paginationHTML += `<button class="pagination-btn ${currentPage === totalPages ? 'active' : ''}" onclick="changePage(${totalPages})">${totalPages}</button>`;
+    }
+    
+    // 下一页按钮
+    if (currentPage < totalPages) {
+        paginationHTML += `<button class="pagination-btn" onclick="changePage(${currentPage + 1})">下一页 <i class="fas fa-chevron-right"></i></button>`;
+    } else {
+        paginationHTML += `<button class="pagination-btn disabled" disabled>下一页 <i class="fas fa-chevron-right"></i></button>`;
+    }
+    
+    paginationHTML += '</div>';
+    paginationContainer.innerHTML = paginationHTML;
+}
+
+// 创建分页容器
+function createPaginationContainer() {
+    const tableContainer = document.querySelector('.software-table-container');
+    if (!tableContainer) return;
+    
+    const paginationDiv = document.createElement('div');
+    paginationDiv.id = 'paginationContainer';
+    paginationDiv.className = 'pagination-container';
+    tableContainer.parentNode.insertBefore(paginationDiv, tableContainer.nextSibling);
+}
+
+// 切换页面
+function changePage(page) {
+    if (page < 1 || page > totalPages || page === currentPage) return;
+    
+    currentPage = page;
+    renderSoftwareTable();
+    
+    // 滚动到表格顶部
+    document.querySelector('.software-table-container').scrollIntoView({ behavior: 'smooth' });
 }
 
 // 获取分类显示名称
@@ -258,6 +591,7 @@ function getCategoryDisplayName(category) {
         'social': '社交媒体',
         'life': '生活',
         'government': '政府',
+        'study': '学习',
         'other': '其他'
     };
     
@@ -285,9 +619,8 @@ function openAddSoftwareModal() {
 // 编辑项目
 function editSoftware(id) {
     const software = softwareData.find(item => item.id === id);
-    
     if (!software) {
-        showNotification('未找到要编辑的项目', 'error');
+        showNotification('未找到该项目', 'error');
         return;
     }
     
@@ -301,10 +634,13 @@ function editSoftware(id) {
     softwareUrlInput.value = software.url || '';
     softwareDescInput.value = software.description || '';
     softwareCategoryInput.value = software.category || 'other';
-    softwareTypeInput.value = software.type || 'software'; // 设置类型字段
+    softwareTypeInput.value = software.type || 'software';
     softwareIconInput.value = software.icon || 'fas fa-cube';
     softwareIconColorInput.value = software.iconColor || '#2575fc';
-    softwarePopularInput.checked = software.popular || false;
+    
+    // 改进popular字段处理
+    const normalizedPopular = normalizePopularValue(software.popular);
+    softwarePopularInput.checked = normalizedPopular;
     
     // 处理标签
     if (software.tags && Array.isArray(software.tags)) {
@@ -328,87 +664,63 @@ function handleFormSubmit(event) {
     
     // 获取表单数据
     const formData = {
-        id: editMode ? currentEditId : generateId(),
+        id: editMode ? currentEditId : generateUniqueId(),
         name: softwareNameInput.value.trim(),
         url: softwareUrlInput.value.trim(),
         description: softwareDescInput.value.trim(),
         category: softwareCategoryInput.value,
-        type: softwareTypeInput.value, // 添加类型字段
+        type: softwareTypeInput.value,
         icon: softwareIconInput.value.trim(),
         iconColor: softwareIconColorInput.value,
-        popular: softwarePopularInput.checked,
+        popular: softwarePopularInput.checked, // 直接使用复选框状态
         tags: softwareTagsInput.value.split(',').map(tag => tag.trim()).filter(tag => tag.length > 0)
     };
     
-    // 验证数据
-    if (!formData.name) {
-        showNotification('请输入项目名称', 'error');
-        return;
-    }
-    
-    if (!formData.url) {
-        showNotification('请输入项目链接', 'error');
-        return;
-    }
-    
-    if (!formData.description) {
-        showNotification('请输入项目描述', 'error');
-        return;
-    }
-    
-    if (!formData.category) {
-        showNotification('请选择项目分类', 'error');
-        return;
-    }
-    
-    if (!formData.type) {
-        showNotification('请选择项目类型', 'error');
-        return;
-    }
-    
-    // 验证URL格式
     try {
-        new URL(formData.url);
+        // 验证数据
+        validateRequiredFields(formData);
+        validateDataFormat(formData);
+        
+        if (!isValidUrl(formData.url)) {
+            throw new Error('请输入有效的URL链接（必须以http://或https://开头）');
+        }
+        
+        // 检查项目是否已存在
+        const existingItem = getExistingSoftware(formData.name, formData.url);
+        if (existingItem && (editMode ? existingItem.id !== formData.id : true)) {
+            throw new Error(`项目已存在（现有分类：${getCategoryDisplayName(existingItem.category)}）`);
+        }
+        
+        // 清理和标准化数据
+        const cleanedData = cleanAndNormalizeData(formData);
+        
+        if (editMode) {
+            // 更新现有项目
+            const index = softwareData.findIndex(item => item.id === cleanedData.id);
+            if (index !== -1) {
+                softwareData[index] = cleanedData;
+                showNotification('项目更新成功', 'success');
+            }
+        } else {
+            // 添加新项目
+            softwareData.push(cleanedData);
+            showNotification('项目添加成功', 'success');
+        }
+        
+        // 保存到data.json文件
+        saveToDataFile();
+        
+        // 更新UI
+        updateStats();
+        renderSoftwareTable();
+        
+        // 关闭模态框
+        closeSoftwareModal();
+        
     } catch (error) {
-        showNotification('请输入有效的URL链接', 'error');
+        showNotification(error.message, 'error');
         return;
     }
-    
-    if (editMode) {
-        // 更新现有项目
-        const index = softwareData.findIndex(item => item.id === formData.id);
-        if (index !== -1) {
-            softwareData[index] = formData;
-            showNotification('项目更新成功', 'success');
-        }
-    } else {
-        // 添加新项目
-        softwareData.push(formData);
-        showNotification('项目添加成功', 'success');
-    }
-    
-    // 保存到data.json文件
-    saveToDataFile();
-    
-    // 更新UI
-    updateStats();
-    renderSoftwareTable();
-    
-    // 关闭模态框
-    closeSoftwareModal();
-    
-    // 提示用户需要手动更新data.json文件
-    showNotification('请手动更新 data.json 文件以保存更改', 'info');
-}
-
-// 生成ID
-function generateId() {
-    if (softwareData.length === 0) {
-        return 1;
-    }
-    
-    const maxId = Math.max(...softwareData.map(item => item.id));
-    return maxId + 1;
 }
 
 // 删除软件
@@ -498,40 +810,167 @@ function confirmUploadJson() {
     reader.readAsText(file);
 }
 
-// 处理导入的数据
+// 处理导入的数据（改进版）
 function processImportedData(jsonData) {
     // 验证数据格式
     if (!Array.isArray(jsonData)) {
-        showNotification('导入的数据应该是一个数组', 'error');
+        throw new Error('导入的数据应该是一个JSON数组');
+    }
+    
+    const validItems = [];
+    const duplicateItems = [];
+    const invalidItems = [];
+    const fixedItems = [];
+    
+    // 用于跟踪已使用的ID和URL
+    const existingIds = new Set(softwareData.map(item => item.id));
+    const existingUrls = new Set(softwareData.map(item => item.url.toLowerCase()));
+    const existingNames = new Set(softwareData.map(item => item.name.toLowerCase()));
+    
+    // 用于跟踪导入数据中的ID，避免内部重复
+    const importedIds = new Set();
+    
+    for (let i = 0; i < jsonData.length; i++) {
+        const rawItem = jsonData[i];
+        
+        try {
+            // 验证必需字段
+            validateRequiredFields(rawItem);
+            
+            // 验证数据格式
+            validateDataFormat(rawItem);
+            
+            // 清理和标准化数据
+            const cleanedItem = cleanAndNormalizeData(rawItem, true);
+            
+            // 检查ID唯一性（避免导入数据内部重复）
+            if (importedIds.has(cleanedItem.id)) {
+                // ID重复，生成新ID
+                cleanedItem.id = generateUniqueId();
+                fixedItems.push({
+                    name: cleanedItem.name,
+                    originalId: rawItem.id,
+                    newId: cleanedItem.id,
+                    reason: 'ID重复'
+                });
+            }
+            importedIds.add(cleanedItem.id);
+            
+            // 检查是否合并数据
+            const isMerging = mergeDataCheckbox.checked;
+            
+            if (isMerging) {
+                // 合并模式：检查是否已存在
+                const isDuplicate = softwareData.some(existing => 
+                    existing.name.toLowerCase() === cleanedItem.name.toLowerCase() || 
+                    existing.url.toLowerCase() === cleanedItem.url.toLowerCase()
+                );
+                
+                if (isDuplicate) {
+                    const duplicate = softwareData.find(existing => 
+                        existing.name.toLowerCase() === cleanedItem.name.toLowerCase() || 
+                        existing.url.toLowerCase() === cleanedItem.url.toLowerCase()
+                    );
+                    duplicateItems.push({
+                        name: cleanedItem.name,
+                        reason: duplicate.name === cleanedItem.name ? 
+                            `名称与现有项目"${duplicate.name}"重复` : 
+                            `URL与现有项目"${duplicate.name}"重复`
+                    });
+                    continue;
+                }
+                
+                // 检查ID是否冲突
+                if (existingIds.has(cleanedItem.id)) {
+                    // ID冲突，生成新ID
+                    cleanedItem.id = generateUniqueId();
+                    fixedItems.push({
+                        name: cleanedItem.name,
+                        originalId: rawItem.id,
+                        newId: cleanedItem.id,
+                        reason: '与现有项目ID冲突'
+                    });
+                }
+            }
+            
+            validItems.push(cleanedItem);
+            
+        } catch (error) {
+            invalidItems.push({
+                index: i + 1,
+                name: rawItem.name || '未知项目',
+                reason: error.message
+            });
+        }
+    }
+    
+    // 显示验证结果
+    if (invalidItems.length > 0) {
+        const errorMsg = `${invalidItems.length} 个项目数据无效：\n` + 
+            invalidItems.slice(0, 5).map(item => 
+                `第 ${item.index} 项 "${item.name}": ${item.reason}`
+            ).join('\n');
+        if (invalidItems.length > 5) {
+            errorMsg += `\n... 还有 ${invalidItems.length - 5} 个错误`;
+        }
+        showNotification(errorMsg, 'error');
+    }
+    
+    if (duplicateItems.length > 0) {
+        const duplicateMsg = `${duplicateItems.length} 个重复项目已跳过：\n` + 
+            duplicateItems.slice(0, 5).map(item => 
+                `"${item.name}" (${item.reason})`
+            ).join('\n');
+        if (duplicateItems.length > 5) {
+            duplicateMsg += `\n... 还有 ${duplicateItems.length - 5} 个重复项目`;
+        }
+        showNotification(duplicateMsg, 'warning');
+    }
+    
+    if (fixedItems.length > 0) {
+        const fixedMsg = `${fixedItems.length} 个项目已修复：\n` + 
+            fixedItems.slice(0, 3).map(item => 
+                `"${item.name}": ID ${item.originalId} -> ${item.newId} (${item.reason})`
+            ).join('\n');
+        if (fixedItems.length > 3) {
+            fixedMsg += `\n... 还有 ${fixedItems.length - 3} 个项目已修复`;
+        }
+        showNotification(fixedMsg, 'info');
+    }
+    
+    if (validItems.length === 0) {
+        const totalFailed = invalidItems.length + duplicateItems.length;
+        showNotification(`导入失败：所有 ${totalFailed} 个项目都无法导入`, 'error');
         return;
     }
     
-    // 验证每个对象
-    for (let i = 0; i < jsonData.length; i++) {
-        const item = jsonData[i];
-        if (!item.name || !item.url || !item.category) {
-            showNotification(`第 ${i + 1} 个项目缺少必要字段 (name, url 或 category)`, 'error');
-            return;
+    // 处理数据合并或替换
+    let importMessage = '';
+    if (mergeDataCheckbox.checked && softwareData.length > 0) {
+        // 合并数据
+        softwareData = softwareData.concat(validItems);
+        importMessage = `成功导入 ${validItems.length} 个项目（合并数据）`;
+    } else {
+        // 替换数据
+        softwareData = validItems;
+        importMessage = `成功导入 ${validItems.length} 个项目（替换数据）`;
+    }
+    
+    // 添加统计信息
+    if (invalidItems.length > 0 || duplicateItems.length > 0 || fixedItems.length > 0) {
+        importMessage += `\n处理详情：`;
+        if (invalidItems.length > 0) {
+            importMessage += ` ${invalidItems.length} 个无效`;
         }
-        
-        // 确保有ID
-        if (!item.id) {
-            item.id = generateId();
+        if (duplicateItems.length > 0) {
+            importMessage += ` ${duplicateItems.length} 个重复`;
+        }
+        if (fixedItems.length > 0) {
+            importMessage += ` ${fixedItems.length} 个已修复`;
         }
     }
     
-    // 处理数据合并或替换
-    if (mergeDataCheckbox.checked && softwareData.length > 0) {
-        // 合并数据
-        const existingIds = new Set(softwareData.map(item => item.id));
-        const newItems = jsonData.filter(item => !existingIds.has(item.id));
-        softwareData = softwareData.concat(newItems);
-        showNotification(`成功导入 ${newItems.length} 个项目（合并数据）`, 'success');
-    } else {
-        // 替换数据
-        softwareData = jsonData;
-        showNotification(`成功导入 ${jsonData.length} 个项目（替换数据）`, 'success');
-    }
+    showNotification(importMessage, 'success');
     
     // 保存到data.json文件
     saveToDataFile();
@@ -542,9 +981,6 @@ function processImportedData(jsonData) {
     
     // 关闭模态框
     closeImportModalFunc();
-    
-    // 提示用户需要手动更新data.json文件
-    showNotification('请手动更新 data.json 文件以保存更改', 'info');
 }
 
 // 导出JSON文件
@@ -645,15 +1081,21 @@ function showNotification(message, type = 'info') {
 // 获取图标HTML（支持URL和类名）
 function getIconHTML(iconValue, backgroundColor) {
     if (!iconValue) {
-        iconValue = 'fas fa-cube';
-        backgroundColor = '#2575fc';
+        iconValue = 'fas fa-globe';
+        backgroundColor = backgroundColor || '#2575fc';
     }
     
-    // 判断是否为URL（简单判断是否包含http或https）
-    if (iconValue.startsWith('http://') || iconValue.startsWith('https://')) {
+    // 处理可能的null或undefined
+    backgroundColor = backgroundColor || '#2575fc';
+    
+    // 判断是否为URL
+    if (typeof iconValue === 'string' && 
+        (iconValue.startsWith('http://') || iconValue.startsWith('https://'))) {
         return `
             <div class="table-icon table-icon-image" style="background-color: ${backgroundColor}">
-                <img src="${iconValue}" alt="图标" onerror="this.style.display='none';this.parentElement.innerHTML='<i class=\'fas fa-image\'></i>'">
+                <img src="${iconValue}" alt="图标" 
+                     onerror="this.onerror=null; this.style.display='none';
+                              this.parentElement.innerHTML='<i class=\"fas fa-image\"></i>'">
             </div>
         `;
     } else {
@@ -664,4 +1106,22 @@ function getIconHTML(iconValue, backgroundColor) {
             </div>
         `;
     }
+}
+
+// 标准化popular字段值
+function normalizePopularValue(value) {
+    if (typeof value === 'boolean') {
+        return value;
+    }
+    if (typeof value === 'string') {
+        return value.toLowerCase() === 'true';
+    }
+    if (value === 1 || value === '1') {
+        return true;
+    }
+    if (value === 0 || value === '0') {
+        return false;
+    }
+    // 默认返回false
+    return false;
 }

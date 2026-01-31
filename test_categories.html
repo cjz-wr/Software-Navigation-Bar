@@ -34,9 +34,10 @@
         <option value="social">社交媒体</option>
         <option value="life">生活</option>
         <option value="government">政府</option>
+        <option value="study">学习</option>
         <option value="other">其他</option>
     </select>
-    <p>✅ 新增的"生活"和"政府"分类已成功添加到下拉菜单中</p>
+    <p>✅ 新增的"生活"、"政府"和"学习"分类已成功添加到下拉菜单中</p>
 
     <h2>2. 分类显示名称测试</h2>
     <div id="displayNameTest"></div>
@@ -61,6 +62,7 @@
                 'social': '社交媒体',
                 'life': '生活',
                 'government': '政府',
+                'study': '学习',
                 'other': '其他'
             };
             
@@ -68,7 +70,7 @@
         }
 
         // 测试分类显示名称
-        const testCategories = ['life', 'government', 'browser', 'development'];
+        const testCategories = ['life', 'government', 'study', 'browser', 'development'];
         const displayNameTest = document.getElementById('displayNameTest');
         
         testCategories.forEach(cat => {
@@ -82,11 +84,12 @@
         const selectElement = document.getElementById('testCategorySelect');
         const lifeOption = selectElement.querySelector('option[value="life"]');
         const govOption = selectElement.querySelector('option[value="government"]');
+        const studyOption = selectElement.querySelector('option[value="study"]');
         
-        if (lifeOption && govOption) {
+        if (lifeOption && govOption && studyOption) {
             const successDiv = document.createElement('div');
             successDiv.className = 'test-result success';
-            successDiv.innerHTML = '✅ 成功验证："生活"和"政府"分类选项已正确添加';
+            successDiv.innerHTML = '✅ 成功验证："生活"、"政府"和"学习"分类选项已正确添加';
             document.body.appendChild(successDiv);
         } else {
             const errorDiv = document.createElement('div');

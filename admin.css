@@ -271,12 +271,17 @@ header {
     border-radius: 12px;
     font-size: 12px;
     color: #475569;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
+/* 确保标签容器不导致换行 */
 .software-tags-cell {
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
+    min-width: 100px;
 }
 
 .tag {
@@ -573,6 +578,83 @@ label {
     color: #64748b;
     margin-bottom: 20px;
     max-width: 500px;
+}
+
+/* 分页控件样式 */
+.pagination-container {
+    margin: 20px 0;
+    padding: 15px 0;
+    border-top: 1px solid #e2e8f0;
+}
+
+.pagination-info {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #64748b;
+    font-size: 14px;
+}
+
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.pagination-btn {
+    padding: 8px 12px;
+    border: 1px solid #cbd5e1;
+    background-color: white;
+    color: #334155;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    min-width: 40px;
+    text-align: center;
+}
+
+.pagination-btn:hover:not(.disabled) {
+    background-color: #f1f5f9;
+    border-color: #94a3b8;
+    color: #0f172a;
+}
+
+.pagination-btn.active {
+    background-color: #2575fc;
+    border-color: #2575fc;
+    color: white;
+}
+
+.pagination-btn.disabled {
+    background-color: #f8fafc;
+    border-color: #e2e8f0;
+    color: #94a3b8;
+    cursor: not-allowed;
+}
+
+.pagination-ellipsis {
+    padding: 8px 4px;
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+/* 响应式分页 */
+@media (max-width: 768px) {
+    .pagination-controls {
+        gap: 4px;
+    }
+    
+    .pagination-btn {
+        padding: 6px 10px;
+        font-size: 13px;
+        min-width: 36px;
+    }
+    
+    .pagination-info {
+        font-size: 13px;
+    }
 }
 
 /* 响应式设计 */

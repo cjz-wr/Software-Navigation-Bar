@@ -66,18 +66,18 @@
   {
     "id": 5,
     "name": "Zoom",
-    "url": "https://zoom.us/",
     "description": "视频会议软件，支持在线会议和屏幕共享",
+    "url": "https://zoom.us/",
     "category": "communication",
-    "type": "software",
-    "icon": "fas fa-video",
-    "iconColor": "#2d8cff",
-    "popular": false,
     "tags": [
       "视频会议",
       "通讯",
       "远程办公"
-    ]
+    ],
+    "icon": "fas fa-video",
+    "iconColor": "#2D8CFF",
+    "popular": true,
+    "type": "software"
   },
   {
     "id": 6,
@@ -243,33 +243,30 @@
     "id": 16,
     "name": "百度",
     "url": "https://www.baidu.com/",
-    "description": "百度搜索，中文搜索引擎",
+    "description": "百度",
     "category": "browser",
     "type": "website",
     "icon": "https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png",
     "iconColor": "#175cd3",
     "popular": false,
     "tags": [
-      "搜索",
-      "引擎",
-      "中文"
+      "搜索"
     ]
   },
   {
     "id": 17,
     "name": "WPS",
-    "description": "WPS是一款由中国金山办公软件公司开发的综合办公套件，主要用于处理文档、表格和演示文稿",
     "url": "https://platform.wps.cn/",
+    "description": "WPS是一款由中国金山办公软件公司开发的综合办公套件，主要用于处理文档、表格和演示文稿",
     "category": "productivity",
-    "tags": [
-      "工具",
-      "办公",
-      "文档处理"
-    ],
+    "type": "software",
     "icon": "https://platform.wps.cn/assets/model1-logo-217669f7.svg",
     "iconColor": "#ffffff",
     "popular": true,
-    "type": "software"
+    "tags": [
+      "工具",
+      "办公"
+    ]
   },
   {
     "id": 18,
@@ -306,34 +303,34 @@
   {
     "id": 20,
     "name": "淘宝",
-    "description": "阿里巴巴旗下电子商务平台",
     "url": "https://www.taobao.com/",
+    "description": "阿里巴巴旗下电子商务平台",
     "category": "life",
+    "type": "website",
+    "icon": "fas fa-shopping-cart",
+    "iconColor": "#ff4400",
+    "popular": true,
     "tags": [
       "购物",
       "电商",
       "阿里巴巴"
-    ],
-    "icon": "fas fa-shopping-cart",
-    "iconColor": "#ff4400",
-    "popular": true,
-    "type": "website"
+    ]
   },
   {
     "id": 21,
     "name": "京东",
-    "description": "自营式电商平台，正品保障物流快",
     "url": "https://www.jd.com/",
+    "description": "自营式电商平台，正品保障物流快",
     "category": "life",
+    "type": "website",
+    "icon": "fas fa-box",
+    "iconColor": "#e31436",
+    "popular": true,
     "tags": [
       "购物",
       "电商",
       "物流"
-    ],
-    "icon": "fas fa-box",
-    "iconColor": "#e31436",
-    "popular": true,
-    "type": "website"
+    ]
   },
   {
     "id": 22,
@@ -466,18 +463,34 @@
   {
     "id": 30,
     "name": "码云",
-    "url": "https://gitee.com/",
     "description": "开源中国推出的代码托管与协作平台",
-    "category": "documentation",
-    "type": "website",
-    "icon": "fas fa-code-branch",
-    "iconColor": "#c71d23",
-    "popular": true,
+    "url": "https://gitee.com/",
+    "category": "development",
     "tags": [
       "代码托管",
       "开源",
       "Git"
-    ]
+    ],
+    "icon": "fas fa-code-branch",
+    "iconColor": "#C71D23",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 31,
+    "name": "ProcessOn",
+    "description": "专业的在线作图工具，支持流程图、思维导图、原型设计等，支持实时协作。",
+    "url": "https://www.processon.com/",
+    "category": "design",
+    "tags": [
+      "作图",
+      "思维导图",
+      "设计"
+    ],
+    "icon": "fas fa-project-diagram",
+    "iconColor": "#5C6BC0",
+    "popular": false,
+    "type": "website"
   },
   {
     "id": 32,
@@ -498,18 +511,18 @@
   {
     "id": 33,
     "name": "国家政务服务平台",
-    "url": "http://gjzwfw.www.gov.cn/",
     "description": "全国一体化在线政务服务的总枢纽，可办理跨地区、跨部门的各类政务业务。",
+    "url": "http://gjzwfw.www.gov.cn/",
     "category": "government",
-    "type": "website",
-    "icon": "fas fa-passport",
-    "iconColor": "#0d9e4a",
-    "popular": false,
     "tags": [
       "办事",
       "政务",
       "一站式"
-    ]
+    ],
+    "icon": "fas fa-passport",
+    "iconColor": "#0D9E4A",
+    "popular": true,
+    "type": "website"
   },
   {
     "id": 34,
@@ -546,18 +559,18 @@
   {
     "id": 36,
     "name": "拼多多",
-    "description": "以社交拼团为核心模式的新电商平台，主打低价和农产品上行。",
     "url": "https://www.pinduoduo.com/",
+    "description": "以社交拼团为核心模式的新电商平台，主打低价和农产品上行。",
     "category": "life",
+    "type": "website",
+    "icon": "fas fa-users",
+    "iconColor": "#ee1c25",
+    "popular": true,
     "tags": [
       "购物",
       "拼团",
       "社交电商"
-    ],
-    "icon": "fas fa-users",
-    "iconColor": "#ee1c25",
-    "popular": true,
-    "type": "website"
+    ]
   },
   {
     "id": 37,
@@ -604,6 +617,22 @@
     ],
     "icon": "fab fa-osi",
     "iconColor": "#21B351",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 40,
+    "name": "码云 Gitee",
+    "description": "基于Git的国内代码托管与协作开发平台，提供本土化的云端软件开发服务。",
+    "url": "https://gitee.com/",
+    "category": "development",
+    "tags": [
+      "代码托管",
+      "Git",
+      "协作"
+    ],
+    "icon": "fas fa-code-branch",
+    "iconColor": "#C71D23",
     "popular": true,
     "type": "website"
   },
@@ -850,34 +879,34 @@
   {
     "id": 56,
     "name": "剪映",
-    "description": "字节跳动推出的视频剪辑工具，支持手机端与电脑端，操作简单功能强大",
     "url": "https://www.capcut.cn/",
+    "description": "字节跳动推出的视频剪辑工具，支持手机端与电脑端，操作简单功能强大",
     "category": "design",
+    "type": "software",
+    "icon": "fas fa-film",
+    "iconColor": "#ff2d55",
+    "popular": true,
     "tags": [
       "视频剪辑",
       "创作",
       "模板"
-    ],
-    "icon": "fas fa-film",
-    "iconColor": "#ff2d55",
-    "popular": true,
-    "type": "software"
+    ]
   },
   {
     "id": 57,
     "name": "中国大学MOOC",
-    "description": "国家精品课程在线学习平台，涵盖各学科免费课程资源",
     "url": "https://www.icourse163.org/",
+    "description": "国家精品课程在线学习平台，涵盖各学科免费课程资源",
     "category": "study",
+    "type": "website",
+    "icon": "fas fa-graduation-cap",
+    "iconColor": "#ff6a00",
+    "popular": true,
     "tags": [
       "学习",
       "课程",
       "慕课"
-    ],
-    "icon": "fas fa-graduation-cap",
-    "iconColor": "#ff6a00",
-    "popular": true,
-    "type": "website"
+    ]
   },
   {
     "id": 58,
@@ -896,7 +925,7 @@
     "type": "website"
   },
   {
-    "id": 59,
+    "id": 60,
     "name": "印象笔记",
     "description": "跨平台笔记应用，支持笔记整理、网页剪藏与团队协作",
     "url": "https://www.yinxiang.com/",
@@ -912,39 +941,39 @@
     "type": "software"
   },
   {
-    "id": 60,
+    "id": 61,
     "name": "Keep",
-    "description": "健身与运动社区，提供训练课程、跑步记录与健康指导",
     "url": "https://www.gotokeep.com/",
+    "description": "健身与运动社区，提供训练课程、跑步记录与健康指导",
     "category": "life",
+    "type": "software",
+    "icon": "fas fa-running",
+    "iconColor": "#21c45d",
+    "popular": false,
     "tags": [
       "健身",
       "运动",
       "健康"
-    ],
-    "icon": "fas fa-running",
-    "iconColor": "#21c45d",
-    "popular": false,
-    "type": "software"
+    ]
   },
   {
-    "id": 61,
+    "id": 62,
     "name": "Udemy",
-    "description": "全球在线学习平台，涵盖编程、设计、商业等海量课程",
     "url": "https://www.udemy.com/",
+    "description": "全球在线学习平台，涵盖编程、设计、商业等海量课程",
     "category": "study",
+    "type": "website",
+    "icon": "fas fa-chalkboard-teacher",
+    "iconColor": "#a435f0",
+    "popular": false,
     "tags": [
       "课程",
       "学习",
       "技能提升"
-    ],
-    "icon": "fas fa-chalkboard-teacher",
-    "iconColor": "#a435f0",
-    "popular": false,
-    "type": "website"
+    ]
   },
   {
-    "id": 62,
+    "id": 70,
     "name": "腾讯会议",
     "description": "高清云视频会议服务，支持屏幕共享、录制、虚拟背景等企业级功能",
     "url": "https://meeting.tencent.com/",
@@ -960,7 +989,7 @@
     "type": "software"
   },
   {
-    "id": 63,
+    "id": 71,
     "name": "Miro",
     "description": "在线白板平台，用于头脑风暴、流程图绘制、敏捷开发与远程团队可视化协作",
     "url": "https://miro.com/",
@@ -976,7 +1005,7 @@
     "type": "website"
   },
   {
-    "id": 64,
+    "id": 54,
     "name": "Obsidian",
     "description": "基于Markdown的本地优先知识管理与笔记应用，支持双向链接和知识图谱",
     "url": "https://obsidian.md/",
@@ -992,23 +1021,23 @@
     "type": "software"
   },
   {
-    "id": 65,
+    "id": 56,
     "name": "Trello",
-    "url": "https://trello.com/",
     "description": "看板式的项目管理工具，帮助团队组织任务和追踪项目进度",
+    "url": "https://trello.com/",
     "category": "productivity",
-    "type": "website",
-    "icon": "fas fa-list-alt",
-    "iconColor": "#006bff",
-    "popular": false,
     "tags": [
       "项目管理",
       "任务",
       "团队协作"
-    ]
+    ],
+    "icon": "fas fa-list-alt",
+    "iconColor": "#006BFF",
+    "popular": true,
+    "type": "website"
   },
   {
-    "id": 66,
+    "id": 57,
     "name": "小红书",
     "description": "生活方式分享平台，用户分享购物心得、旅行攻略、美妆护肤等内容",
     "url": "https://www.xiaohongshu.com/",
@@ -1024,466 +1053,50 @@
     "type": "website"
   },
   {
-    "id": 67,
+    "id": 58,
     "name": "墨刀",
-    "url": "https://modao.cc/",
     "description": "国内专业的原型设计与协同工具，支持产品设计、交互演示和团队评审",
+    "url": "https://modao.cc/",
     "category": "design",
-    "type": "website",
-    "icon": "fas fa-drafting-compass",
-    "iconColor": "#00c98d",
-    "popular": false,
     "tags": [
       "原型设计",
       "UI设计",
       "协作"
-    ]
+    ],
+    "icon": "fas fa-drafting-compass",
+    "iconColor": "#00C98D",
+    "popular": true,
+    "type": "website"
   },
   {
-    "id": 68,
+    "id": 61,
     "name": "Postman",
-    "url": "https://www.postman.com/",
     "description": "API开发协作平台，用于构建、测试和文档化API",
+    "url": "https://www.postman.com/",
     "category": "development",
-    "type": "software",
-    "icon": "fas fa-satellite-dish",
-    "iconColor": "#ff6c37",
-    "popular": false,
     "tags": [
       "API",
       "开发",
       "测试"
-    ]
+    ],
+    "icon": "fas fa-satellite-dish",
+    "iconColor": "#FF6C37",
+    "popular": true,
+    "type": "software"
   },
   {
-    "id": 69,
+    "id": 62,
     "name": "Xmind",
-    "url": "https://www.xmind.cn/",
     "description": "思维导图软件，帮助用户组织信息、激发创意和提高效率",
+    "url": "https://www.xmind.cn/",
     "category": "productivity",
-    "type": "software",
-    "icon": "fas fa-sitemap",
-    "iconColor": "#2ea9df",
-    "popular": false,
     "tags": [
       "思维导图",
       "效率",
       "学习"
-    ]
-  },
-  {
-    "id": 75,
-    "name": "滴滴出行",
-    "description": "智能出行服务平台，提供快车、专车、顺风车、代驾及共享单车等全场景交通解决方案",
-    "url": "https://www.didichuxing.com/",
-    "category": "life",
-    "tags": [
-      "出行",
-      "打车",
-      "交通"
     ],
-    "icon": "fas fa-taxi",
-    "iconColor": "#FF6600",
-    "popular": true,
-    "type": "software"
-  },
-  {
-    "id": 78,
-    "name": "石墨文档",
-    "description": "云端协作文档工具，支持多人实时编辑文字、表格、幻灯片，企业级权限与安全管控",
-    "url": "https://shimo.im/",
-    "category": "productivity",
-    "tags": [
-      "文档",
-      "协作",
-      "办公"
-    ],
-    "icon": "fas fa-file-contract",
-    "iconColor": "#3E7BFA",
-    "popular": true,
-    "type": "website"
-  },
-  {
-    "id": 80,
-    "name": "薄荷健康",
-    "url": "https://www.boohee.com/",
-    "description": "专业健康管理平台，提供食物热量库、个性化减肥计划、运动记录与营养分析服务",
-    "category": "life",
-    "type": "software",
-    "icon": "fas fa-apple-alt",
-    "iconColor": "#4caf50",
-    "popular": true,
-    "tags": [
-      "健康",
-      "减肥",
-      "饮食"
-    ]
-  },
-  {
-    "id": 81,
-    "name": "支付宝",
-    "url": "https://www.alipay.com/",
-    "description": "数字生活开放平台，集成支付、理财、保险、城市服务、公益及小程序生态",
-    "category": "life",
-    "type": "software",
-    "icon": "fab fa-alipay",
-    "iconColor": "#1677ff",
-    "popular": true,
-    "tags": [
-      "支付",
-      "理财",
-      "生活服务"
-    ]
-  },
-  {
-    "id": 83,
-    "name": "爱奇艺",
-    "url": "https://www.iqiyi.com/",
-    "description": "综合视频娱乐平台，提供海量影视内容、自制剧、综艺、动漫及高清会员服务",
-    "category": "media",
-    "type": "website",
-    "icon": "fas fa-film",
-    "iconColor": "#e62129",
-    "popular": true,
-    "tags": [
-      "视频",
-      "影视",
-      "会员"
-    ]
-  },
-  {
-    "id": 88,
-    "name": "高德地图",
-    "description": "精准导航与位置服务平台，提供实时路况、公交查询、打车聚合及AR步行导航",
-    "url": "https://www.amap.com/",
-    "category": "life",
-    "tags": [
-      "地图",
-      "导航",
-      "出行"
-    ],
-    "icon": "fas fa-map-marker-alt",
-    "iconColor": "#2486FF",
-    "popular": true,
-    "type": "software"
-  },
-  {
-    "id": 89,
-    "name": "有道词典",
-    "url": "https://www.youdao.com/",
-    "description": "权威语言学习工具，支持多语种翻译、拍照查词、AI作文批改与听力训练",
-    "category": "study",
-    "type": "software",
-    "icon": "fas fa-language",
-    "iconColor": "#ff6600",
-    "popular": true,
-    "tags": [
-      "词典",
-      "翻译",
-      "学习"
-    ]
-  },
-  {
-    "id": 90,
-    "name": "金山文档",
-    "url": "https://www.kdocs.cn/",
-    "description": "WPS旗下云端协作文档工具，无缝兼容Office格式，支持表单、流程图与PDF处理",
-    "category": "productivity",
-    "type": "website",
-    "icon": "fas fa-file-word",
-    "iconColor": "#29a2ff",
-    "popular": false,
-    "tags": [
-      "文档",
-      "Office",
-      "协作"
-    ]
-  },
-  {
-    "id": 92,
-    "name": "通义千问",
-    "description": "阿里巴巴推出的超大规模语言模型，支持多轮对话、代码写作、文档解析与AI绘画",
-    "url": "https://tongyi.aliyun.com/",
-    "category": "ai",
-    "tags": [
-      "大模型",
-      "AI",
-      "智能助手"
-    ],
-    "icon": "fas fa-robot",
-    "iconColor": "#1677FF",
-    "popular": true,
-    "type": "website"
-  },
-  {
-    "id": 93,
-    "name": "中国知网",
-    "url": "https://www.cnki.net/",
-    "description": "国家级学术资源平台，收录期刊论文、博硕士论文、会议文献与工具书数据库",
-    "category": "study",
-    "type": "website",
-    "icon": "fas fa-book",
-    "iconColor": "#c00000",
-    "popular": false,
-    "tags": [
-      "学术",
-      "论文",
-      "文献"
-    ]
-  },
-  {
-    "id": 94,
-    "name": "今日头条",
-    "url": "https://www.toutiao.com/",
-    "description": "智能信息推荐平台，基于算法精准推送新闻、视频、微头条等个性化内容",
-    "category": "life",
-    "type": "website",
-    "icon": "fas fa-newspaper",
-    "iconColor": "#ff8c00",
-    "popular": true,
-    "tags": [
-      "新闻",
-      "资讯",
-      "推荐算法"
-    ]
-  },
-  {
-    "id": 97,
-    "name": "大众点评",
-    "description": "本地生活消费决策平台，提供餐厅/美容/休闲等真实用户评价与优惠团购",
-    "url": "https://www.dianping.com/",
-    "category": "life",
-    "tags": [
-      "美食",
-      "探店",
-      "消费指南"
-    ],
-    "icon": "fas fa-utensils",
-    "iconColor": "#E94B35",
-    "popular": true,
-    "type": "website"
-  },
-  {
-    "id": 98,
-    "name": "百度网盘",
-    "url": "https://pan.baidu.com/",
-    "description": "个人云存储服务，支持文件备份、分享、在线预览及多端同步",
-    "category": "utility",
-    "type": "website",
-    "icon": "fas fa-cloud",
-    "iconColor": "#2932e1",
-    "popular": false,
-    "tags": [
-      "云存储",
-      "文件管理",
-      "备份"
-    ]
-  },
-  {
-    "id": 100,
-    "name": "虎扑",
-    "url": "https://www.hupu.com/",
-    "description": "体育垂直社区，聚焦篮球/足球赛事讨论、装备评测与JRs互动文化",
-    "category": "life",
-    "type": "website",
-    "icon": "fas fa-basketball-ball",
-    "iconColor": "#ff6600",
-    "popular": true,
-    "tags": [
-      "体育",
-      "社区",
-      "赛事"
-    ]
-  },
-  {
-    "id": 102,
-    "name": "喜马拉雅",
-    "url": "https://www.ximalaya.com/",
-    "description": "音频内容生态平台，涵盖有声书、播客、知识课程与广播剧",
-    "category": "media",
-    "type": "software",
-    "icon": "fas fa-podcast",
-    "iconColor": "#ff4646",
-    "popular": true,
-    "tags": [
-      "音频",
-      "有声书",
-      "播客"
-    ]
-  },
-  {
-    "id": 104,
-    "name": "360安全卫士",
-    "url": "https://weishi.360.cn/",
-    "description": "全方位终端安全防护平台，集成病毒查杀、系统修复、隐私保护、弹窗拦截与软件管家",
-    "category": "security",
-    "type": "software",
-    "icon": "fas fa-shield-alt",
-    "iconColor": "#e40000",
-    "popular": true,
-    "tags": [
-      "杀毒",
-      "系统防护",
-      "国产安全"
-    ]
-  },
-  {
-    "id": 105,
-    "name": "腾讯电脑管家",
-    "description": "腾讯出品智能安全软件，融合TAV杀毒引擎、系统清理、网络防护与勒索病毒专防",
-    "url": "https://guanjia.qq.com/",
-    "category": "security",
-    "tags": [
-      "杀毒",
-      "系统优化",
-      "实时防护"
-    ],
-    "icon": "fas fa-shield-virus",
-    "iconColor": "#2BA245",
-    "popular": true,
-    "type": "software"
-  },
-  {
-    "id": 106,
-    "name": "火绒安全",
-    "description": "轻量级国产安全软件，专注无广告干扰的病毒查杀、行为防护、弹窗拦截与自定义规则",
-    "url": "https://www.huorong.cn/",
-    "category": "security",
-    "tags": [
-      "杀毒",
-      "弹窗拦截",
-      "纯净体验"
-    ],
-    "icon": "fas fa-fire",
-    "iconColor": "#FF6B00",
-    "popular": true,
-    "type": "software"
-  },
-  {
-    "id": 107,
-    "name": "卡巴斯基",
-    "description": "国际权威网络安全解决方案，提供多层病毒防护、隐私盾、安全支付与家长控制",
-    "url": "https://www.kaspersky.com/",
-    "category": "security",
-    "tags": [
-      "杀毒",
-      "国际品牌",
-      "企业安全"
-    ],
-    "icon": "fas fa-user-shield",
-    "iconColor": "#0066CC",
-    "popular": true,
-    "type": "software"
-  },
-  {
-    "id": 108,
-    "name": "Norton 360",
-    "description": "赛门铁克旗舰安全套件，集成AI病毒防护、云备份、密码管理器与暗网监控服务",
-    "url": "https://us.norton.com/",
-    "category": "security",
-    "tags": [
-      "杀毒",
-      "云安全",
-      "密码管理"
-    ],
-    "icon": "fas fa-lock",
-    "iconColor": "#0072C6",
-    "popular": true,
-    "type": "software"
-  },
-  {
-    "id": 109,
-    "name": "Windows Defender",
-    "description": "微软内置企业级安全中心，提供实时防护、勒索软件防护、网络防火墙与安全运行状况报告",
-    "url": "https://www.microsoft.com/security/windows-defender",
-    "category": "security",
-    "tags": [
-      "系统安全",
-      "内置防护",
-      "企业级"
-    ],
-    "icon": "fab fa-windows",
-    "iconColor": "#0078D7",
-    "popular": true,
-    "type": "software"
-  },
-  {
-    "id": 110,
-    "name": "Malwarebytes",
-    "description": "专业恶意软件清除工具，专注查杀广告软件、勒索病毒、间谍程序等高级威胁",
-    "url": "https://www.malwarebytes.com/",
-    "category": "security",
-    "tags": [
-      "恶意软件清除",
-      "专业工具",
-      "国际"
-    ],
-    "icon": "fas fa-bug",
-    "iconColor": "#1A8CFF",
-    "popular": true,
-    "type": "software"
-  },
-  {
-    "id": 111,
-    "name": "微步在线",
-    "description": "威胁情报与安全分析平台，提供IP/域名/文件威胁检测、API集成与安全运营支持",
-    "url": "https://www.threatbook.cn/",
-    "category": "security",
-    "tags": [
-      "威胁情报",
-      "企业安全",
-      "SOC"
-    ],
-    "icon": "fas fa-search",
-    "iconColor": "#00C1D4",
-    "popular": true,
-    "type": "website"
-  },
-  {
-    "id": 112,
-    "name": "360系统急救箱",
-    "url": "https://weishi.360.cn/jijiuxiang/index.html",
-    "description": "专治顽固木马与系统异常的深度查杀工具，集成云QVM引擎与WinPE急救模式，无需依赖360安全卫士独立运行",
-    "category": "security",
-    "type": "software",
-    "icon": "fas fa-medkit",
-    "iconColor": "#e40000",
-    "popular": true,
-    "tags": [
-      "木马查杀",
-      "系统修复",
-      "WinPE急救"
-    ]
-  },
-  {
-    "id": 113,
-    "name": "360断网急救箱",
-    "description": "网络故障一键修复神器，智能诊断DNS错误、IP冲突、网卡故障，支持全面诊断与强力修复（含独立绿色版）",
-    "url": "https://dl.360safe.com/netdoctor/360NetDr.exe",
-    "category": "security",
-    "tags": [
-      "网络修复",
-      "断网诊断",
-      "绿色工具"
-    ],
-    "icon": "fas fa-plug",
-    "iconColor": "#E40000",
-    "popular": true,
-    "type": "software"
-  },
-  {
-    "id": 114,
-    "name": "360手机急救箱",
-    "description": "Android端顽固木马专杀工具，集成云QVM引擎与底层强力查杀技术，支持长老木马清除、刷机修复及扣费拦截",
-    "url": "https://sj.360.cn/jiuzhi",
-    "category": "security",
-    "tags": [
-      "手机安全",
-      "木马查杀",
-      "Android工具"
-    ],
-    "icon": "fas fa-mobile-alt",
-    "iconColor": "#E40000",
+    "icon": "fas fa-sitemap",
+    "iconColor": "#2EA9DF",
     "popular": true,
     "type": "software"
   }

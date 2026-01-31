@@ -372,7 +372,8 @@ function getDisplayName(value, type) {
             'documentation': '技术文档',
             'social': '社交媒体',
             'life': '生活',
-            'government': '政府'
+            'government': '政府',
+            'study': '学习'
         },
         type: {
             'software': '软件',
