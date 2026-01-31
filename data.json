@@ -4833,5 +4833,175 @@
     "iconColor": "#FF5722",
     "popular": false,
     "type": "software"
+  },
+  {
+    "id": 500,
+    "name": "Steam",
+    "description": "Valve推出的全球最大的数字游戏发行平台，提供游戏购买、下载、社区和创意工坊等功能",
+    "url": "https://store.steampowered.com/",
+    "category": "game",
+    "tags": [
+      "游戏平台",
+      "数字发行",
+      "PC游戏",
+      "社区"
+    ],
+    "icon": "fab fa-steam",
+    "iconColor": "#171A21",
+    "popular": true,
+    "type": "software"
+  },
+  {
+    "id": 501,
+    "name": "Epic Games Store",
+    "description": "Epic Games推出的数字游戏发行平台，每周提供免费游戏，支持开发者更高收入分成",
+    "url": "https://store.epicgames.com/",
+    "category": "game",
+    "tags": [
+      "游戏平台",
+      "Epic",
+      "免费游戏",
+      "数字发行"
+    ],
+    "icon": "fas fa-gamepad",
+    "iconColor": "#2A2A2A",
+    "popular": true,
+    "type": "software"
+  },
+  {
+    "id": 502,
+    "name": "GOG",
+    "url": "https://www.gog.com/",
+    "description": "CD Projekt推出的数字游戏平台，专注于无DRM的老游戏和独立游戏",
+    "category": "game",
+    "type": "website",
+    "icon": "fas fa-crown",
+    "iconColor": "#ff5c00",
+    "popular": false,
+    "tags": [
+      "游戏平台",
+      "无DRM",
+      "老游戏",
+      "独立游戏"
+    ]
+  },
+  {
+    "id": 503,
+    "name": "Origin",
+    "description": "EA推出的数字游戏平台，提供EA旗下游戏购买、下载和社区功能",
+    "url": "https://www.origin.com/",
+    "category": "game",
+    "tags": [
+      "游戏平台",
+      "EA",
+      "数字发行",
+      "体育游戏"
+    ],
+    "icon": "fas fa-basketball-ball",
+    "iconColor": "#F56C2D",
+    "popular": false,
+    "type": "software"
+  },
+  {
+    "id": 504,
+    "name": "Ubisoft Connect",
+    "description": "育碧推出的游戏平台，提供游戏启动、社交和成就系统",
+    "url": "https://ubisoftconnect.com/",
+    "category": "game",
+    "tags": [
+      "游戏平台",
+      "育碧",
+      "启动器",
+      "社交"
+    ],
+    "icon": "fas fa-ghost",
+    "iconColor": "#0077FF",
+    "popular": false,
+    "type": "software"
+  },
+  {
+    "id": 505,
+    "name": "Battle.net",
+    "url": "https://www.blizzard.com/zh-tw/apps/battle.net/desktop",
+    "description": "暴雪娱乐推出的游戏平台，提供暴雪旗下游戏下载和社交功能",
+    "category": "game",
+    "type": "software",
+    "icon": "fas fa-battle-net",
+    "iconColor": "#148eff",
+    "popular": false,
+    "tags": [
+      "游戏平台",
+      "暴雪",
+      "暴雪游戏",
+      "社交"
+    ]
+  },
+  {
+    "id": 506,
+    "name": "itch.io",
+    "url": "https://itch.io/",
+    "description": "独立游戏发行平台，支持开发者直接发布和销售游戏",
+    "category": "game",
+    "type": "website",
+    "icon": "fas fa-gamepad",
+    "iconColor": "#fa5c5c",
+    "popular": false,
+    "tags": [
+      "独立游戏",
+      "游戏发行",
+      "开发者平台",
+      "创意游戏"
+    ]
+  },
+  {
+    "id": 507,
+    "name": "Humble Bundle",
+    "url": "https://www.humblebundle.com/",
+    "description": "游戏捆绑包销售平台，经常提供超值游戏捆绑包，支持慈善捐赠",
+    "category": "game",
+    "type": "website",
+    "icon": "fas fa-heart",
+    "iconColor": "#cc2929",
+    "popular": false,
+    "tags": [
+      "游戏捆绑包",
+      "慈善",
+      "折扣",
+      "独立游戏"
+    ]
+  },
+  {
+    "id": 508,
+    "name": "Game Jolt",
+    "description": "独立游戏社区和发行平台，支持游戏发布、分享和社区互动",
+    "url": "https://gamejolt.com/",
+    "category": "game",
+    "tags": [
+      "独立游戏",
+      "社区",
+      "游戏分享",
+      "开发者"
+    ],
+    "icon": "fas fa-bolt",
+    "iconColor": "#FFCC00",
+    "popular": false,
+    "type": "website"
+  },
+  {
+    "id": 509,
+    "name": "Nexus Mods",
+    "url": "https://www.nexusmods.com/",
+    "description": "最大的游戏模组社区，提供各类游戏的模组下载和管理工具",
+    "category": "game",
+    "type": "website",
+    "icon": "fas fa-puzzle-piece",
+    "iconColor": "#da8e35",
+    "popular": false,
+    "tags": [
+      "游戏模组",
+      "MOD",
+      "社区",
+      "模组管理"
+    ]
   }
 ]

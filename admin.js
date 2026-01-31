@@ -592,6 +592,7 @@ function getCategoryDisplayName(category) {
         'life': '生活',
         'government': '政府',
         'study': '学习',
+        'game': '游戏',
         'other': '其他'
     };
     

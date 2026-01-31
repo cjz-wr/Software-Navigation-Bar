@@ -373,7 +373,9 @@ function getDisplayName(value, type) {
             'social': '社交媒体',
             'life': '生活',
             'government': '政府',
-            'study': '学习'
+            'game': '游戏',
+            'study': '学习',
+            'other': '其他'
         },
         type: {
             'software': '软件',
