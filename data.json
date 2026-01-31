@@ -1456,22 +1456,6 @@
     ]
   },
   {
-    "id": 113,
-    "name": "360断网急救箱",
-    "description": "网络故障一键修复神器，智能诊断DNS错误、IP冲突、网卡故障，支持全面诊断与强力修复（含独立绿色版）",
-    "url": "https://dl.360safe.com/netdoctor/360NetDr.exe",
-    "category": "security",
-    "tags": [
-      "网络修复",
-      "断网诊断",
-      "绿色工具"
-    ],
-    "icon": "fas fa-plug",
-    "iconColor": "#E40000",
-    "popular": true,
-    "type": "software"
-  },
-  {
     "id": 114,
     "name": "360手机急救箱",
     "description": "Android端顽固木马专杀工具，集成云QVM引擎与底层强力查杀技术，支持长老木马清除、刷机修复及扣费拦截",
