@@ -1470,5 +1470,133 @@
     "iconColor": "#E40000",
     "popular": true,
     "type": "software"
+  },
+  {
+    "id": 115,
+    "name": "1Password",
+    "description": "企业级密码管理器，支持安全存储密码/证件/密钥，提供家庭共享、旅行模式与防钓鱼保护",
+    "url": "https://1password.com/",
+    "category": "security",
+    "tags": [
+      "密码管理",
+      "数据加密",
+      "跨平台"
+    ],
+    "icon": "fas fa-key",
+    "iconColor": "#267FF5",
+    "popular": true,
+    "type": "software"
+  },
+  {
+    "id": 116,
+    "name": "Avast Free Antivirus",
+    "description": "全球超4亿用户信赖的免费杀毒软件，含Wi-Fi安全扫描、行为防护与勒索软件盾",
+    "url": "https://www.avast.com/",
+    "category": "security",
+    "tags": [
+      "杀毒",
+      "免费工具",
+      "国际品牌"
+    ],
+    "icon": "fas fa-shield-alt",
+    "iconColor": "#00B84D",
+    "popular": true,
+    "type": "software"
+  },
+  {
+    "id": 117,
+    "name": "丁香医生",
+    "url": "https://dxy.com/",
+    "description": "专业医疗健康平台，提供在线问诊、用药查询、疫苗预约与权威健康科普内容",
+    "category": "life",
+    "type": "software",
+    "icon": "fas fa-stethoscope",
+    "iconColor": "#00b07d",
+    "popular": true,
+    "tags": [
+      "医疗",
+      "问诊",
+      "健康科普"
+    ]
+  },
+  {
+    "id": 118,
+    "name": "雪球",
+    "url": "https://xueqiu.com/",
+    "description": "投资者社区与财富管理平台，聚合实时行情、投资组合分析、大V观点与基金服务",
+    "category": "utility",
+    "type": "website",
+    "icon": "fas fa-chart-line",
+    "iconColor": "#222222",
+    "popular": true,
+    "tags": [
+      "投资",
+      "股票",
+      "社区"
+    ]
+  },
+  {
+    "id": 119,
+    "name": "Everything",
+    "url": "https://www.voidtools.com/",
+    "description": "极速文件搜索神器，毫秒级定位NTFS磁盘文件，支持正则表达式与HTTP远程访问",
+    "category": "utility",
+    "type": "software",
+    "icon": "fas fa-search",
+    "iconColor": "#1a73e8",
+    "popular": true,
+    "tags": [
+      "文件搜索",
+      "效率工具",
+      "轻量级"
+    ]
+  },
+  {
+    "id": 122,
+    "name": "丁香园",
+    "description": "医学专业社区与知识平台，服务医生群体，涵盖临床指南、学术会议与继续教育",
+    "url": "https://www.dxy.cn/",
+    "category": "education",
+    "tags": [
+      "医学",
+      "学术",
+      "专业社区"
+    ],
+    "icon": "fas fa-graduation-cap",
+    "iconColor": "#009A6C",
+    "popular": true,
+    "type": "website"
+  },
+  {
+    "id": 123,
+    "name": "有赞",
+    "url": "https://www.youzan.com/",
+    "description": "电商SaaS解决方案，赋能商家搭建小程序商城，集成营销、CRM与供应链管理工具",
+    "category": "other",
+    "type": "website",
+    "icon": "fas fa-store",
+    "iconColor": "#ff5500",
+    "popular": true,
+    "tags": [
+      "电商工具",
+      "SaaS",
+      "小程序"
+    ]
+  },
+  {
+    "id": 124,
+    "name": "墨迹天气",
+    "description": "精准气象服务平台，提供分钟级降水预报、空气质量监测、生活指数与灾害预警",
+    "url": "https://www.moji.com/",
+    "category": "life",
+    "tags": [
+      "天气",
+      "生活服务",
+      "实时预报"
+    ],
+    "icon": "fas fa-cloud-sun",
+    "iconColor": "#33CCFF",
+    "popular": true,
+    "type": "software"
   }
 ]
